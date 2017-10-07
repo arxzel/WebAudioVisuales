@@ -1,0 +1,12 @@
+otherdata en los campos hace referencia a campos que no han visto y se pueden agregar
+
+en el periodo academico hay que tener en cuenta que existen los vacacionales
+
+las reservas se harán por paquetes
+
+puede variar el aula y la hora y un estado en caso de cancelar
+
+dependiendo del tipo de usuario, este puede tener una materia asociada a su perfil (Andmin, root, director)
+
+
+
