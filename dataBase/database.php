@@ -6,7 +6,7 @@ class database{
     private $conn = null;
 
     private function getConnection(){
-        $conn = new PDO('mysql:host=localhost;dbname=id2892932_miaccount', $user, $passwd);
+        $conn = new PDO('mysql:host=localhost;dbname=audio_visuales', $user, $passwd);
     }
 
     private function closeConnection(){
