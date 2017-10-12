@@ -1,0 +1,21 @@
+Acuerdo:
+	* Inicio de sesión con selección de Rol. De tener un solo rol la selección será automatica.					
+
+	* El usuario encargado (director de programa) registrara los profesores en la plataforma y los asociará a las materias.<-Propuesta- Esto lo hace el sistema
+
+	* El usuario (profesor) activará su cuenta en la plataforma agregando su horario y salón para cada materia.<-Propuesta- Esto lo hace el sistema
+
+	* El usuario (profesor) con permisos debe realizar el préstamo seleccionando equipo, fecha y hora. Pueden ser 
+	distintas a las del horario de clase.
+
+	* El administrador audiovisual podrá atender las solicitudes de préstamo de equipos.
+	
+	* El administrador audiovisual podrá reportar el estado de los equipos audiovisuales
+
+	* El usuario encargado (director de programa) podrá consultar la cantidad de horas de
+	 préstamo efectuados por los profesores de sus materias.<-Propuesta- Hay que aclarar quien hace uso de esta información(no asumir al director de programa)
+
+
+	* Se contará con un rol de administrador que del sistema para modificar los parámetros (ver tabla) del sistema.
+
+	* Se podrá hacer auditoría del sistema.
