@@ -6,6 +6,10 @@ CREATE DATABASE IF NOT EXISTS audio_visuales
 USE audio_visuales;
 
 
+/****
+***** ESQUEMA PERMISOS Y USUARIOS EN DESARROLLO *****
+****/
+
 DROP TABLE IF EXISTS permisos CASCADE;
 DROP TABLE IF EXISTS permisos_tipos_de_usuarios CASCADE;
 DROP TABLE IF EXISTS tipos_de_usuarios CASCADE;
@@ -86,4 +90,72 @@ INSERT INTO permisos_tipos_de_usuarios
 INSERT INTO usuarios
     (documento, nombres, apellidos, email, passwd, activo, id_tipo_de_usuario, id_jefe) VALUES
     ('0', 'ROOT', 'ADMIN', 'support@unisangil.edu.co', SHA1(MD5('toor')), TRUE, 1, NULL)
+;
+
+
+
+
+/****
+***** ESQUEMA MAGISTRAL EN DESARROLLO *****
+****/
+
+
+
+CREATE TABLE IF NOT EXISTS descansos(
+    id_descanso                     INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
+    nombre                          VARCHAR(20)     NOT NULL,
+    hora_inicio                     TIME            NOT NULL,
+    duracion                        TIME            NOT NULL,
+    estado                          BOOLEAN         NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS parametros_horario(
+    id_parametro_horario            INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
+    nombre                          VARCHAR(30)     NOT NULL,
+    hora_inicio_jornada             TIME            NOT NULL,
+    hora_final_jornada              TIME            NOT NULL,
+    duracion_hora_academica         TIME            NOT NULL,
+    estado                          BOOLEAN         NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS parametros_reservas(
+    id_parametro_reserva            INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
+    nombre                          VARCHAR(30)     NOT NULL,
+    dias_minimos_reserva            SMALLINT        NOT NULL,
+    tiempo_minimo_reserva           TIME            NOT NULL,
+    dias_maximos_reserva            SMALLINT        NOT NULL,
+    tiempo_maximo_reserva           TIME            NOT NULL,
+    estado                          BOOLEAN         NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS horas(
+    id_hora                         INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
+    hora                            TIME            NOT NULL;
+);
+
+CREATE TABLE IF NOT EXISTS periodos_academicos(
+    id_periodo_academico            INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
+    nombre                          VARCHAR(50)     NOT NULL,
+    fecha_inicio                    DATE            NOT NULL,
+    fecha_final                     DATE            NOT NULL,
+    estado                          BOOLEAN         NOT NULL,
+    descripcion                     TEXT            NULL
+);
+
+
+INSERT INTO descansos
+    (nombre, hora_inicio, duracion, estado) VALUES
+    ('Primer descanso mañana', '08:30:00', '00:10:00', TRUE),
+    ('Segundo descanso mañana', '10:20:00', '00:10:00', TRUE),
+    ('Descanso medio día', '12:10:00', '01:40:00', TRUE),
+    ('Descanso media tarde', '18:00:00', '00:15:00', TRUE),
+    ('Descanso noche', '20:45', '00:15:00', TRUE)
+;
+
+INSERT INTO parametros_semestres
+    (hora_inicio_jornada, hora_final_jornada, duracion_hora_academica, estado) VALUES
+    ('hora_inicio_jornada', 'hora_final_jornada', 'duracion_hora_academica', FALSE),
+    ('hora_inicio_jornada', 'hora_final_jornada', 'duracion_hora_academica', FALSE),
+    ('hora_inicio_jornada', 'hora_final_jornada', 'duracion_hora_academica', FALSE),
+    ('hora_inicio_jornada', 'hora_final_jornada', 'duracion_hora_academica', FALSE)
 ;
