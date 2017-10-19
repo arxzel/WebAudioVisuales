@@ -26,7 +26,7 @@ class DataBase
     }
 
 
-    protected function insertOrDeleteQuery($query = null)
+    protected function insertOrDeleteQuery($query)
     {
         $this->getConnection();
         $this->conn->exec($sql);
@@ -44,7 +44,7 @@ class DataBase
         return $result;
     }
 
-    protected function updateQuery()
+    protected function updateQuery($query)
     {
         $this->getConnection();
         $stmt = $this->conn->prepare($query);
