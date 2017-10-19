@@ -172,3 +172,16 @@ INSERT INTO periodos_academicos
     ('2017-1', '2017-2-1', '2017-6-30', FALSE, 'descripcion'),
     ('2017-2', '2017-8-1', '2017-11-30', TRUE, 'descripcion')
 ;
+
+
+delimiter //
+CREATE TRIGGER actualizar_horas BEFORE INSERT ON descansos
+    FOR EACH ROW
+    BEGIN
+        IF NEW.amount < 0 THEN
+            SET NEW.amount = 0;
+        ELSEIF NEW.amount > 100 THEN
+            SET NEW.amount = 100;
+        END IF;
+    END;//
+delimiter ;
