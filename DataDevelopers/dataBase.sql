@@ -152,10 +152,10 @@ INSERT INTO descansos
     ('Descanso noche', '20:45', '00:15:00', TRUE)
 ;
 
-INSERT INTO parametros_semestres
+INSERT INTO parametros_horario
     (hora_inicio_jornada, hora_final_jornada, duracion_hora_academica, estado) VALUES
+    ('hora_inicio_jornada', 'hora_final_jornada', '60:00:00', FALSE),
     ('hora_inicio_jornada', 'hora_final_jornada', 'duracion_hora_academica', FALSE),
     ('hora_inicio_jornada', 'hora_final_jornada', 'duracion_hora_academica', FALSE),
-    ('hora_inicio_jornada', 'hora_final_jornada', 'duracion_hora_academica', FALSE),
-    ('hora_inicio_jornada', 'hora_final_jornada', 'duracion_hora_academica', FALSE)
+    ('hora_inicio_jornada', 'hora_final_jornada', 'duracion_hora_academica', TRUE)
 ;

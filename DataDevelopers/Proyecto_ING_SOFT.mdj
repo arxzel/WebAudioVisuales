@@ -7339,9 +7339,15 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< HEAD
 									"left": 48,
 									"top": 37,
 									"width": 273,
+=======
+									"left": 56,
+									"top": 53,
+									"width": 243.8271484375,
+>>>>>>> 4cf5c5eef721edb1da09a1f043706a89118c186c
 									"height": 13,
 									"autoResize": false,
 									"underline": false,
@@ -7378,6 +7384,7 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< HEAD
 											"left": 53,
 											"top": 60,
 											"width": 263,
@@ -7405,6 +7412,11 @@
 											"left": 53,
 											"top": 75,
 											"width": 263,
+=======
+											"left": 61,
+											"top": 76,
+											"width": 233.8271484375,
+>>>>>>> 4cf5c5eef721edb1da09a1f043706a89118c186c
 											"height": 13,
 											"autoResize": false
 										},
@@ -7426,9 +7438,15 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< HEAD
 											"left": 53,
 											"top": 90,
 											"width": 263,
+=======
+											"left": 61,
+											"top": 91,
+											"width": 233.8271484375,
+>>>>>>> 4cf5c5eef721edb1da09a1f043706a89118c186c
 											"height": 13,
 											"autoResize": false
 										},
@@ -7450,9 +7468,15 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< HEAD
 											"left": 53,
 											"top": 105,
 											"width": 263,
+=======
+											"left": 61,
+											"top": 106,
+											"width": 233.8271484375,
+>>>>>>> 4cf5c5eef721edb1da09a1f043706a89118c186c
 											"height": 13,
 											"autoResize": false
 										},
@@ -7474,9 +7498,15 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< HEAD
 											"left": 53,
 											"top": 120,
 											"width": 263,
+=======
+											"left": 61,
+											"top": 121,
+											"width": 233.8271484375,
+>>>>>>> 4cf5c5eef721edb1da09a1f043706a89118c186c
 											"height": 13,
 											"autoResize": false
 										}
@@ -7490,10 +7520,17 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
+<<<<<<< HEAD
 									"left": 48,
 									"top": 55,
 									"width": 273,
 									"height": 83,
+=======
+									"left": 56,
+									"top": 71,
+									"width": 243.8271484375,
+									"height": 68,
+>>>>>>> 4cf5c5eef721edb1da09a1f043706a89118c186c
 									"autoResize": false
 								}
 							],
@@ -7506,10 +7543,17 @@
 							"showShadow": true,
 							"containerChangeable": false,
 							"containerExtending": false,
+<<<<<<< HEAD
 							"left": 48,
 							"top": 32,
 							"width": 273,
 							"height": 106,
+=======
+							"left": 56,
+							"top": 48,
+							"width": 243.8271484375,
+							"height": 91,
+>>>>>>> 4cf5c5eef721edb1da09a1f043706a89118c186c
 							"autoResize": false,
 							"nameLabel": {
 								"$ref": "AAAAAAFfKuyigsqjkmk="
@@ -8372,6 +8416,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9JYnh8Qc5Ow="
+							},
 							"nullable": true,
 							"unique": false
 						}
@@ -8616,6 +8663,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9KUg/8UCcU8="
+							},
 							"nullable": false,
 							"unique": false
 						},
@@ -8630,6 +8680,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9KBErcTMKQk="
+							},
 							"nullable": true,
 							"unique": false
 						}
@@ -8897,9 +8950,13 @@
 								"$ref": "AAAAAAFe9JaKsMQ8cb4="
 							},
 							"name": "id_padre",
+							"type": "INTEGER",
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9Jz/p8SNTYo="
+							},
 							"nullable": true,
 							"unique": false
 						}
@@ -9171,6 +9228,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9J/BccS+aZo="
+							},
 							"nullable": false,
 							"unique": false
 						},
@@ -9185,6 +9245,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9Jz/p8SNTYo="
+							},
 							"nullable": true,
 							"unique": false
 						},
@@ -9199,6 +9262,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9KBErcTMKQk="
+							},
 							"nullable": false,
 							"unique": false
 						},
@@ -9213,6 +9279,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9T8WbmGwwpw="
+							},
 							"nullable": false,
 							"unique": false
 						},
@@ -9227,6 +9296,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9MusjcdKkDU="
+							},
 							"nullable": true,
 							"unique": false
 						},
@@ -9241,6 +9313,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9MusjcdKkDU="
+							},
 							"nullable": true,
 							"unique": false
 						}
@@ -9524,6 +9599,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9J/BccS+aZo="
+							},
 							"nullable": false,
 							"unique": false
 						},
@@ -9538,6 +9616,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9JYnh8Qc5Ow="
+							},
 							"nullable": false,
 							"unique": false
 						}
@@ -9576,6 +9657,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9KUg/8UCcU8="
+							},
 							"nullable": false,
 							"unique": false
 						},
@@ -9590,6 +9674,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9MCN4ca/2HE="
+							},
 							"nullable": false,
 							"unique": false
 						}
@@ -9716,6 +9803,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9Jz/p8SNTYo="
+							},
 							"nullable": false,
 							"unique": false
 						},
@@ -9758,6 +9848,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9KBErcTMKQk="
+							},
 							"nullable": false,
 							"unique": false
 						},
@@ -9767,11 +9860,14 @@
 							"_parent": {
 								"$ref": "AAAAAAFe9MbZascSHrg="
 							},
-							"name": "id_materia",
+							"name": "id_faculprog_materia",
 							"type": "INTEGER",
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9K467cYwMMs="
+							},
 							"nullable": false,
 							"unique": false
 						}
@@ -10030,6 +10126,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9MdFKccfHA0="
+							},
 							"nullable": false,
 							"unique": false
 						},
@@ -10044,6 +10143,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFe9K962MZ8Qbs="
+							},
 							"nullable": false,
 							"unique": false
 						}
@@ -11389,7 +11491,7 @@
 									"containerExtending": false,
 									"left": 881.5,
 									"top": 76.5,
-									"width": 123,
+									"width": 121.236328125,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -13036,7 +13138,7 @@
 									"containerExtending": false,
 									"left": 920,
 									"top": 380.5,
-									"width": 75,
+									"width": 74.29541015625,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -13351,7 +13453,7 @@
 									"containerExtending": false,
 									"left": 909,
 									"top": 308.5,
-									"width": 100,
+									"width": 98.14990234375,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -15758,7 +15860,7 @@
 									"containerExtending": false,
 									"left": 886,
 									"top": 516.5,
-									"width": 144,
+									"width": 140.78076171875,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -16073,7 +16175,7 @@
 									"containerExtending": false,
 									"left": 914,
 									"top": 668.5,
-									"width": 85,
+									"width": 82.97265625,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -17528,7 +17630,7 @@
 									"containerExtending": false,
 									"left": 215,
 									"top": 324.5,
-									"width": 187,
+									"width": 182.64990234375,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
