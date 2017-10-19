@@ -7,6 +7,6 @@ $requires -> getRequireControllerUsuarios();
 $usuario = new Usuario();
 $usuario->setId_usuario(1);
 $miUsuariosController = new UsuariosController();
-$miUsuariosController->getUsuarioById($usuario);
+$miUsuariosController->getUsuarioById($usuario);s
 
  ?>

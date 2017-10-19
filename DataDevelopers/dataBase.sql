@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS tipos_de_usuarios CASCADE;
 DROP TABLE IF EXISTS usuarios CASCADE;
 
 CREATE TABLE IF NOT EXISTS permisos(
-    id_permiso                      INT             NOT NULL        AUTO_INCREMENT,
+    id_permiso                      INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
     permiso                         VARCHAR(20)     NOT NULL,
     valor                           INT             NOT NULL,
     PRIMARY KEY (id_permiso),
@@ -20,13 +20,13 @@ CREATE TABLE IF NOT EXISTS permisos(
 );
 
 CREATE TABLE IF NOT EXISTS tipos_de_usuarios(
-    id_tipo_de_usuario              INT             NOT NULL        AUTO_INCREMENT,
+    id_tipo_de_usuario              INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
     tipo_usuario                    VARCHAR(20)     NOT NULL,
     PRIMARY KEY (id_tipo_de_usuario)
 );
 
 CREATE TABLE IF NOT EXISTS permisos_tipos_de_usuarios(
-    id_permiso_tipo_de_usuario      INT             NOT NULL        AUTO_INCREMENT,
+    id_permiso_tipo_de_usuario      INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
     id_tipo_de_usuario              INT             NOT NULL,
     id_permiso                      INT             NOT NULL,
     PRIMARY KEY (id_permiso_tipo_de_usuario),
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS permisos_tipos_de_usuarios(
 );
 
 CREATE TABLE IF NOT EXISTS usuarios(
-    id_usuario                      INT             NOT NULL        AUTO_INCREMENT,
+    id_usuario                      INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
     documento                       VARCHAR(20)     NOT NULL,
     nombres                         VARCHAR(20)     NOT NULL,
     apellidos                       VARCHAR(20)     NOT NULL,
