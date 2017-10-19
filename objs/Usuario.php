@@ -14,23 +14,7 @@ class Usuario{
     public function __construct(){
 
     }
-
-    public function __construct1($id){
-        $this->id_usuario = $id;
-    }
-
-    public function __construct3($id_usuario, $documento, $nombres, $apellidos, $email, $passwd, $activo, $id_tipo_de_usuario, $id_jefe){
-        $this->id_usuario = $id_usuario;
-        $this->documento = $documento;
-        $this->nombres = $nombres;
-        $this->apellidos = $apellidos;
-        $this->email = $email;
-        $this->passwd = $passwd;
-        $this->activo = $activo;
-        $this->id_tipo_de_usuario = $id_tipo_de_usuario;
-        $this->id_jefe = $id_jefe;
-    }
-
+    
     public function getId_usuario(){
         return $this->id_usuario;
     }

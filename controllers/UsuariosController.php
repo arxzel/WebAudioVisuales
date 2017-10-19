@@ -1,8 +1,8 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.php');
 $requires = new Requires();
-$this->requires->getRequireDatabase();
-$this->requires->getRequireUsuario();
+$requires->getRequireDatabase();
+$requires->getRequireUsuario();
 
 
 class UsuariosController extends DataBase
@@ -15,6 +15,7 @@ class UsuariosController extends DataBase
     public function getUsuarioById($usuario)
     {
         $sql = "SELECT * FROM usuarios WHERE id_usuario = " . $usuario->getId_usuario();
+        echo $sql;
         $resulset = $this-> selectQuery($sql);
         foreach ($resulset as $row) {
             echo "<li>{$row['id_usuario']}</li>";

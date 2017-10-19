@@ -18,7 +18,7 @@ class Requires
     */
 
     public function getRequireControllerUsuarios(){
-        require_once($this->root.'/controllers/UsuariosController.php');
+        require_once($this->root.'/controllers/UsuariosController.php');        
     }
 
     /**

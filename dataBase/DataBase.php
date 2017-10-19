@@ -1,9 +1,7 @@
 <?php
 class DataBase
 {
-    private $driver = 'mysql'; //opcional
     private $server = 'localhost';
-    private $database = 'audio_visuales';//opcional
     private $user = 'root';
     private $passwd = '';
     private $conn = null;
@@ -15,8 +13,8 @@ class DataBase
     private function getConnection()
     {
         try {
-            $conn = new PDO("$driver:host=$server;dbname=$database", $user, $passwd);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->conn = new PDO("mysql:host=$this->server;dbname=audio_visuales", $this->user, $this->passwd);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
         }
@@ -30,27 +28,27 @@ class DataBase
 
     protected function insertOrDeleteQuery($query = null)
     {
-        this.getConnection();
-        $conn->exec($sql);
-        this.closeConnection();
+        $this->getConnection();
+        $this->conn->exec($sql);
+        $this->closeConnection();
     }
 
-    protected function selectQuery($query = null)
+    protected function selectQuery($query)
     {
-        this.getConnection();
-        $stmt = $conn->prepare($query);
+        $this->getConnection();
+        $stmt = $this->conn->prepare($query);
         $stmt->execute();
         //$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $result = $stmt->fetchAll();
-        this.closeConnection();
+        $this->closeConnection();
         return $result;
     }
 
     protected function updateQuery()
     {
-        this.getConnection();
-        $stmt = $conn->prepare($query);
+        $this->getConnection();
+        $stmt = $this->conn->prepare($query);
         $stmt->execute();
-        this.closeConnection();
+        $this->closeConnection();
     }
 }
