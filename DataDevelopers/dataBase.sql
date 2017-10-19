@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS tipos_de_usuarios CASCADE;
 DROP TABLE IF EXISTS usuarios CASCADE;
 
 CREATE TABLE IF NOT EXISTS permisos(
-    id_permiso                      INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
+    id_permiso                      INT             NOT NULL        AUTO_INCREMENT,
     permiso                         VARCHAR(20)     NOT NULL,
     valor                           INT             NOT NULL,
     PRIMARY KEY (id_permiso),
@@ -24,13 +24,13 @@ CREATE TABLE IF NOT EXISTS permisos(
 );
 
 CREATE TABLE IF NOT EXISTS tipos_de_usuarios(
-    id_tipo_de_usuario              INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
+    id_tipo_de_usuario              INT             NOT NULL        AUTO_INCREMENT,
     tipo_usuario                    VARCHAR(20)     NOT NULL,
     PRIMARY KEY (id_tipo_de_usuario)
 );
 
 CREATE TABLE IF NOT EXISTS permisos_tipos_de_usuarios(
-    id_permiso_tipo_de_usuario      INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
+    id_permiso_tipo_de_usuario      INT             NOT NULL        AUTO_INCREMENT,
     id_tipo_de_usuario              INT             NOT NULL,
     id_permiso                      INT             NOT NULL,
     PRIMARY KEY (id_permiso_tipo_de_usuario),
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS permisos_tipos_de_usuarios(
 );
 
 CREATE TABLE IF NOT EXISTS usuarios(
-    id_usuario                      INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
+    id_usuario                      INT             NOT NULL        AUTO_INCREMENT,
     documento                       VARCHAR(20)     NOT NULL,
     nombres                         VARCHAR(20)     NOT NULL,
     apellidos                       VARCHAR(20)     NOT NULL,
@@ -102,7 +102,7 @@ INSERT INTO usuarios
 
 
 CREATE TABLE IF NOT EXISTS descansos(
-    id_descanso                     INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
+    id_descanso                     INT             NOT NULL        AUTO_INCREMENT,
     nombre                          VARCHAR(20)     NOT NULL,
     hora_inicio                     TIME            NOT NULL,
     duracion                        TIME            NOT NULL,
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS descansos(
 );
 
 CREATE TABLE IF NOT EXISTS parametros_horario(
-    id_parametro_horario            INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
+    id_parametro_horario            INT             NOT NULL        AUTO_INCREMENT,
     nombre                          VARCHAR(30)     NOT NULL,
     hora_inicio_jornada             TIME            NOT NULL,
     hora_final_jornada              TIME            NOT NULL,
@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS parametros_horario(
 );
 
 CREATE TABLE IF NOT EXISTS parametros_reservas(
-    id_parametro_reserva            INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
+    id_parametro_reserva            INT             NOT NULL        AUTO_INCREMENT,
     nombre                          VARCHAR(30)     NOT NULL,
     dias_minimos_reserva            SMALLINT        NOT NULL,
     tiempo_minimo_reserva           TIME            NOT NULL,
@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS horas(
 );
 
 CREATE TABLE IF NOT EXISTS periodos_academicos(
-    id_periodo_academico            INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
+    id_periodo_academico            INT             NOT NULL        AUTO_INCREMENT,
     nombre                          VARCHAR(50)     NOT NULL,
     fecha_inicio                    DATE            NOT NULL,
     fecha_final                     DATE            NOT NULL,
@@ -154,8 +154,21 @@ INSERT INTO descansos
 
 INSERT INTO parametros_horario
     (hora_inicio_jornada, hora_final_jornada, duracion_hora_academica, estado) VALUES
-    ('hora_inicio_jornada', 'hora_final_jornada', '60:00:00', FALSE),
-    ('hora_inicio_jornada', 'hora_final_jornada', 'duracion_hora_academica', FALSE),
-    ('hora_inicio_jornada', 'hora_final_jornada', 'duracion_hora_academica', FALSE),
-    ('hora_inicio_jornada', 'hora_final_jornada', 'duracion_hora_academica', TRUE)
+    ('06:00:00', '23:00:00', '60:00:00', FALSE),
+    ('06:00:00', '23:00:00', '00:45:00', FALSE),
+    ('06:00:00', '23:00:00', '00:50:00', TRUE)
+;
+
+INSERT INTO parametros_reservas
+    (nombre, dias_minimos_reserva, tiempo_minimo_reserva, dias_maximos_reserva, tiempo_maximo_reserva, estado) VALUES
+    ('antes', 0, '12:00:00', 6, '23:59:59', FALSE),
+    ('ahora', 1, '00:00:00', 7, '23:59:59', TRUE)
+;
+
+INSERT INTO periodos_academicos
+    (nombre, fecha_inicio, fecha_final, estado, descripcion) VALUES
+    ('2016-1', '2016-2-1', '2016-6-30', FALSE, 'descripcion'),
+    ('2016-2', '2016-8-1', '2016-11-30', FALSE, 'descripcion'),
+    ('2017-1', '2017-2-1', '2017-6-30', FALSE, 'descripcion'),
+    ('2017-2', '2017-8-1', '2017-11-30', TRUE, 'descripcion')
 ;
