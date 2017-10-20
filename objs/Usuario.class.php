@@ -1,26 +1,29 @@
 <?php
+/*require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
+$requires = new Requires();
+$requires -> getRequireTipoUsuario();
+*/
 class Usuario{
 
-    private $id_usuario;
+    private $idUsuario;
     private $documento;
     private $nombres;
     private $apellidos;
     private $email;
     private $passwd;
     private $activo;
-    private $id_tipo_de_usuario;
-    private $id_jefe;
+    private $tipoUsuario;
+    private $jefe;
 
     public function __construct(){
-
-    }
-    
-    public function getId_usuario(){
-        return $this->id_usuario;
     }
 
-    public function setId_usuario($id_usuario){
-        $this->id_usuario = $id_usuario;
+    public function getIdUsuario(){
+        return $this->idUsuario;
+    }
+
+    public function setIdUsuario($idUsuario){
+        $this->idUsuario = $idUsuario;
     }
 
     public function getDocumento(){
@@ -71,20 +74,20 @@ class Usuario{
         $this->activo = $activo;
     }
 
-    public function getId_tipo_de_usuario(){
-        return $this->id_tipo_de_usuario;
+    public function getTipoUsuario(){
+        return $this->tipoUsuario;
     }
 
-    public function setId_tipo_de_usuario($id_tipo_de_usuario){
-        $this->id_tipo_de_usuario = $id_tipo_de_usuario;
+    public function setTipoUsuario($tipoUsuario){
+        $this->tipoUsuario = $tipoUsuario;
     }
 
-    public function getId_jefe(){
-        return $this->id_jefe;
+    public function getJefe(){
+        return $this->jefe;
     }
 
-    public function setId_jefe($id_jefe){
-        $this->id_jefe = $id_jefe;
+    public function setJefe($jefe){
+        $this->jefe = $jefe;
     }
 
 }

@@ -11,8 +11,8 @@ USE audio_visuales;
 ****/
 
 DROP TABLE IF EXISTS permisos CASCADE;
-DROP TABLE IF EXISTS permisos_tipos_de_usuarios CASCADE;
-DROP TABLE IF EXISTS tipos_de_usuarios CASCADE;
+DROP TABLE IF EXISTS permisos_tipos_usuarios CASCADE;
+DROP TABLE IF EXISTS tipos_usuarios CASCADE;
 DROP TABLE IF EXISTS usuarios CASCADE;
 
 CREATE TABLE IF NOT EXISTS permisos(
@@ -23,20 +23,21 @@ CREATE TABLE IF NOT EXISTS permisos(
     UNIQUE(valor)
 );
 
-CREATE TABLE IF NOT EXISTS tipos_de_usuarios(
-    id_tipo_de_usuario              INT             NOT NULL        AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS tipos_usuarios(
+    id_tipo_usuario                 INT             NOT NULL        AUTO_INCREMENT,
     tipo_usuario                    VARCHAR(20)     NOT NULL,
-    PRIMARY KEY (id_tipo_de_usuario)
+    descripcion                     TEXT            NULL,
+    PRIMARY KEY (id_tipo_usuario)
 );
 
-CREATE TABLE IF NOT EXISTS permisos_tipos_de_usuarios(
-    id_permiso_tipo_de_usuario      INT             NOT NULL        AUTO_INCREMENT,
-    id_tipo_de_usuario              INT             NOT NULL,
+CREATE TABLE IF NOT EXISTS permisos_tipos_usuarios(
+    id_permiso_tipo_usuario      INT             NOT NULL        AUTO_INCREMENT,
+    id_tipo_usuario              INT             NOT NULL,
     id_permiso                      INT             NOT NULL,
-    PRIMARY KEY (id_permiso_tipo_de_usuario),
-    FOREIGN KEY (id_tipo_de_usuario)                REFERENCES tipos_de_usuarios(id_tipo_de_usuario),
+    PRIMARY KEY (id_permiso_tipo_usuario),
+    FOREIGN KEY (id_tipo_usuario)                REFERENCES tipos_usuarios(id_tipo_usuario),
     FOREIGN KEY (id_permiso)                        REFERENCES permisos(id_permiso),
-    CONSTRAINT permiso_tipo_de_usuario UNIQUE (id_permiso, id_tipo_de_usuario)
+    CONSTRAINT permiso_tipo_de_usuario UNIQUE (id_permiso, id_tipo_usuario)
 );
 
 CREATE TABLE IF NOT EXISTS usuarios(
@@ -47,10 +48,10 @@ CREATE TABLE IF NOT EXISTS usuarios(
     email                           VARCHAR(30)     NOT NULL,
     passwd                          VARCHAR(100)    NOT NULL,
     activo                          BOOLEAN         NOT NULL,
-    id_tipo_de_usuario              INT             NOT NULL,
+    id_tipo_usuario              INT             NOT NULL,
     id_jefe                         INT             NULL,
     PRIMARY KEY (id_usuario),
-    FOREIGN KEY (id_tipo_de_usuario)                REFERENCES tipos_de_usuarios(id_tipo_de_usuario),
+    FOREIGN KEY (id_tipo_usuario)                REFERENCES tipos_usuarios(id_tipo_usuario),
     FOREIGN KEY (id_jefe)                           REFERENCES usuarios(id_usuario)
 );
 
@@ -66,7 +67,7 @@ INSERT INTO permisos
     ('ADMIN ACADEMICO',7)
 ;
 
-INSERT INTO tipos_de_usuarios
+INSERT INTO tipos_usuarios
     (tipo_usuario) VALUES
     ('ROOT'),
     ('ADMINISTRADOR'),
@@ -76,8 +77,8 @@ INSERT INTO tipos_de_usuarios
     ('INVITADO')
 ;
 
-INSERT INTO permisos_tipos_de_usuarios
-    (id_tipo_de_usuario, id_permiso) VALUES
+INSERT INTO permisos_tipos_usuarios
+    (id_tipo_usuario, id_permiso) VALUES
     (1, 1),
     (1, 2),
     (1, 3),
@@ -88,8 +89,11 @@ INSERT INTO permisos_tipos_de_usuarios
 ;
 
 INSERT INTO usuarios
-    (documento, nombres, apellidos, email, passwd, activo, id_tipo_de_usuario, id_jefe) VALUES
-    ('0', 'ROOT', 'ADMIN', 'support@unisangil.edu.co', SHA1(MD5('toor')), TRUE, 1, NULL)
+    (documento, nombres, apellidos, email, passwd, activo, id_tipo_usuario, id_jefe) VALUES
+    ('0', 'ROOT', 'ADMIN', 'support@unisangil.edu.co', SHA1(MD5('toor')), TRUE, 1, NULL),
+    ('123', 'Faver', 'Amorocho', 'decano@unisangil.edu.co', SHA1(MD5('decano')), TRUE, 4, 1),
+    ('234', 'Yaneida', 'Longas', 'programa@unisangil.edu.co', SHA1(MD5('programa')), TRUE, 4, 2),
+    ('345', 'Igor', 'Bautista', 'docente@unisangil.edu.co', SHA1(MD5('docente')), TRUE, 5, 3)
 ;
 
 
@@ -106,7 +110,8 @@ CREATE TABLE IF NOT EXISTS descansos(
     nombre                          VARCHAR(20)     NOT NULL,
     hora_inicio                     TIME            NOT NULL,
     duracion                        TIME            NOT NULL,
-    estado                          BOOLEAN         NOT NULL
+    estado                          BOOLEAN         NOT NULL,
+    PRIMARY KEY (id_descanso)
 );
 
 CREATE TABLE IF NOT EXISTS parametros_horario(
@@ -115,7 +120,8 @@ CREATE TABLE IF NOT EXISTS parametros_horario(
     hora_inicio_jornada             TIME            NOT NULL,
     hora_final_jornada              TIME            NOT NULL,
     duracion_hora_academica         TIME            NOT NULL,
-    estado                          BOOLEAN         NOT NULL
+    estado                          BOOLEAN         NOT NULL,
+    PRIMARY KEY (id_parametro_horario)
 );
 
 CREATE TABLE IF NOT EXISTS parametros_reservas(
@@ -125,12 +131,14 @@ CREATE TABLE IF NOT EXISTS parametros_reservas(
     tiempo_minimo_reserva           TIME            NOT NULL,
     dias_maximos_reserva            SMALLINT        NOT NULL,
     tiempo_maximo_reserva           TIME            NOT NULL,
-    estado                          BOOLEAN         NOT NULL
+    estado                          BOOLEAN         NOT NULL,
+    PRIMARY KEY (id_parametro_reserva)
 );
 
 CREATE TABLE IF NOT EXISTS horas(
     id_hora                         INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
-    hora                            TIME            NOT NULL;
+    hora                            TIME            NOT NULL,
+    PRIMARY KEY (id_hora)
 );
 
 CREATE TABLE IF NOT EXISTS periodos_academicos(
@@ -139,7 +147,8 @@ CREATE TABLE IF NOT EXISTS periodos_academicos(
     fecha_inicio                    DATE            NOT NULL,
     fecha_final                     DATE            NOT NULL,
     estado                          BOOLEAN         NOT NULL,
-    descripcion                     TEXT            NULL
+    descripcion                     TEXT            NULL,
+    PRIMARY KEY (id_periodo_academico)
 );
 
 
@@ -173,15 +182,53 @@ INSERT INTO periodos_academicos
     ('2017-2', '2017-8-1', '2017-11-30', TRUE, 'descripcion')
 ;
 
-
-delimiter //
+/*
+delimiter $$
 CREATE TRIGGER actualizar_horas BEFORE INSERT ON descansos
     FOR EACH ROW
     BEGIN
+    DECLARE inicio_jornada
+    DECLARE final_jornada
+    DECLARE ids_descansos CURSOR FOR SELECT temp.ids FROM (SELECT id_descanso AS ids, hora_inicio  FROM descansos WHERE estado = TRUE ORDER BY hora_inicio ASC) AS temp;
+        FOR
+        SELECT * FROM
         IF NEW.amount < 0 THEN
             SET NEW.amount = 0;
         ELSEIF NEW.amount > 100 THEN
             SET NEW.amount = 100;
         END IF;
-    END;//
+    END;
+$$
 delimiter ;
+*/
+
+/*
+DROP PROCEDURE IF EXISTS calculo_horario;
+
+DELIMITER $$
+CREATE PROCEDURE calculo_horario(OUT dato char(100))
+BEGIN
+    DECLARE inicio_jornada TIME;
+    DECLARE final_jornada TIME;
+    DECLARE duracion_hora TIME;
+
+    CREATE TEMPORARY TABLE tempo AS
+    SELECT id_descanso, hora_inicio
+    FROM descansos
+    WHERE estado = TRUE
+    ORDER BY hora_inicio ASC;
+
+    SELECT hora_inicio_jornada, hora_final_jornada, duracion_hora_academica
+    INTO inicio_jornada, final_jornada, duracion_hora
+    FROM parametros_horario
+    WHERE estado = TRUE;
+
+
+
+    SELECT  CONCAT('Hello, ',inicio_jornada, ' ', final_jornada, ' ', duracion_hora,'!') INTO dato;
+END;$$ DELIMITER ;
+
+CALL calculo_horario(@dato);
+
+SELECT @dato;
+*/

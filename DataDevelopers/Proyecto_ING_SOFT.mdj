@@ -2466,7 +2466,7 @@
 									"height": 13,
 									"autoResize": false,
 									"underline": false,
-									"text": "USUARIO",
+									"text": "USUARIOS",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5,
 									"wordWrap": false
@@ -2766,7 +2766,7 @@
 									"height": 13,
 									"autoResize": false,
 									"underline": false,
-									"text": "TIPO_USUARIO",
+									"text": "TIPOS_USUARIOS",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5,
 									"wordWrap": false
@@ -4860,7 +4860,7 @@
 									"height": 13,
 									"autoResize": false,
 									"underline": false,
-									"text": "PERMISOS_TIPO_USUARIO",
+									"text": "PERMISOS_TIPOS_USUARIOS",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5,
 									"wordWrap": false
@@ -8383,7 +8383,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFe8hezpKR1d2s="
 					},
-					"name": "USUARIO",
+					"name": "USUARIOS",
 					"ownedElements": [
 						{
 							"_type": "ERDRelationship",
@@ -8641,7 +8641,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFe8hezpKR1d2s="
 					},
-					"name": "TIPO_USUARIO",
+					"name": "TIPOS_USUARIOS",
 					"ownedElements": [
 						{
 							"_type": "ERDRelationship",
@@ -9549,7 +9549,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFe8hezpKR1d2s="
 					},
-					"name": "PERMISOS_TIPO_USUARIO",
+					"name": "PERMISOS_TIPOS_USUARIOS",
 					"columns": [
 						{
 							"_type": "ERDColumn",
@@ -13560,7 +13560,7 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 970,
+									"left": 971,
 									"top": 350,
 									"width": 0,
 									"height": 13,
@@ -13594,7 +13594,7 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 958,
+									"left": 959,
 									"top": 350,
 									"width": 55.65625,
 									"height": 13,
@@ -13629,7 +13629,7 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 941,
+									"left": 942,
 									"top": 351,
 									"width": 0,
 									"height": 13,
@@ -16282,7 +16282,7 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 939,
+									"left": 940,
 									"top": 553,
 									"width": 0,
 									"height": 13,
@@ -16316,7 +16316,7 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 897,
+									"left": 898,
 									"top": 552,
 									"width": 55.65625,
 									"height": 13,
@@ -16351,7 +16351,7 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 968,
+									"left": 969,
 									"top": 556,
 									"width": 0,
 									"height": 13,
@@ -16461,7 +16461,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 956,
-									"top": 630,
+									"top": 629,
 									"width": 55.65625,
 									"height": 13,
 									"autoResize": false,

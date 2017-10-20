@@ -26,7 +26,14 @@ class DataBase
     }
 
 
-    protected function insertOrDeleteQuery($query)
+    protected function insertQuery($query)
+    {
+        $this->getConnection();
+        $this->conn->exec($sql);
+        $this->closeConnection();
+    }
+
+    protected function deleteQuery($query)
     {
         $this->getConnection();
         $this->conn->exec($sql);
