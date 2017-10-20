@@ -1,3 +1,3 @@
 <?php
-include_once('vistaPrueba.php');
+//include_once('vistaPrueba.php');
  ?>
