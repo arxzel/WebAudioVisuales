@@ -48,6 +48,8 @@ BEGIN
 
     SET iterator = 0;
 
+    TRUNCATE TABLE horas RESTART IDENTITY;
+
     CREATE TEMPORARY TABLE descansostable (
         id INT NOT NULL AUTO_INCREMENT,
         iniciodescanso TIME NOT NULL,
