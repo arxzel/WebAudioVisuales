@@ -3,7 +3,7 @@
 /****
 ***** INSERTS DEL ESQUEMA USUARIOS Y PERMISOS *****
 ****/
-
+USE audio_visuales;
 INSERT INTO permisos
     (permiso, valor) VALUES
     ('CREAR USUARIO',1),

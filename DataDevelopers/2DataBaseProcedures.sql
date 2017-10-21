@@ -2,7 +2,8 @@
 /****
 ***** PROCEDURES Y TRIGGERS DEL ESQUEMA MAGISTRAL *****
 ****/
-
+USE audio_visuales;
+/*
 DROP TRIGGER IF EXISTS actualizar_horas_insert;
 DELIMITER $$
 CREATE TRIGGER actualizar_horas_insert AFTER INSERT ON descansos
@@ -29,7 +30,7 @@ CREATE TRIGGER actualizar_horas_delete AFTER DELETE ON descansos
         CALL calculo_horario();
     END;
 $$ DELIMITER ;
-
+*/
 DROP PROCEDURE IF EXISTS calculo_horario;
 DELIMITER $$
 CREATE PROCEDURE calculo_horario()
@@ -48,7 +49,7 @@ BEGIN
 
     SET iterator = 0;
 
-    TRUNCATE TABLE horas RESTART IDENTITY;
+    TRUNCATE TABLE horas;
 
     CREATE TEMPORARY TABLE descansostable (
         id INT NOT NULL AUTO_INCREMENT,
