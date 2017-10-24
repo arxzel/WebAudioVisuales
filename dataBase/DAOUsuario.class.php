@@ -34,7 +34,7 @@ $requires->importDAOTipoUsuario();
                 $usuario->setActivo((boolean) $row['activo']);
 
                 //metodo para buscar el tipo de usuario
-                $DAOTipoUsuario =  new TipoUsuarioController();
+                $DAOTipoUsuario =  new DAOTipoUsuario();
                 $tipoUsuario = new TipoUsuario();
                 $tipoUsuario->setIdTipoUsuario((int) $row['id_tipo_usuario']);
                 $usuario->setTipoUsuario($DAOTipoUsuario->getTipoUsuarioById($tipoUsuario));

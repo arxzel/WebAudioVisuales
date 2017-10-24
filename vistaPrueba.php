@@ -1,7 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php'); //llamo la clase que tiene todas las dependencias
 $requires = new Requires(); //instancio el objeto de la clase requires que tiene todas las dependencias
-$requires -> getRequireUsuarioController(); //llamo la dependencia UsuariosController
+$requires -> importUsuarioController(); //llamo la dependencia UsuariosController
 
 echo '<h2>Muesta del recorrido de un objeto mediante :: vista <-> controlador <-> dao <-> dbClass< -> dbEngine</h2>';
 

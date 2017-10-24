@@ -1,5 +1,4 @@
 <?php
-
 class Requires
 {
     private $root = '';
@@ -53,6 +52,38 @@ class Requires
         require_once($this->root.'/dataBase/DAOPeriodoAcademico.class.php');
     }
 
+    public function importDAOGrupoMateria(){
+        require_once($this->root.'/dataBase/DAOGrupoMateria.class.php');
+    }
+
+    public function importDAOFaculProgDep(){
+        require_once($this->root.'/dataBase/DAOFaculProgDep.class.php');
+    }
+
+    public function importDAOMateria(){
+        require_once($this->root.'/dataBase/DAOMateria.class.php');
+    }
+
+    public function importDAOAula(){
+        require_once($this->root.'/dataBase/DAOAula.class.php');
+    }
+
+    public function importDAOFaculProgDepMateria(){
+        require_once($this->root.'/dataBase/DAOFaculProgDepMateria.class.php');
+    }
+
+    public function importDAOReserva(){
+        require_once($this->root.'/dataBase/DAOReserva.class.php');
+    }
+
+    public function importDAOReservaRecurso(){
+        require_once($this->root.'/dataBase/DAOReservaRecurso.class.php');
+    }
+
+    public function importDAORecurso(){
+        require_once($this->root.'/dataBase/DAORecurso.class.php');
+    }
+
     /*************************************************************************
     * FUNCIONES PARA RETORNAR A LOS CONTROLADORES.
     *************************************************************************/
@@ -91,6 +122,38 @@ class Requires
 
     public function importPeriodoAcademicoController(){
         require_once($this->root.'/controllers/PeriodoAcademicoController.class.php');
+    }
+
+    public function importGrupoMateriaController(){
+        require_once($this->root.'/controllers/GrupoMateriaController.class.php');
+    }
+
+    public function importFaculProgDepController(){
+        require_once($this->root.'/controllers/FaculProgDepController.class.php');
+    }
+
+    public function importMateriaController(){
+        require_once($this->root.'/controllers/MateriaController.class.php');
+    }
+
+    public function importAulaController(){
+        require_once($this->root.'/controllers/AulaController.class.php');
+    }
+
+    public function importFaculProgDepMateriaController(){
+        require_once($this->root.'/controllers/FaculProgDepMateriaController.class.php');
+    }
+
+    public function importReservaController(){
+        require_once($this->root.'/controllers/ReservaController.class.php');
+    }
+
+    public function importReservaRecursoController(){
+        require_once($this->root.'/controllers/ReservaRecursoController.class.php');
+    }
+
+    public function importRecursoController(){
+        require_once($this->root.'/controllers/RecursoController.class.php');
     }
 
     /*************************************************************************
@@ -133,6 +196,36 @@ class Requires
         require_once($this->root.'/objs/TriodoAcademico.class.php');
     }
 
-}
+    public function importGrupoMateria(){
+        require_once($this->root.'/objs/GrupoMateria.class.php');
+    }
 
+    public function importFaculProgDep(){
+        require_once($this->root.'/objs/FaculProgDep.class.php');
+    }
+
+    public function importMateria(){
+        require_once($this->root.'/objs/Materia.class.php');
+    }
+
+    public function importAula(){
+        require_once($this->root.'/objs/Aula.class.php');
+    }
+
+    public function importFaculProgDepMateria(){
+        require_once($this->root.'/objs/FaculProgDepMateria.class.php');
+    }
+
+    public function importReserva(){
+        require_once($this->root.'/objs/Reserva.class.php');
+    }
+
+    public function importReservaRecurso(){
+        require_once($this->root.'/objs/ReservaRecurso.class.php');
+    }
+
+    public function importRecurso(){
+        require_once($this->root.'/objs/Recurso.class.php');
+    }
+}
  ?>
