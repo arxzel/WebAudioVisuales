@@ -1,8 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
 $requires = new Requires();
-$requires->getRequireDAOUsuario();
-$requires->getRequireUsuario();
+$requires->importDAOUsuario();
 
 
 class UsuariosController

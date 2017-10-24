@@ -52,15 +52,6 @@ INSERT INTO usuarios
 ****/
 
 
-INSERT INTO descansos
-    (nombre, hora_inicio, duracion, estado) VALUES
-    ('Primer descanso mañana', '08:30:00', '00:10:00', TRUE),
-    ('Segundo descanso mañana', '10:20:00', '00:10:00', TRUE),
-    ('Descanso medio día', '12:10:00', '01:40:00', TRUE),
-    ('Descanso media tarde', '18:00:00', '00:15:00', TRUE),
-    ('Descanso noche', '20:45', '00:15:00', TRUE)
-;
-
 INSERT INTO parametros_horario
     (hora_inicio_jornada, hora_final_jornada, duracion_hora_academica, estado) VALUES
     ('06:00:00', '23:00:00', '60:00:00', FALSE),
@@ -80,4 +71,13 @@ INSERT INTO periodos_academicos
     ('2016-2', '2016-8-1', '2016-11-30', FALSE, 'descripcion'),
     ('2017-1', '2017-2-1', '2017-6-30', FALSE, 'descripcion'),
     ('2017-2', '2017-8-1', '2017-11-30', TRUE, 'descripcion')
+;
+
+INSERT INTO descansos
+    (nombre, hora_inicio, duracion, estado) VALUES
+    ('Primer descanso mañana', '08:30:00', '00:10:00', TRUE),
+    ('Segundo descanso mañana', '10:20:00', '00:10:00', TRUE),
+    ('Descanso medio día', '12:10:00', '01:40:00', TRUE),
+    ('Descanso media tarde', '18:00:00', '00:15:00', TRUE),
+    ('Descanso noche', '20:45', '00:10:00', TRUE)
 ;

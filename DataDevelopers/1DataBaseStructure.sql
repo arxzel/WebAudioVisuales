@@ -31,8 +31,8 @@ CREATE TABLE IF NOT EXISTS tipos_usuarios(
 );
 
 CREATE TABLE IF NOT EXISTS permisos_tipos_usuarios(
-    id_permiso_tipo_usuario      INT             NOT NULL        AUTO_INCREMENT,
-    id_tipo_usuario              INT             NOT NULL,
+    id_permiso_tipo_usuario         INT             NOT NULL        AUTO_INCREMENT,
+    id_tipo_usuario                 INT             NOT NULL,
     id_permiso                      INT             NOT NULL,
     PRIMARY KEY (id_permiso_tipo_usuario),
     FOREIGN KEY (id_tipo_usuario)                REFERENCES tipos_usuarios(id_tipo_usuario),

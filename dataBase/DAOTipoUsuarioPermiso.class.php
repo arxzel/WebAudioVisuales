@@ -2,8 +2,8 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
 $requires = new Requires();
-$requires->getRequireTipoUsuario();
-$requires->getRequirePermiso();
+$requires->importTipoUsuario();
+$requires->importPermiso();
 
 class PermisoTipoUsuario{
     private $idPermisoTipoUsuario;

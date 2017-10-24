@@ -2,8 +2,8 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
 $requires = new Requires();
-$requires->getRequireDatabase();
-$requires->getRequirePermiso();
+$requires->importDatabase();
+$requires->importPermiso();
 
     /**
      *

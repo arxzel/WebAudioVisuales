@@ -2,9 +2,9 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
 $requires = new Requires();
-$requires->getRequireDatabase();
-$requires->getRequireUsuario();
-$requires->getRequireTipoUsuarioController();
+$requires->importDatabase();
+$requires->importUsuario();
+$requires->importDAOTipoUsuario();
 
     /**
      *
@@ -34,10 +34,10 @@ $requires->getRequireTipoUsuarioController();
                 $usuario->setActivo((boolean) $row['activo']);
 
                 //metodo para buscar el tipo de usuario
-                $TipoUsuarioController =  new TipoUsuarioController();
+                $DAOTipoUsuario =  new TipoUsuarioController();
                 $tipoUsuario = new TipoUsuario();
                 $tipoUsuario->setIdTipoUsuario((int) $row['id_tipo_usuario']);
-                $usuario->setTipoUsuario($TipoUsuarioController->getTipoUsuarioById($tipoUsuario));
+                $usuario->setTipoUsuario($DAOTipoUsuario->getTipoUsuarioById($tipoUsuario));
 
                 //metodo para buscar al jefe, **OJO ES RECURSIVA**
                 if($row['id_jefe'] != 0 && $row['id_jefe'] != null && $row['id_jefe'] != '' ){
