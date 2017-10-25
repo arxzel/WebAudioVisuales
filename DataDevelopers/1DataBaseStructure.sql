@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS parametros_reservas(
 );
 
 CREATE TABLE IF NOT EXISTS horas(
-    id_hora                         INT             NOT NULL        AUTO_INCREMENT      COMMENT 'este_es_un_comentario',
+    id_hora                         INT             NOT NULL        AUTO_INCREMENT COMMENT 'no es AUTO_INCREMENT debido a que el trigger no soporta DDL solo DML',
     hora                            TIME            NOT NULL,
     PRIMARY KEY (id_hora)
 );

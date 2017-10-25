@@ -72,7 +72,7 @@ INSERT INTO periodos_academicos
     ('2017-1', '2017-2-1', '2017-6-30', FALSE, 'descripcion'),
     ('2017-2', '2017-8-1', '2017-11-30', TRUE, 'descripcion')
 ;
-
+/*
 INSERT INTO descansos
     (nombre, hora_inicio, duracion, estado) VALUES
     ('Primer descanso mañana', '08:30:00', '00:10:00', TRUE),
@@ -81,3 +81,11 @@ INSERT INTO descansos
     ('Descanso media tarde', '18:00:00', '00:15:00', TRUE),
     ('Descanso noche', '20:45', '00:10:00', TRUE)
 ;
+*/
+
+
+CALL calculo_horario_on_insert('Primer descanso mañana', '08:30:00', '00:10:00', TRUE);
+CALL calculo_horario_on_insert('Segundo descanso mañana', '10:20:00', '00:10:00', TRUE);
+CALL calculo_horario_on_insert('Descanso medio día', '12:10:00', '01:40:00', TRUE);
+CALL calculo_horario_on_insert('Descanso media tarde', '18:00:00', '00:15:00', TRUE);
+CALL calculo_horario_on_insert('Descanso noche', '20:45', '00:10:00', TRUE);
