@@ -1,9 +1,9 @@
-<?php 
+<?php
 	require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
 	$requires = new Requires();
 
 	//controller parametros horarios
-	$requires -> importParametroHorarioController(); 
+	$requires -> importParametroHorarioController();
 
 	//controller parametros descansos
 	$requires-> importDescansoController();
@@ -23,11 +23,11 @@
 
 	<body>
 		<header>
-			
+
 		</header>
 
 		<section name="ParametrosHorarios">
-			
+
 		<fieldset><legend> Parametros Horarios</legend>
 			<form method="POST" action="ParametrosHora.php">
 				<table border="0" width="550" cellspacing="0" cellpadding="5">
@@ -47,7 +47,7 @@
 					</tr>
 					<tr>
 						<td>Hora Final Jornada: </td>
-						<td><input type="datetime" name="dateHorafinalJornada" value="" /></td>		
+						<td><input type="datetime" name="dateHorafinalJornada" value="" /></td>
 					</tr>
 					<tr>
 						<td>Duración Hora Academica: </td>
@@ -65,22 +65,21 @@
 					<tr>
 						<td colspan="2">
 							<?php
-								
+
 
 								if (isset($_POST['botonRegistrar'])) {
 
 									$parametroHorario = new ParametroHorario();
 									//contruccion de objeto (da el nombre)
-									$parametroHorario->setNombre($_POST['txtNombre']); 
+									$parametroHorario->setNombre($_POST['txtNombre']);
 									//construccion de objeto (da la hora de inicio)
-									$parametroHorario->setHoraInicioJornada($_POST['dateHoraInicioJornada']); 
+									$parametroHorario->setHoraInicioJornada($_POST['dateHoraInicioJornada']);
 									//contruccion de objeto (da la hora final academica)
-									$parametroHorario->setHoraFinalAcademica($_POST['dateHorafinalJornada']); 
+									$parametroHorario->setHoraFinalJornada($_POST['dateHorafinalJornada']);
 									//construccion de objeto (da la duraccion academica)
-									$parametroHorario->setDuraciónHoraAcademica($_POST['duraciónHoraAcademica']); 
+									$parametroHorario->setDuracionHoraAcademica($_POST['duraciónHoraAcademica']);
 									//construccion de objeto estado
 									$parametroHorario->setEstado($_POST['booleanEstado']);
-									$HorafinalJornada = $_POST['dateHorafinalJornada'];
 									 //instanció un objeto de tipo parametro tipo controller
 									$parametroHorarioController	= new ParametroHorarioController();
 									 //le pasa al controlador el objeto tipo parametro horario
@@ -93,10 +92,10 @@
 						</td>
 					</tr>
 				</tbody>
-				</table>	
+				</table>
 			</form>
 		</fieldset>
-		
+
 		</section>
 		<section name="Descansos">
 			<fieldset><legend>Descansos</legend>
@@ -131,7 +130,7 @@
 					<tr>
 						<td colspan="2">
 							<?php
-								
+
 
 								if (isset($_POST['botonRegistrar'])) {
 
@@ -150,7 +149,7 @@
 							?>
 						</td>
 					</tr>
-					</tbody>	
+					</tbody>
 
 				</table>
 			</form>

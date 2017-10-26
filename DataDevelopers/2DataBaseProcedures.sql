@@ -5,9 +5,9 @@
 
 USE audio_visuales;
 
-DROP PROCEDURE IF EXISTS calculo_horario_on_insert;
+DROP PROCEDURE IF EXISTS calcular_horario;
 DELIMITER $$
-CREATE PROCEDURE calculo_horario_on_insert(in nome text, in horaInicio time, in duration time, in esta boolean)
+CREATE PROCEDURE calcular_horario()
 BEGIN
     DECLARE horaTemp TIME;
     DECLARE finalJornada TIME;
@@ -23,10 +23,6 @@ BEGIN
     SET iterator = 0;
 
     TRUNCATE TABLE horas;
-
-    INSERT INTO descansos
-        (nombre, hora_inicio, duracion, estado) VALUES
-        (nome, horaInicio, duration, esta);
 
     CREATE TEMPORARY TABLE IF NOT EXISTS descansostable (
         id INT NOT NULL AUTO_INCREMENT,

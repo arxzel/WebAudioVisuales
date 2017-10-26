@@ -1,9 +1,9 @@
-<?php 
+<?php
 	require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
 	$requires = new Requires();
 
 	//creacion de controller
-	$requires -> importPeriodoAcademicoController(); 
+	$requires -> importPeriodoAcademicoController();
 
  ?>
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
 </head>
 	<body>
 		<header>
-		
+
 		</header>
 			<section name="PeriodosAcademicos">
 				<fieldset><legend> Periodos Académicos</legend>
@@ -54,19 +54,19 @@
 									<tr>
 										<td colspan="2">
 											<?php
-									
+
 												if (isset($_POST['bootonRegistrar'])) {
 
 													$periodoAcademico = new PeriodoAcademico();
 														//construccion de objetos
-													$periodoAcademico->setNombre($_POST['textNombre']); 
+													$periodoAcademico->setNombre($_POST['textNombre']);
 													$periodoAcademico->setFechaInicio($_POST['dateFechaInicio']);
 													$periodoAcademico->setFechaFinal($_POST['dateFechaFinal']);
 													$periodoAcademico->setEstado($_POST['booleanEstado']);
 													$periodoAcademico->setDescripcion($_POST['textDescripcion']);
 
 													 //instanció un objeto de tipo parametro tipo controller
-													$periodoAcademico	= new PeriodoAcademicoController();
+													$periodoAcademicoController	= new PeriodoAcademicoController();
 													 //le pasa al controlador el objeto tipo parametro horario
 													$periodoAcademicoController->insertarperiodoAcademico($periodoAcademico);
 												}

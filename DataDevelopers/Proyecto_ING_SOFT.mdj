@@ -6326,7 +6326,7 @@
 									"containerExtending": false,
 									"left": 48,
 									"top": 293,
-									"width": 290,
+									"width": 297,
 									"height": 13,
 									"autoResize": false,
 									"underline": false,
@@ -6365,7 +6365,7 @@
 											"containerExtending": false,
 											"left": 53,
 											"top": 316,
-											"width": 280,
+											"width": 287,
 											"height": 13,
 											"autoResize": false
 										},
@@ -6389,7 +6389,7 @@
 											"containerExtending": false,
 											"left": 53,
 											"top": 331,
-											"width": 280,
+											"width": 287,
 											"height": 13,
 											"autoResize": false
 										},
@@ -6413,7 +6413,7 @@
 											"containerExtending": false,
 											"left": 53,
 											"top": 346,
-											"width": 280,
+											"width": 287,
 											"height": 13,
 											"autoResize": false
 										},
@@ -6437,7 +6437,7 @@
 											"containerExtending": false,
 											"left": 53,
 											"top": 361,
-											"width": 280,
+											"width": 287,
 											"height": 13,
 											"autoResize": false
 										},
@@ -6461,7 +6461,7 @@
 											"containerExtending": false,
 											"left": 53,
 											"top": 376,
-											"width": 280,
+											"width": 287,
 											"height": 13,
 											"autoResize": false
 										},
@@ -6485,7 +6485,7 @@
 											"containerExtending": false,
 											"left": 53,
 											"top": 391,
-											"width": 280,
+											"width": 287,
 											"height": 13,
 											"autoResize": false
 										},
@@ -6509,7 +6509,7 @@
 											"containerExtending": false,
 											"left": 53,
 											"top": 406,
-											"width": 280,
+											"width": 287,
 											"height": 13,
 											"autoResize": false
 										}
@@ -6525,7 +6525,7 @@
 									"containerExtending": false,
 									"left": 48,
 									"top": 311,
-									"width": 290,
+									"width": 297,
 									"height": 113,
 									"autoResize": false
 								}
@@ -6541,7 +6541,7 @@
 							"containerExtending": false,
 							"left": 48,
 							"top": 288,
-							"width": 290,
+							"width": 297,
 							"height": 136,
 							"autoResize": false,
 							"nameLabel": {
@@ -7365,7 +7365,7 @@
 									"containerExtending": false,
 									"left": 48,
 									"top": 37,
-									"width": 273,
+									"width": 297,
 									"height": 13,
 									"autoResize": false,
 									"underline": false,
@@ -7404,7 +7404,7 @@
 											"containerExtending": false,
 											"left": 53,
 											"top": 60,
-											"width": 263,
+											"width": 287,
 											"height": 13,
 											"autoResize": false
 										},
@@ -7428,7 +7428,7 @@
 											"containerExtending": false,
 											"left": 53,
 											"top": 75,
-											"width": 263,
+											"width": 287,
 											"height": 13,
 											"autoResize": false
 										},
@@ -7452,7 +7452,7 @@
 											"containerExtending": false,
 											"left": 53,
 											"top": 90,
-											"width": 263,
+											"width": 287,
 											"height": 13,
 											"autoResize": false
 										},
@@ -7476,7 +7476,7 @@
 											"containerExtending": false,
 											"left": 53,
 											"top": 105,
-											"width": 263,
+											"width": 287,
 											"height": 13,
 											"autoResize": false
 										},
@@ -7500,7 +7500,7 @@
 											"containerExtending": false,
 											"left": 53,
 											"top": 120,
-											"width": 263,
+											"width": 287,
 											"height": 13,
 											"autoResize": false
 										}
@@ -7516,7 +7516,7 @@
 									"containerExtending": false,
 									"left": 48,
 									"top": 55,
-									"width": 273,
+									"width": 297,
 									"height": 83,
 									"autoResize": false
 								}
@@ -7532,7 +7532,7 @@
 							"containerExtending": false,
 							"left": 48,
 							"top": 32,
-							"width": 273,
+							"width": 297,
 							"height": 106,
 							"autoResize": false,
 							"nameLabel": {

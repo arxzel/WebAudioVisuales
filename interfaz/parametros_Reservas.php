@@ -1,10 +1,8 @@
 <?php
-	require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
-	$requires = new Requires();
-
-	$requires -> importParametroReservaController(); 
+    require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
+    $requires = new Requires();
+    $requires -> importParametroReservaController();
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -15,7 +13,7 @@
 </head>
 	<body>
 		<header>
-			
+
 		</header>
 		<section name="ParametroReserva">
 			<fieldset class="pRF"><legend> Parametros Reserva</legend>
@@ -56,33 +54,31 @@
 								<td><input type="submit" name="bootonResgistrar" value="Registar"></td>
 							</tr>
 							<tr>
-							<td colspan="2">
+								<td colspan="2">
 								<?php
-									
-									if (isset($_POST['botonRegistrar'])) {
 
-										$parametroReserva = new ParametroReserva();
-											//construccion de objetos
-										$parametroReserva->setNombre($_POST['txtNombreR']); 
-										$parametroReserva->setDiasMinimoReserva($_POST['smallintDiasMinimosReserva']);
-										$parametroReserva->setTiempoMinimoReserva($_POST['timeTiempoMinimoReserva']);
-										$parametroReserva->setDiaMaximoReserva($_POST['smallintDiasMaximoReserva']);
-										$parametroReserva->setTiempoMaximoReserva($_POST['timeTiempoMaximoReserva']);
-										$parametroReserva->setEstado($_POST['booleanEstado']);
-										 //instanció un objeto de tipo parametro tipo controller
-										$parametroReserva	= new ParametroReservaController();
-										 //le pasa al controlador el objeto tipo parametro horario
-										$parametroReservaController->insertarParametroReserva($parametroReserva);
-
-									}
-									//Falta crear la condicción si esta seguro o desea cancelarlo.
-									//Falta el aviso cuando registre en la db o si hay algún problema.
-								?>
-							</td>
-						</tr>
+                                    if (isset($_POST['botonRegistrar'])) {
+                                        $parametroReserva = new ParametroReserva();
+                                        //construccion de objetos
+                                        $parametroReserva->setNombre($_POST['txtNombreR']);
+                                        $parametroReserva->setDiasMinimoReserva($_POST['smallintDiasMinimosReserva']);
+                                        $parametroReserva->setTiempoMinimoReserva($_POST['timeTiempoMinimoReserva']);
+                                        $parametroReserva->setDiaMaximoReserva($_POST['smallintDiasMaximoReserva']);
+                                        $parametroReserva->setTiempoMaximoReserva($_POST['timeTiempoMaximoReserva']);
+                                        $parametroReserva->setEstado($_POST['booleanEstado']);
+                                        //instanció un objeto de tipo parametro tipo controller
+                                        $$parametroReservaController = new ParametroReservaController();
+                                        //le pasa al controlador el objeto tipo parametro horario
+                                        $parametroReservaController->insertarParametroReserva($parametroReserva);
+                                    }
+                                    //Falta crear la condicción si esta seguro o desea cancelarlo.
+                                    //Falta el aviso cuando registre en la db o si hay algún problema.
+                                ?>
+								</td>
+							</tr>
 
 						</tbody>
-					</table>					
+					</table>
 				</form>
 			</fieldset>
 		</section>
