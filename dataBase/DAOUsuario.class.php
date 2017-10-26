@@ -19,13 +19,24 @@ $requires->importDAOTipoUsuario();
 
         public function getUsuarioById($usuario)
         {
-            $sql = "SELECT * FROM usuarios WHERE id_usuario = " . $usuario->getIdUsuario();
+            $sql = "SELECT * FROM `usuarios` WHERE id_usuario = ".$usuario->getIdUsuario();
             $resulset = $this-> selectQuery($sql);
+            return $this-> construirUsuario($resulset);
+        }
+
+        public function getUsuarioByNombre($usuario)
+        {
+            $sql = "SELECT * FROM `usuarios` WHERE UPPER(`nombres`) LIKE (UPPER('%".$usuario->getNombres()."%'))";
+            $resulset = $this-> selectQuery($sql);
+            return $this-> construirUsuario($resulset);
+        }
+
+        private function construirUsuario($resulset){
             $usuario = new Usuario();
             $jefe = new Usuario();
             foreach ($resulset as $row) {
 
-                $usuario->setIdUsuario((int) $row['id_usuario']);
+                $usuario->setIdUsuario($row['id_usuario']);
                 $usuario->setDocumento($row['documento']);
                 $usuario->setNombres($row['nombres']);
                 $usuario->setApellidos($row['apellidos']);
