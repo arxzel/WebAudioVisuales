@@ -23,7 +23,7 @@
 
 	<body>
 		<header>
-
+			<img src="img/logoUni.png">
 		</header>
 
 		<section name="ParametrosHorarios">
@@ -43,11 +43,11 @@
 					</tr>
 					<tr>
 						<td>Hora Inicio Jornada: </td>
-						<td><input type="datetime" name="dateHoraInicioJornada" value="" /></td>
+						<td><input type="time" name="dateHoraInicioJornada" value="" /></td>
 					</tr>
 					<tr>
 						<td>Hora Final Jornada: </td>
-						<td><input type="datetime" name="dateHorafinalJornada" value="" /></td>
+						<td><input type="time" name="dateHorafinalJornada" value="" /></td>
 					</tr>
 					<tr>
 						<td>Duración Hora Academica: </td>
@@ -130,12 +130,17 @@
 					<tr>
 						<td colspan="2">
 							<?php
+
+
 								if (isset($_POST['botonRegistrar'])) {
+
 									$parametroDescanso = new ParametroDescanso();
+
 									$parametroDescanso ->setNombre($_POST['txtNombreDes']);
 									$parametroDescanso ->setHoraInicio($_POST['dateHoraInicio']);
 									$parametroDescanso ->setDuracion($_POST['dateDuracion']);
 									$parametroDescanso ->setEstado($_POST['booleEstado']);
+
 									$parametroDescanso = new ParametroDescansoController();
 									$parametroDescanso -> insertarParametroDescanso($parametroDescanso);
 								}

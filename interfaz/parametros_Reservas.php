@@ -10,13 +10,15 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Parametros Reservas</title>
+	<meta name="viewport" content="width=device-width">
 </head>
 	<body>
 		<header>
-
+			<img src="img/logoUni.png">
+			<h1 align="center">Recursos Audiovisuales</h1>		
 		</header>
-		<section name="ParametroReserva">
-			<fieldset class="pRF"><legend> Parametros Reserva</legend>
+		<section name="ParametroReserva" class="parametroReserva">
+			<fieldset class="pRF"><legend style="font-weight:bold"> Parametros Reserva</legend>
 			<form method="POST" action="parametros_Reservas.php">
 				<table>
 					<thead>
@@ -83,4 +85,22 @@
 			</fieldset>
 		</section>
 	</body>
+	<footer>
+		<table align="right" class="redes">
+		<tbody>
+			<tr>
+				<td style="text-align: right;"><a href="https://www.facebook.com/UNISANGIL" target="_blank" rel="alternate"><img src="img/facebook.jpg" alt="" height="23" width="23"></a></td>
+			</tr>
+
+			<tr>
+				<td style="text-align: right;"><a href="https://twitter.com/unisangil" target="_blank" rel="alternate"><img src="img/twitter.png" alt="" height="23" width="23"></a></td>
+			</tr>
+			<tr>
+				<td style="text-align: right;"><a href="https://plus.google.com/+unisangil/posts" target="_blank" rel="alternate"><img src="img/google.png" alt="" height="23" width="23"></a></td>
+			</tr>
+				
+			</tr>
+		</tbody>
+		</table>
+	</footer>
 </html>

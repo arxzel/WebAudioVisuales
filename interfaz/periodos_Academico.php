@@ -15,7 +15,7 @@
 </head>
 	<body>
 		<header>
-
+			<img src="img/logoUni.png">
 		</header>
 			<section name="PeriodosAcademicos">
 				<fieldset><legend> Periodos Académicos</legend>
@@ -37,7 +37,7 @@
 									</tr>
 									<tr>
 										<td>Fecha Final: </td>
-										<td><input type="datetime " name="dateFechaFinal"></td>
+										<td><input type="date" name="dateFechaFinal"></td>
 									</tr>
 									<tr>
 										<td>Estado: </td>
