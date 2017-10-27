@@ -10652,7 +10652,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFfKuyigMqgl8o="
 							},
-							"name": "duration",
+							"name": "duracion",
 							"type": "TIME",
 							"length": 0,
 							"primaryKey": false,
