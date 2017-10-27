@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS auditoria_delete_permisos_tipos_usuarios(
     id_permiso                      INT             NULL,
     usuario_id                      INT             NOT NULL,
     hora_action                     TIMESTAMP       NOT NULL,
-    PRIMARY KEY (id_auditoria_delete_permisos_tipos_usuarios)  
+    PRIMARY KEY (id_auditoria_delete_permisos_tipos_usuarios)
 );
 
 CREATE TABLE IF NOT EXISTS auditoria_delete_usuarios(
@@ -61,8 +61,9 @@ CREATE TABLE IF NOT EXISTS auditoria_delete_descansos(
     PRIMARY KEY (id_auditoria_delete_descansos)
 );
 
-CREATE TABLE IF NOT EXISTS auditoria_delete_parametros_horario(
-    id_auditoria_delete_parametros_horario  INT             AUTO_INCREMENT,
+
+CREATE TABLE IF NOT EXISTS auditoria_delete_parametros_horarios(
+    id_auditoria_delete_parametro_horario  INT             AUTO_INCREMENT,
     id_parametro_horario            INT             NULL,
     nombre                          VARCHAR(30)     NULL,
     hora_inicio_jornada             TIME            NULL,
@@ -71,8 +72,9 @@ CREATE TABLE IF NOT EXISTS auditoria_delete_parametros_horario(
     estado                          BOOLEAN         NULL,
     usuario_id                      INT             NOT NULL,
     hora_action                     TIMESTAMP       NOT NULL,
-    PRIMARY KEY (id_auditoria_delete_parametros_horario)
+    PRIMARY KEY (id_auditoria_delete_parametro_horario)
 );
+
 
 CREATE TABLE IF NOT EXISTS auditoria_delete_parametros_reservas(
     id_auditoria_delete_parametros_reservas INT             AUTO_INCREMENT,
@@ -88,6 +90,7 @@ CREATE TABLE IF NOT EXISTS auditoria_delete_parametros_reservas(
     PRIMARY KEY (id_auditoria_delete_parametros_reservas)
 );
 
+
 CREATE TABLE IF NOT EXISTS auditoria_delete_horas(
     id_auditoria_delete_horas   INT             AUTO_INCREMENT,
     id_hora                         INT             NULL,
@@ -96,6 +99,7 @@ CREATE TABLE IF NOT EXISTS auditoria_delete_horas(
     hora_action                     TIMESTAMP       NOT NULL,
     PRIMARY KEY (id_auditoria_delete_horas)
 );
+
 
 CREATE TABLE IF NOT EXISTS auditoria_delete_periodos_academicos(
     id_auditoria_delete_periodos_academicos INT             AUTO_INCREMENT,
@@ -110,6 +114,7 @@ CREATE TABLE IF NOT EXISTS auditoria_delete_periodos_academicos(
     PRIMARY KEY (id_auditoria_delete_periodos_academicos)
 );
 
+
 /*UPDATE */
 CREATE TABLE IF NOT EXISTS auditoria_update_permisos(
     id_auditoria_update_permisos    INT             AUTO_INCREMENT,
@@ -119,8 +124,9 @@ CREATE TABLE IF NOT EXISTS auditoria_update_permisos(
     usuario_id                      INT             NOT NULL,
     hora_action                     TIMESTAMP       NOT NULL,
     PRIMARY KEY (id_auditoria_update_permisos)
-    
+
 );
+
 
 CREATE TABLE IF NOT EXISTS auditoria_update_tipos_usuarios(
     id_auditoria_update_tipos_usuarios  INT             AUTO_INCREMENT,
@@ -132,6 +138,7 @@ CREATE TABLE IF NOT EXISTS auditoria_update_tipos_usuarios(
     PRIMARY KEY (id_auditoria_update_tipos_usuarios)
 );
 
+
 CREATE TABLE IF NOT EXISTS auditoria_update_permisos_tipos_usuarios(
     id_auditoria_update_permisos_tipos_usuarios INT             AUTO_INCREMENT,
     id_permiso_tipo_usuario         INT             NULL,
@@ -139,7 +146,7 @@ CREATE TABLE IF NOT EXISTS auditoria_update_permisos_tipos_usuarios(
     id_permiso                      INT             NULL,
     usuario_id                      INT             NOT NULL,
     hora_action                     TIMESTAMP       NOT NULL,
-    PRIMARY KEY (id_auditoria_update_permisos_tipos_usuarios)    
+    PRIMARY KEY (id_auditoria_update_permisos_tipos_usuarios)
 );
 
 CREATE TABLE IF NOT EXISTS auditoria_update_usuarios(
@@ -174,17 +181,22 @@ CREATE TABLE IF NOT EXISTS auditoria_update_descansos(
     PRIMARY KEY (id_auditoria_update_descansos)
 );
 
-CREATE TABLE IF NOT EXISTS auditoria_update_parametros_horario(
-    id_auditoria_update_parametros_horario  INT             AUTO_INCREMENT,
-    id_parametro_horario            INT             NULL,
-    nombre                          VARCHAR(30)     NULL,
-    hora_inicio_jornada             TIME            NULL,
-    hora_final_jornada              TIME            NULL,
-    duracion_hora_academica         TIME            NULL,
-    estado                          BOOLEAN         NULL,
-    usuario_id                      INT             NOT NULL,
-    hora_action                     TIMESTAMP       NOT NULL,
-    PRIMARY KEY (id_auditoria_update_parametros_horario)
+CREATE TABLE IF NOT EXISTS auditoria_update_parametro_horarios(
+    id_auditoria_update_parametro_horario  INT             AUTO_INCREMENT,
+    id_parametro_horario                    INT             NULL,
+    nombre_old                              VARCHAR(30)     NULL,
+    nombre_new                              VARCHAR(30)     NULL,
+    hora_inicio_jornada_old                 TIME            NULL,
+    hora_inicio_jornada_new                 TIME            NULL,
+    hora_final_jornada_old                  TIME            NULL,
+    hora_final_jornada_new                  TIME            NULL,
+    duracion_hora_academica_old             TIME            NULL,
+    duracion_hora_academica_new             TIME            NULL,
+    estado_old                              BOOLEAN         NULL,
+    estado_new                              BOOLEAN         NULL,
+    usuario_id                              INT             NOT NULL,
+    hora_action                             TIMESTAMP       NOT NULL,
+    PRIMARY KEY (id_auditoria_update_parametro_horario)
 );
 
 CREATE TABLE IF NOT EXISTS auditoria_update_parametros_reservas(

@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS descansos(
     PRIMARY KEY (id_descanso)
 );
 
-CREATE TABLE IF NOT EXISTS parametros_horario(
+CREATE TABLE IF NOT EXISTS parametros_horarios(
     id_parametro_horario            INT             NOT NULL        AUTO_INCREMENT,
     nombre                          VARCHAR(30)     NOT NULL,
     hora_inicio_jornada             TIME            NOT NULL,

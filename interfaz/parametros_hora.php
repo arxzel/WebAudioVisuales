@@ -130,17 +130,12 @@
 					<tr>
 						<td colspan="2">
 							<?php
-
-
 								if (isset($_POST['botonRegistrar'])) {
-
 									$parametroDescanso = new ParametroDescanso();
-
 									$parametroDescanso ->setNombre($_POST['txtNombreDes']);
 									$parametroDescanso ->setHoraInicio($_POST['dateHoraInicio']);
 									$parametroDescanso ->setDuracion($_POST['dateDuracion']);
 									$parametroDescanso ->setEstado($_POST['booleEstado']);
-
 									$parametroDescanso = new ParametroDescansoController();
 									$parametroDescanso -> insertarParametroDescanso($parametroDescanso);
 								}
