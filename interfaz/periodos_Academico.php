@@ -10,15 +10,17 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Periodos Académicos</title>
 </head>
 	<body>
 		<header>
 			<img src="img/logoUni.png">
+			<h1 align="center">Recursos Audiovisuales</h1>	
 		</header>
 			<section name="PeriodosAcademicos">
-				<fieldset><legend> Periodos Académicos</legend>
+				<fieldset class="pA"><legend> Periodos Académicos</legend>
 					<form method="POST" action="periodo_Academico.php">
 						<table>
 							<thead>
@@ -82,4 +84,22 @@
 				</fieldset>
 			</section>
 	</body>
+	<footer>
+		<table align="right" class="redes">
+		<tbody>
+			<tr>
+				<td style="text-align: right;"><a href="https://www.facebook.com/UNISANGIL" target="_blank" rel="alternate"><img src="img/facebook.jpg" alt="" height="23" width="23"></a></td>
+			</tr>
+
+			<tr>
+				<td style="text-align: right;"><a href="https://twitter.com/unisangil" target="_blank" rel="alternate"><img src="img/twitter.png" alt="" height="23" width="23"></a></td>
+			</tr>
+			<tr>
+				<td style="text-align: right;"><a href="https://plus.google.com/+unisangil/posts" target="_blank" rel="alternate"><img src="img/google.png" alt="" height="23" width="23"></a></td>
+			</tr>
+				
+			</tr>
+		</tbody>
+		</table>
+	</footer>
 </html>
