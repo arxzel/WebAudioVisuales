@@ -40,7 +40,11 @@ class descansos{
         return $this->duracion;
     }
 
+<<<<<<< HEAD
     public function setDuracion($duracion){
+=======
+    public function setDuration($duracion){
+>>>>>>> e508c7811724b69bb9745760b9cf9561c0d5b364
         $this->duracion = $duracion;
     }
     public function getEstado(){

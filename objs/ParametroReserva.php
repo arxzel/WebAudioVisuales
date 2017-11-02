@@ -49,14 +49,14 @@ class ParametroReserva{
         return $this->diasMaximo;
     }
 
-    public function setDias_maximo($diasMaximo){
+    public function setDiasMaximo($diasMaximo){
         $this->diasMaximo = $diasMaximo;
     }
     public function getTiempoMaximo(){
         return $this->tiempoMaximo;
     }
 
-    public function setTiempo_maximo($tiempoMaximo){
+    public function setTiempoMaximo($tiempoMaximo){
         $this->tiempoMaximo = $tiempoMaximo;
     }
     public function getEstado(){
