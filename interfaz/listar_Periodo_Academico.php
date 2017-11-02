@@ -1,3 +1,15 @@
+<?php
+	require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
+	$requires = new Requires();
+
+	//creacion de controller
+	$requires -> importPeriodoAcademicoController();
+
+	$periodoAcademicoController	= new PeriodoAcademicoController();
+
+ ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +25,6 @@
 		</header>
 			<section name="PeriodosAcademicos">
 				<fieldset class="lPA"><legend>Listar Periodos Académicos</legend>
-					<form method="POST" action="periodo_Academico.php"> 
 						<table>
 							<thead>
 								<tr>
@@ -27,23 +38,39 @@
 								    	<th>Fecha Final</th>
 								    	<th>Estado</th>
 								    	<th>Descripción</th>
+								    	<th>Operación</th>
 								    </tr>
 								    <tr>
-								    	<th><td><input type="submit" name="bootonResgistrar" value="Registar"></td></th>
-								    	<th><td><input type="submit" name="bootonEliminar" value="Eliminar"></td></th>
+								    	<th></th>
+								    	<th></th>
 								    </tr>
 								
 									<tr>
 										<td colspan="2">
 											<?php
-												//traerme la informacion para la
+
+											$listaPeridoAcademico = $controladorPeridoAcademico -> getAllPeridoAcademico(); 
+
+											foreach ($listaPeridoAcademico as $periodoAcademico) {
+												echo "<tr>";
+
+    											echo "<td>".$periodoAcademico->getNombre()."</td>";
+    											echo "<td>".$periodoAcademico->getFechaInicio()."</td>";
+    											echo "<td>".$periodoAcademico->getFechaFinal()."</td>";
+    											echo "<td>".$periodoAcademico->getEstado()."</td>";
+    											echo "<td>".$periodoAcademico->getDescripcion()."</td>";
+
+    											echo "<td><a href='editar_periodo_academico.php?idPeriodoAcademico='".$periodoAcademico->getIdPeriodoAcademico().">editar</a>";
+												echo "<input type='submit' name='bootonEliminar' value='Eliminar'></td>";
+    											echo "<tr>";
+											}
+												
 											?>
 
 										</td>
 									</tr>
 								</tbody>
 						</table>
-					</form>
 				</fieldset>
 			</section>
 	</body>
