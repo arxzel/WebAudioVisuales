@@ -5,23 +5,23 @@ $requires -> getRequireTipoUsuario();
 */
 class ParametroHorario{
 
-    private $id_parametro_horario;
+    private $idParametroHorario;
     private $nombre;
-    private $hora_inicio_jornada;
-    private $hora_final_jornada;
-    private $duracion_hora_academica;
+    private $horaInicioJornada;
+    private $horaFinalJornada;
+    private $duracionHoraAcademica;
     private $estado;
 
 
     public function __construct(){
     }
 
-    public function getId_parametro_horario(){
-        return $this->id_parametro_horario;
+    public function getIdParametroHorario(){
+        return $this->idParametroHorario;
     }
 
-    public function setId_parametro_horario($id_parametro_horario){
-        $this->id_parametro_horario = $id_parametro_horario;
+    public function setIdParametroHorario($idParametroHorario){
+        $this->idParametroHorario = $idParametroHorario;
     }
     public function getNombre(){
         return $this->nombre;
@@ -30,26 +30,26 @@ class ParametroHorario{
     public function setNombre($nombre){
         $this->nombre = $nombre;
     }
-    public function getHora_inicio_jornada(){
-        return $this->hora_inicio_jornada;
+    public function getHoraInicioJornada(){
+        return $this->horaInicioJornada;
     }
 
-    public function setHora_inicio_jornada($hora_inicio_jornada){
-        $this->hora_inicio_jornada = $hora_inicio_jornada;
+    public function setHoraInicioJornada($horaInicioJornada){
+        $this->horaInicioJornada = $horaInicioJornada;
     }
-    public function getHora_final_jornada(){
-        return $this->hora_final_jornada;
-    }
-
-    public function setHora_final_jornada($hora_final_jornada){
-        $this->hora_final_jornada = $hora_final_jornada;
-    }
-    public function getDuracion_hora_academica(){
-        return $this->duracion_hora_academica;
+    public function getHoraFinalJornada(){
+        return $this->horaFinalJornada;
     }
 
-    public function setDuracion_hora_academica($duracion_hora_academica){
-        $this->duracion_hora_academica = $duracion_hora_academica;
+    public function setHoraFinalJornada($horaFinalJornada){
+        $this->horaFinalJornada = $horaFinalJornada;
+    }
+    public function getDuracionHoraAcademica(){
+        return $this->duracionHoraAcademica;
+    }
+
+    public function setDuracionHoraAcademica($duracionHoraAcademica){
+        $this->duracionHoraAcademica = $duracionHoraAcademica;
     }
     public function getEstado(){
         return $this->estado;
