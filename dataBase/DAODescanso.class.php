@@ -36,19 +36,19 @@ class DAODescanso extends DataBase{
 
     public function insertDescanso($descanso)
     {
-        $sql = "INSERT INTO `descanso`(`id_descanso`, `nombre`, `hora_inicio`, `duracion`, `estado`) VALUES (".$descanso->getId_horario_descanso().",".$descanso->getNombre().",".$descanso->getHora_inicio().",".$descanso->getDuration().",".$descanso->getEstado().")";
+        $sql = "INSERT INTO `descanso`(`id_descanso`, `nombre`, `hora_inicio`, `duracion`, `estado`) VALUES (".$descanso->getIdHorarioDescanso().",".$descanso->getNombre().",".$descanso->getHoraInicio().",".$descanso->getDuration().",".$descanso->getEstado().")";
          $this->insertQuery($sql);
     }
 
     public function deleteDescanso($descanso,$usuario)
      {
-         $sql = "call delete_descanso(". $descanso->getId_horario_descanso()." , ". $usuario->getIdUsuario().");"
+         $sql = "call delete_descanso(". $descanso->getIdHorarioDescanso()." , ". $usuario->getIdUsuario().");"
          $this->insertQuery($sql);
      }
 
      public function updateDescanso($descanso,$usuario)
       {
-        $sql = "call update_descansos(".$descanso->getNombre().",".$descanso->getHora_inicio().",".$descanso->getDuration().",".$descanso->getEstado().",". $usuario->getIdUsuario().");"
+        $sql = "call update_descansos(".$descanso->getNombre().",".$descanso->getHoraInicio().",".$descanso->getDuration().",".$descanso->getEstado().",". $usuario->getIdUsuario().");"
         $this->insertQuery($sql);
       }
 
