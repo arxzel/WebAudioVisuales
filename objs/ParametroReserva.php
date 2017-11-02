@@ -3,7 +3,7 @@
 $requires = new Requires();
 $requires -> getRequireTipoUsuario();
 */
-class Usuario{
+class ParametroReserva{
 
     private $id_parametro;
     private $nombre;
