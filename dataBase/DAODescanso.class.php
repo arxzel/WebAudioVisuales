@@ -36,7 +36,7 @@ class DAODescanso extends DataBase{
 
     public function insertDescanso($descanso)
     {
-        $sql = "INSERT INTO `descanso`(`id_descanso`, `nombre`, `hora_inicio`, `duracion`, `estado`) VALUES (".$descanso->getId_horario_descanso().",".$descanso->getNombre().",".$descanso->getHora_inicio().",".$descanso->getDuration().",".$descanso->getEstado().")";
+        $sql = "insert_descansos(".$descanso->getNombre().",".$descanso->getHora_inicio().",".$descanso->getDuration().",".$descanso->getEstado().")";
          $this->insertQuery($sql);
     }
 
