@@ -28,22 +28,22 @@ class DAOParametroReserva extends DataBase{
             }
 
     public function insertParametroReserva($parametroReserva)
-            {
-                  $sql = "INSERT INTO `parametros_reservas`(`id_parametro_reserva`, `nombre`, `dias_minimos_reserva`, `tiempo_minimo_reserva`, `dias_maximos_reserva`, `tiempo_maximo_reserva`, `estado`) VALUES (".$parametroReserva->getId_parametro().",".$parametroReserva->getNombre().",".$parametroReserva->getDias_minimos().",".$parametroReserva->getTiempo_minimo().",".$parametroReserva->getDias_maximo().",".$parametroReserva->getTiempo_maximo().",".$parametroReserva->getEstado().")";
-                   $this->insertQuery($sql);
-           }
+    {
+        $sql = "INSERT INTO `parametros_reservas`(`id_parametro_reserva`, `nombre`, `dias_minimos_reserva`, `tiempo_minimo_reserva`, `dias_maximos_reserva`, `tiempo_maximo_reserva`, `estado`) VALUES(".$parametroReserva->getId_parametro().",".$parametroReserva->getNombre().",".$parametroReserva->getDias_minimos().",".$parametroReserva->getTiempo_minimo().",".$parametroReserva->getDias_maximo().",".$parametroReserva->getTiempo_maximo().",".$parametroReserva->getEstado().")";
+         $this->insertQuery($sql);
+    }
 
    public function deleteParametroReserva($parametroReserva,$usuario)
-           {
-                 $sql = "call delete_parametro_reserva(". $parametroReserva->getId_parametro()." , ". $usuario->getIdUsuario().");"
-                 $this->insertQuery($sql);
-          }
+    {
+        $sql = "call delete_parametro_reserva(". $parametroReserva->getId_parametro()." , ". $usuario->getIdUsuario().");"
+        $this->insertQuery($sql);
+    }
 
   public function updateParametroReserva($parametroReserva,$usuario)
-          {
-                $sql = "call update_parametro_reserva(". $parametroReserva->getId_parametro()." , ". $usuario->getIdUsuario().");"
-                $this->insertQuery($sql);
-         }
+    {
+       $sql = "call update_parametro_reserva(". $parametroReserva->getNombre()." , ". $parametroReserva->getDias_minimos()." , ". $parametroReserva->getTiempo_minimo()." , ". $parametroReserva->getDias_maximo()." , ". $parametroReserva->getTiempo_maximo()." , ". $parametroReserva->getEstado().");"
+       $this->insertQuery($sql);
+    }
 
 
 

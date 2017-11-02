@@ -5,6 +5,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
 $requires = new Requires();
 $requires->importDatabase();
 $requires->importDescanso();
+$requires -> importUsuario();
 
 class DAODescanso extends DataBase{
 
@@ -18,6 +19,39 @@ class DAODescanso extends DataBase{
              $resulset = $this->selectQuery($sql);
              return $this-> construirDescanso($resulset);
         }
+
+    public function getDescansoByNombre($descanso)
+    {
+      $sql = "SELECT * FROM descansos WHERE nombre = " . $descanso->getNombre();
+      $resulset = $this->selectQuery($sql);
+      return $this-> construirDescanso($resulset);
+    }
+
+    public function getDescansoByEstado($descanso)
+    {
+      $sql = "SELECT * FROM estado WHERE nombre = " . $descanso->getEstado();
+      $resulset = $this->selectQuery($sql);
+      return $this-> construirDescanso($resulset);
+    }
+
+    public function insertDescanso($descanso)
+    {
+        $sql = "INSERT INTO `descanso`(`id_descanso`, `nombre`, `hora_inicio`, `duracion`, `estado`) VALUES (".$descanso->getId_horario_descanso().",".$descanso->getNombre().",".$descanso->getHora_inicio().",".$descanso->getDuration().",".$descanso->getEstado().")";
+         $this->insertQuery($sql);
+    }
+
+    public function deleteDescanso($descanso,$usuario)
+     {
+         $sql = "call delete_descanso(". $descanso->getId_horario_descanso()." , ". $usuario->getIdUsuario().");"
+         $this->insertQuery($sql);
+     }
+
+     public function updateDescanso($descanso,$usuario)
+      {
+        $sql = "call update_descansos(".$descanso->getNombre().",".$descanso->getHora_inicio().",".$descanso->getDuration().",".$descanso->getEstado().",". $usuario->getIdUsuario().");"
+        $this->insertQuery($sql);
+      }
+
 
     private function construirDescanso($resulset){
         $descanso = new Descanso();
