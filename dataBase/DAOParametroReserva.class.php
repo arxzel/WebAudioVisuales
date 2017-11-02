@@ -35,13 +35,13 @@ class DAOParametroReserva extends DataBase{
 
    public function deleteParametroReserva($parametroReserva,$usuario)
     {
-        $sql = "call delete_parametro_reserva(". $parametroReserva->getId_parametro()." , ". $usuario->getIdUsuario().");"
+        $sql = "call delete_parametro_reserva(". $parametroReserva->getId_parametro()." , ".$usuario->getIdUsuario().");"
         $this->insertQuery($sql);
     }
 
   public function updateParametroReserva($parametroReserva,$usuario)
     {
-       $sql = "call update_parametro_reserva(". $parametroReserva->getNombre()." , ". $parametroReserva->getDias_minimos()." , ". $parametroReserva->getTiempo_minimo()." , ". $parametroReserva->getDias_maximo()." , ". $parametroReserva->getTiempo_maximo()." , ". $parametroReserva->getEstado().");"
+       $sql = "call update_parametro_reserva(". $parametroReserva->getNombre()." , ". $parametroReserva->getDias_minimos()." , ". $parametroReserva->getTiempo_minimo()." , ". $parametroReserva->getDias_maximo()." , ". $parametroReserva->getTiempo_maximo()." , ". $parametroReserva->getEstado().", ".$usuario->getIdUsuario().");"
        $this->insertQuery($sql);
     }
 
