@@ -1,3 +1,5 @@
+USE audio_visuales;
+
 /*DELETE*/
 CREATE TABLE IF NOT EXISTS auditoria_delete_permisos(
     id_auditoria_delete_permisos    INT             AUTO_INCREMENT,
@@ -172,10 +174,14 @@ CREATE TABLE IF NOT EXISTS auditoria_update_usuarios(
 CREATE TABLE IF NOT EXISTS auditoria_update_descansos(
     id_auditoria_update_descansos   INT             AUTO_INCREMENT,
     id_descanso                     INT             NULL,
-    nombre                          VARCHAR(20)     NULL,
-    hora_inicio                     TIME            NULL,
-    duracion                        TIME            NULL,
-    estado                          BOOLEAN         NULL,
+    nombre_old                          VARCHAR(20)     NULL,
+    nombre_new                          VARCHAR(20)     NULL,
+    hora_inicio_old                     TIME            NULL,
+    hora_inicio_new                     TIME            NULL,
+    duracion_old                        TIME            NULL,
+    duracion_new                        TIME            NULL,
+    estado_old                          BOOLEAN         NULL,
+    estado_new                          BOOLEAN         NULL,
     usuario_id                      INT             NOT NULL,
     hora_action                     TIMESTAMP       NOT NULL,
     PRIMARY KEY (id_auditoria_update_descansos)
@@ -201,15 +207,21 @@ CREATE TABLE IF NOT EXISTS auditoria_update_parametro_horarios(
 
 CREATE TABLE IF NOT EXISTS auditoria_update_parametros_reservas(
     id_auditoria_update_parametros_reservas INT             AUTO_INCREMENT,
-    id_parametro_reserva            INT             NULL,
-    nombre                          VARCHAR(30)     NULL,
-    dias_minimos_reserva            SMALLINT        NULL,
-    tiempo_minimo_reserva           TIME            NULL,
-    dias_maximos_reserva            SMALLINT        NULL,
-    tiempo_maximo_reserva           TIME            NULL,
-    estado                          BOOLEAN         NULL,
-    usuario_id                      INT             NOT NULL,
-    hora_action                     TIMESTAMP       NOT NULL,
+    id_parametro_reserva                INT             NULL,
+    nombre_old                          VARCHAR(30)     NULL,
+    nombre_new                          VARCHAR(30)     NULL,
+    dias_minimos_reserva_old            SMALLINT        NULL,
+    dias_minimos_reserva_new            SMALLINT        NULL,
+    tiempo_minimo_reserva_old           TIME            NULL,
+    tiempo_minimo_reserva_new           TIME            NULL,
+    dias_maximos_reserva_old            SMALLINT        NULL,
+    dias_maximos_reserva_new            SMALLINT        NULL,
+    tiempo_maximo_reserva_old           TIME            NULL,
+    tiempo_maximo_reserva_new           TIME            NULL,
+    estado_old                          BOOLEAN         NULL,
+    estado_new                          BOOLEAN         NULL,
+    usuario_id                          INT             NOT NULL,
+    hora_action                         TIMESTAMP       NOT NULL,
     PRIMARY KEY (id_auditoria_update_parametros_reservas)
 );
 
@@ -225,11 +237,16 @@ CREATE TABLE IF NOT EXISTS auditoria_update_horas(
 CREATE TABLE IF NOT EXISTS auditoria_update_periodos_academicos(
     id_auditoria_update_periodos_academicos INT             AUTO_INCREMENT,
     id_periodo_academico            INT             NULL,
-    nombre                          VARCHAR(50)     NULL,
-    fecha_inicio                    DATE            NULL,
-    fecha_final                     DATE            NULL,
-    estado                          BOOLEAN         NULL,
-    descripcion                     TEXT            NULL,
+    nombre_old                          VARCHAR(50)     NULL,
+    nombre_new                          VARCHAR(50)     NULL,
+    fecha_inicio_old                    DATE            NULL,
+    fecha_inicio_new                    DATE            NULL,
+    fecha_final_old                     DATE            NULL,
+    fecha_final_new                     DATE            NULL,
+    estado_old                          BOOLEAN         NULL,
+    estado_new                          BOOLEAN         NULL,
+    descripcion_old                     TEXT            NULL,
+    descripcion_new                     TEXT            NULL,
     usuario_id                      INT             NOT NULL,
     hora_action                     TIMESTAMP       NOT NULL,
     PRIMARY KEY (id_auditoria_update_periodos_academicos)
