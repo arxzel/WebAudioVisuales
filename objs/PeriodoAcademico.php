@@ -3,7 +3,7 @@
 $requires = new Requires();
 $requires -> getRequireTipoUsuario();
 */
-class Usuario{
+class PeriodoAcademico{
 
     private $id_periodo_academico;
     private $nombre;
