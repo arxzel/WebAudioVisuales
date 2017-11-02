@@ -5,9 +5,9 @@ $requires -> getRequireTipoUsuario();
 */
 class descansos{
 
-    private $id_horario_descanso;
+    private $idHorarioDescanso;
     private $nombre;
-    private $hora_inicio;
+    private $horaInicio;
     private $duration;
     private $estado;
 
@@ -15,12 +15,12 @@ class descansos{
     public function __construct(){
     }
 
-    public function getId_horario_descanso(){
-        return $this->id_horario_descanso;
+    public function getIdHorarioDescanso(){
+        return $this->idHorarioDescanso;
     }
 
-    public function setId_horario_descanso($id_horario_descanso){
-        $this->id_horario_descanso = $id_horario_descanso;
+    public function setIdHorarioDescanso($idHorarioDescanso){
+        $this->idHorarioDescanso = $idHorarioDescanso;
     }
     public function getNombre(){
         return $this->nombre;
@@ -29,12 +29,12 @@ class descansos{
     public function setNombre($nombre){
         $this->nombre = $nombre;
     }
-    public function getHora_inicio(){
-        return $this->hora_inicio;
+    public function getHoraInicio(){
+        return $this->horaInicio;
     }
 
-    public function setHora_inicio($hora_inicio){
-        $this->hora_inicio = $hora_inicio;
+    public function setHoraInicio($horaInicio){
+        $this->horaInicio = $horaInicio;
     }
     public function getDuration(){
         return $this->duration;

@@ -4,8 +4,16 @@
 
 	//creacion de controller
 	$requires -> importPeriodoAcademicoController();
-	
 
+	//instanció un objeto de tipo parametro tipo controller
+	$periodoAcademicoController	= new PeriodoAcademicoController();
+	//contruyo un iobjeto de tipo periodo academico
+	$periodoAcademico = new PeriodoAcademico();
+	//Le doy al periodo academico el id que me pasaron por la URL
+	$periodoAcademico->setIdPeriodoAcademico($_GET['idPeriodoAcademico']);
+
+	$periodoAcademico = $periodoAcademicoController->getPeriodoAcademicoById($periodoAcademico);
+	
  ?>
 <!DOCTYPE html>
 <html>
@@ -52,15 +60,13 @@
 									</tr>
 									<tr>
 										<td><input type="submit" name="bootonCancelar" value="Cancelar"></td>
-										<td><input type="submit" name="bootonRegistrar" value="Registar"></td>
+										<td><input type="submit" name="bootonAceptar" value="Aceptar"></td>
 									</tr>
 									<tr>
 										<td colspan="2">
 											<?php
 
-												if (isset($_POST['bootonRegistrar'])) {
-
-													$periodoAcademico = new PeriodoAcademico();
+												if (isset($_POST['bootonAceptar'])) {
 														//construccion de objetos
 													$periodoAcademico->setNombre($_POST['textNombre']);
 													$periodoAcademico->setFechaInicio($_POST['dateFechaInicio']);
@@ -68,16 +74,12 @@
 													$periodoAcademico->setEstado($_POST['booleanEstado']);
 													$periodoAcademico->setDescripcion($_POST['textDescripcion']);
 
-													 //instanció un objeto de tipo parametro tipo controller
-													$periodoAcademicoController	= new PeriodoAcademicoController();
 													 //le pasa al controlador el objeto tipo parametro horario
-													$periodoAcademicoController->insertarperiodoAcademico($periodoAcademico);
+													$periodoAcademicoController->updatePeriodoAcademico($periodoAcademico);
 												}
 												//Falta crear la condicción si esta seguro o desea cancelarlo.
 												//Falta el aviso cuando registre en la db o si hay algún problema.
 										
-
-
 											?>
 
 										</td>

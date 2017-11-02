@@ -5,24 +5,24 @@ $requires -> getRequireTipoUsuario();
 */
 class ParametroReserva{
 
-    private $id_parametro;
+    private $idParametro;
     private $nombre;
-    private $dias_minimos;
-    private $tiempo_minimo;
-    private $dias_maximo;
-    private $tiempo_maximo;
+    private $diasMinimos;
+    private $tiempoMinimo;
+    private $diasMaximo;
+    private $tiempoMaximo;
     private $estado;
 
 
     public function __construct(){
     }
 
-    public function getId_parametro(){
-        return $this->id_parametro;
+    public function getIdParametro(){
+        return $this->idParametro;
     }
 
-    public function setId_parametro($id_parametro){
-        $this->id_parametro = $id_parametro;
+    public function setIdParametro($idParametro){
+        $this->idParametro = $idParametro;
     }
     public function getNombre(){
         return $this->nombre;
@@ -31,33 +31,33 @@ class ParametroReserva{
     public function setNombre($nombre){
         $this->nombre = $nombre;
     }
-    public function getDias_minimos(){
-        return $this->dias_minimos;
+    public function getDiasMinimos(){
+        return $this->diasMinimos;
     }
 
-    public function setDias_minimos($dias_minimos){
-        $this->dias_minimos = $dias_minimos;
+    public function setDiasMinimos($diasMinimos){
+        $this->diasMinimos = $diasMinimos;
     }
-    public function getTiempo_minimo(){
-        return $this->tiempo_minimo;
-    }
-
-    public function setTiempo_minimo($tiempo_minimo){
-        $this->tiempo_minimo = $tiempo_minimo;
-    }
-    public function getDias_maximo(){
-        return $this->dias_maximo;
+    public function getTiempoMinimo(){
+        return $this->tiempoMinimo;
     }
 
-    public function setDias_maximo($dias_maximo){
-        $this->dias_maximo = $dias_maximo;
+    public function setTiempoMinimo($tiempoMinimo){
+        $this->tiempoMinimo = $tiempoMinimo;
     }
-    public function getTiempo_maximo(){
-        return $this->tiempo_maximo;
+    Mblic function getDiasMaximo(){
+        return $this->diasMaximo;
     }
 
-    public function setTiempo_maximo($tiempo_maximo){
-        $this->tiempo_maximo = $tiempo_maximo;
+    public function setDias_maximo($diasMaximo){
+        $this->diasMaximo = $diasMaximo;
+    }
+    public function getTiempoMaximo(){
+        return $this->tiempoMaximo;
+    }
+
+    public function setTiempo_maximo($tiempoMaximo){
+        $this->tiempoMaximo = $tiempoMaximo;
     }
     public function getEstado(){
         return $this->estado;
