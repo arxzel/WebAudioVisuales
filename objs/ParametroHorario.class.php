@@ -3,7 +3,7 @@
 $requires = new Requires();
 $requires -> getRequireTipoUsuario();
 */
-class Usuario{
+class ParametroHorario{
 
     private $id_parametro_horario;
     private $nombre;
