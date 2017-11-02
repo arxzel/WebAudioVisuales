@@ -8,7 +8,7 @@ class descansos{
     private $idHorarioDescanso;
     private $nombre;
     private $horaInicio;
-    private $duration;
+    private $duracion;
     private $estado;
 
 
@@ -36,12 +36,12 @@ class descansos{
     public function setHoraInicio($horaInicio){
         $this->horaInicio = $horaInicio;
     }
-    public function getDuration(){
-        return $this->duration;
+    public function getDuracion(){
+        return $this->duracion;
     }
 
-    public function setDuration($duration){
-        $this->duration = $duration;
+    public function setDuracion($duracion){
+        $this->duracion = $duracion;
     }
     public function getEstado(){
         return $this->estado;
