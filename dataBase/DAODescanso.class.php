@@ -36,24 +36,20 @@ class DAODescanso extends DataBase{
 
     public function insertDescanso($descanso)
     {
-<<<<<<< HEAD
         $sql = "insert_descansos(".$descanso->getNombre().",".$descanso->getHora_inicio().",".$descanso->getDuration().",".$descanso->getEstado().")";
-=======
-        $sql = "INSERT INTO `descanso`(`id_descanso`, `nombre`, `hora_inicio`, `duracion`, `estado`) VALUES (".$descanso->getIdHorarioDescanso().",".$descanso->getNombre().",".$descanso->getHoraInicio().",".$descanso->getDuration().",".$descanso->getEstado().")";
->>>>>>> 2bd44ea02a6963896dcb55f655becefc5d9cfc9c
          $this->insertQuery($sql);
     }
 
     public function deleteDescanso($descanso,$usuario)
      {
          $sql = "call delete_descanso(". $descanso->getIdHorarioDescanso()." , ". $usuario->getIdUsuario().");"
-         $this->insertQuery($sql);
+         $this->deleteQuery($sql);
      }
 
      public function updateDescanso($descanso,$usuario)
       {
         $sql = "call update_descansos(".$descanso->getNombre().",".$descanso->getHoraInicio().",".$descanso->getDuration().",".$descanso->getEstado().",". $usuario->getIdUsuario().");"
-        $this->insertQuery($sql);
+        $this->updateQuery($sql);
       }
 
 

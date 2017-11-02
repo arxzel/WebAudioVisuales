@@ -36,13 +36,13 @@ class DAOParametroReserva extends DataBase{
    public function deleteParametroReserva($parametroReserva,$usuario)
     {
         $sql = "call delete_parametro_reserva(". $parametroReserva->getIdParametro()." , ". $usuario->getIdUsuario().");"
-        $this->insertQuery($sql);
+        $this->deleteQuery($sql);
     }
 
   public function updateParametroReserva($parametroReserva,$usuario)
     {
-       $sql = "call update_parametro_reserva(". $parametroReserva->getNombre()." , ". $parametroReserva->getDiasMinimos()." , ". $parametroReserva->getTiempoMinimo()." , ". $parametroReserva->getDiasMaximo()." , ". $parametroReserva->getTiempoMaximo()." , ". $parametroReserva->getEstado().");"
-       $this->insertQuery($sql);
+       $sql = "call update_parametro_reserva(". $parametroReserva->getNombre()." , ". $parametroReserva->getDiasMinimos()." , ". $parametroReserva->getTiempoMinimo()." , ". $parametroReserva->getDiasMaximo()." , ". $parametroReserva->getTiempoMaximo()." , ". $parametroReserva->getEstado().", ". $usuario->getIdUsuario().");"
+       $this->updateQuery($sql);
     }
 
 
@@ -66,10 +66,11 @@ class DAOParametroReserva extends DataBase{
                 return $parametroReserva;
     }
 
-    private function construirParametrosReserva(){
+    private function construirParametrosReserva($resulset){
         $parametrosReserva = [];
         foreach($resulset as $row)
                     {
+                      $parametroReserva = new ParametroReserva();
                       $parametroReserva -> setIdParametro((int)$row['id_parametro_reserva']);
                       /* Ojo Preguntar por los tipos de datos */
                       $parametroReserva -> setNombre($row['nombre']);
