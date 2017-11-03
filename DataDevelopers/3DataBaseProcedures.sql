@@ -7,6 +7,7 @@ USE audio_visuales;
 /*
 ****PROCEDURES PARA PARAMETROS HORARIO
 */
+
 DROP PROCEDURE IF EXISTS insert_parametro_horario;
 DELIMITER $$
 CREATE PROCEDURE insert_parametro_horario(
@@ -31,7 +32,8 @@ BEGIN
         estadoi
     );
 
-    CALL calcular_horario();
+/*    CALL calcular_horario();*/
+    COMMIT;
 END;
 $$ DELIMITER ;
 
@@ -86,7 +88,8 @@ BEGIN
     WHERE id_parametro_horario = idParametroHorario
     ;
 
-    CALL calcular_horario();
+    /*CALL calcular_horario();*/
+    COMMIT;
 END;
 $$ DELIMITER ;
 
@@ -122,7 +125,8 @@ BEGIN
         WHERE id_parametro_horario = idParametroHorario
     ;
 
-    CALL calcular_horario();
+    /*CALL calcular_horario();*/
+    COMMIT;
 END;
 $$ DELIMITER ;
 
@@ -151,7 +155,8 @@ BEGIN
         newDuracion,
         newEstado
     );
-    CALL calcular_horario();
+    /*CALL calcular_horario();*/
+    COMMIT;
 END;
 $$ DELIMITER ;
 
@@ -203,6 +208,7 @@ BEGIN
         estado = newEstado
     WHERE
         id_descanso = idDescanso;
+        COMMIT;
 END;
 $$ DELIMITER ;
 
@@ -233,6 +239,7 @@ BEGIN
 
         DELETE FROM descansos
         WHERE id_descanso = idDescanso;
+        COMMIT;
 END;
 $$ DELIMITER ;
 
@@ -303,6 +310,7 @@ BEGIN
         estado = newEstado
         WHERE id_parametro_reserva =  idParametroReserva
     ;
+    COMMIT;
 END;
 $$ DELIMITER ;
 
@@ -340,6 +348,7 @@ BEGIN
 
     DELETE FROM parametros_reservas
     WHERE id_parametro_reserva = idParametroReserva;
+    COMMIT;
 END;
 $$ DELIMITER ;
 
@@ -401,6 +410,7 @@ BEGIN
         descripcion = newDescripcion
         WHERE id_periodo_academico = idPeriodoAcademico
     ;
+    COMMIT;
 END;
 $$ DELIMITER ;
 
@@ -445,6 +455,7 @@ BEGIN
     DELETE FROM
     periodos_academicos
     WHERE id_periodo_academico = idPeriodoAcademico;
+    COMMIT;
 END;
 $$ DELIMITER ;
 
@@ -523,5 +534,6 @@ BEGIN
         END IF;
     END WHILE;
     TRUNCATE TABLE descansostable;
+    COMMIT;
 END;
 $$ DELIMITER ;

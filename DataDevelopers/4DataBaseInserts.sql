@@ -52,12 +52,16 @@ INSERT INTO usuarios
 ****/
 
 
-INSERT INTO parametros_horarios
+/*INSERT INTO parametros_horarios
     (hora_inicio_jornada, hora_final_jornada, duracion_hora_academica, estado) VALUES
     ('06:00:00', '23:00:00', '60:00:00', FALSE),
     ('06:00:00', '23:00:00', '00:45:00', FALSE),
     ('06:00:00', '23:00:00', '00:50:00', TRUE)
-;
+;*/
+
+CALL insert_parametro_horario('06:00:00', '23:00:00', '60:00:00', FALSE,1);
+CALL insert_parametro_horario('06:00:00', '23:00:00', '00:45:00', FALSE,1);
+CALL insert_parametro_horario('06:00:00', '23:00:00', 'asdasd', TRUE,1);
 
 INSERT INTO parametros_reservas
     (nombre, dias_minimos_reserva, tiempo_minimo_reserva, dias_maximos_reserva, tiempo_maximo_reserva, estado) VALUES

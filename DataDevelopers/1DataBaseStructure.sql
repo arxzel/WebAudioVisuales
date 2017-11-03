@@ -5,6 +5,7 @@ CREATE DATABASE IF NOT EXISTS audio_visuales
     DEFAULT COLLATE utf8_general_ci;
 USE audio_visuales;
 
+SET autocommit=0;
 
 /****
 ***** ESQUEMA PERMISOS Y USUARIOS EN DESARROLLO *****
