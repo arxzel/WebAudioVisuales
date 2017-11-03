@@ -5,18 +5,27 @@
 	//creacion de controller
 	$requires -> importPeriodoAcademicoController();
 
+	//instanció un objeto de tipo parametro tipo controller
+	$periodoAcademicoController	= new PeriodoAcademicoController();
+	//contruyo un iobjeto de tipo periodo academico
+	$periodoAcademico = new PeriodoAcademico();
+	//Le doy al periodo academico el id que me pasaron por la URL
+	$periodoAcademico->setIdPeriodoAcademico($_GET['idPeriodoAcademico']);
+
+	$periodoAcademico = $periodoAcademicoController->getPeriodoAcademicoById($periodoAcademico);
+	
  ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css"">
 	<title>Periodos Académicos</title>
 </head>
 	<body>
 		<header>
-			<img src="img/logoUni.png">
+			<img src="/../WebAudioVisuales/interfaz/img/logoUni.png">
 			<h1 align="center">Recursos Audiovisuales</h1>	
 		</header>
 			<section name="PeriodosAcademicos">
@@ -51,15 +60,13 @@
 									</tr>
 									<tr>
 										<td><input type="submit" name="bootonCancelar" value="Cancelar"></td>
-										<td><input type="submit" name="bootonRegistrar" value="Registar"></td>
+										<td><input type="submit" name="bootonAceptar" value="Aceptar"></td>
 									</tr>
 									<tr>
 										<td colspan="2">
 											<?php
 
-												if (isset($_POST['bootonRegistrar'])) {
-
-													$periodoAcademico = new PeriodoAcademico();
+												if (isset($_POST['bootonAceptar'])) {
 														//construccion de objetos
 													$periodoAcademico->setNombre($_POST['textNombre']);
 													$periodoAcademico->setFechaInicio($_POST['dateFechaInicio']);
@@ -67,13 +74,12 @@
 													$periodoAcademico->setEstado($_POST['booleanEstado']);
 													$periodoAcademico->setDescripcion($_POST['textDescripcion']);
 
-													 //instanció un objeto de tipo parametro tipo controller
-													$periodoAcademicoController	= new PeriodoAcademicoController();
 													 //le pasa al controlador el objeto tipo parametro horario
-													$periodoAcademicoController->insertarperiodoAcademico($periodoAcademico);
+													$periodoAcademicoController->updatePeriodoAcademico($periodoAcademico);
 												}
 												//Falta crear la condicción si esta seguro o desea cancelarlo.
 												//Falta el aviso cuando registre en la db o si hay algún problema.
+										
 											?>
 
 										</td>
@@ -88,14 +94,14 @@
 		<table align="right" class="redes">
 		<tbody>
 			<tr>
-				<td style="text-align: right;"><a href="https://www.facebook.com/UNISANGIL" target="_blank" rel="alternate"><img src="img/facebook.jpg" alt="" height="23" width="23"></a></td>
+				<td style="text-align: right;"><a href="https://www.facebook.com/UNISANGIL" target="_blank" rel="alternate"><img src="/../WebAudioVisuales/interfaz/img/facebook.jpg" alt="" height="23" width="23"></a></td>
 			</tr>
 
 			<tr>
-				<td style="text-align: right;"><a href="https://twitter.com/unisangil" target="_blank" rel="alternate"><img src="img/twitter.png" alt="" height="23" width="23"></a></td>
+				<td style="text-align: right;"><a href="https://twitter.com/unisangil" target="_blank" rel="alternate"><img src="/../WebAudioVisuales/interfaz/img/twitter.png" alt="" height="23" width="23"></a></td>
 			</tr>
 			<tr>
-				<td style="text-align: right;"><a href="https://plus.google.com/+unisangil/posts" target="_blank" rel="alternate"><img src="img/google.png" alt="" height="23" width="23"></a></td>
+				<td style="text-align: right;"><a href="https://plus.google.com/+unisangil/posts" target="_blank" rel="alternate"><img src="/../WebAudioVisuales/interfaz/img/google.png" alt="" height="23" width="23"></a></td>
 			</tr>
 				
 			</tr>

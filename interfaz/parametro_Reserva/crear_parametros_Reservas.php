@@ -8,13 +8,13 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css"">
 	<title>Parametros Reservas</title>
 	<meta name="viewport" content="width=device-width">
 </head>
 	<body>
 		<header>
-			<img src="img/logoUni.png">
+			<img src="/../WebAudioVisuales/interfaz/img/logoUni.png">
 			<h1 align="center">Recursos Audiovisuales</h1>		
 		</header>
 		
@@ -90,14 +90,14 @@
 		<table align="right" class="redes">
 		<tbody>
 			<tr>
-				<td style="text-align: right;"><a href="https://www.facebook.com/UNISANGIL" target="_blank" rel="alternate"><img src="img/facebook.jpg" alt="" height="23" width="23"></a></td>
+				<td style="text-align: right;"><a href="https://www.facebook.com/UNISANGIL" target="_blank" rel="alternate"><img src="/../WebAudioVisuales/interfaz/img/facebook.jpg" alt="" height="23" width="23"></a></td>
 			</tr>
 
 			<tr>
-				<td style="text-align: right;"><a href="https://twitter.com/unisangil" target="_blank" rel="alternate"><img src="img/twitter.png" alt="" height="23" width="23"></a></td>
+				<td style="text-align: right;"><a href="https://twitter.com/unisangil" target="_blank" rel="alternate"><img src="/../WebAudioVisuales/interfaz/img/twitter.png" alt="" height="23" width="23"></a></td>
 			</tr>
 			<tr>
-				<td style="text-align: right;"><a href="https://plus.google.com/+unisangil/posts" target="_blank" rel="alternate"><img src="img/google.png" alt="" height="23" width="23"></a></td>
+				<td style="text-align: right;"><a href="https://plus.google.com/+unisangil/posts" target="_blank" rel="alternate"><img src="/../WebAudioVisuales/interfaz/img/google.png" alt="" height="23" width="23"></a></td>
 			</tr>
 				
 			</tr>

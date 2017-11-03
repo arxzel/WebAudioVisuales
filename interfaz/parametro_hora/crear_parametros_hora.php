@@ -19,12 +19,12 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width">
 		<title>Parametros Hora</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css"">
 	</head>
 
 	<body>
 		<header>
-			<img src="img/logoUni.png">
+			<img src="/../WebAudioVisuales/interfaz/img/logoUni.png">
 			<h1 align="center">Recursos Audiovisuales</h1>	
 		</header>
 		
@@ -160,4 +160,22 @@
 			</section>
 		</div>
 	</body>
+	<footer>
+		<table align="right" class="redes">
+		<tbody>
+			<tr>
+				<td style="text-align: right;"><a href="https://www.facebook.com/UNISANGIL" target="_blank" rel="alternate"><img src="/../WebAudioVisuales/interfaz/img/facebook.jpg" alt="" height="23" width="23"></a></td>
+			</tr>
+
+			<tr>
+				<td style="text-align: right;"><a href="https://twitter.com/unisangil" target="_blank" rel="alternate"><img src="/../WebAudioVisuales/interfaz/img/twitter.png" alt="" height="23" width="23"></a></td>
+			</tr>
+			<tr>
+				<td style="text-align: right;"><a href="https://plus.google.com/+unisangil/posts" target="_blank" rel="alternate"><img src="/../WebAudioVisuales/interfaz/img/google.png" alt="" height="23" width="23"></a></td>
+			</tr>
+				
+			</tr>
+		</tbody>
+		</table>
+	</footer>
 </html>

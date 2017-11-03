@@ -5,22 +5,22 @@ $requires -> getRequireTipoUsuario();
 */
 class descansos{
 
-    private $id_horario_descanso;
+    private $idHorarioDescanso;
     private $nombre;
-    private $hora_inicio;
-    private $duration;
+    private $horaInicio;
+    private $duracion;
     private $estado;
 
 
     public function __construct(){
     }
 
-    public function getId_horario_descanso(){
-        return $this->id_horario_descanso;
+    public function getIdHorarioDescanso(){
+        return $this->idHorarioDescanso;
     }
 
-    public function setId_horario_descanso($id_horario_descanso){
-        $this->id_horario_descanso = $id_horario_descanso;
+    public function setIdHorarioDescanso($idHorarioDescanso){
+        $this->idHorarioDescanso = $idHorarioDescanso;
     }
     public function getNombre(){
         return $this->nombre;
@@ -29,19 +29,23 @@ class descansos{
     public function setNombre($nombre){
         $this->nombre = $nombre;
     }
-    public function getHora_inicio(){
-        return $this->hora_inicio;
+    public function getHoraInicio(){
+        return $this->horaInicio;
     }
 
-    public function setHora_inicio($hora_inicio){
-        $this->hora_inicio = $hora_inicio;
+    public function setHoraInicio($horaInicio){
+        $this->horaInicio = $horaInicio;
     }
-    public function getDuration(){
-        return $this->duration;
+    public function getDuracion(){
+        return $this->duracion;
     }
 
-    public function setDuration($duration){
-        $this->duration = $duration;
+<<<<<<< HEAD
+    public function setDuracion($duracion){
+=======
+    public function setDuration($duracion){
+>>>>>>> e508c7811724b69bb9745760b9cf9561c0d5b364
+        $this->duracion = $duracion;
     }
     public function getEstado(){
         return $this->estado;

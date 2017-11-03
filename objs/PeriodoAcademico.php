@@ -3,12 +3,12 @@
 $requires = new Requires();
 $requires -> getRequireTipoUsuario();
 */
-class Usuario{
+class PeriodoAcademico{
 
-    private $id_periodo_academico;
+    private $idPeriodoAcademico;
     private $nombre;
-    private $fecha_inicio;
-    private $fecha_final;
+    private $fechaInicio;
+    private $fechaFinal;
     private $estado;
     private $descripcion;
 
@@ -16,12 +16,12 @@ class Usuario{
     public function __construct(){
     }
 
-    public function getId_periodo_academico(){
-        return $this->id_periodo_academico;
+    public function getIdPeriodoAcademico(){
+        return $this->idPeriodoAcademico;
     }
 
-    public function setId_periodo_academico($id_periodo_academico){
-        $this->id_periodo_academico = $id_periodo_academico;
+    public function setIdPeriodoAcademico($idPeriodoAcademico){
+        $this->idPeriodoAcademico = $idPeriodoAcademico;
     }
     public function getNombre(){
         return $this->nombre;
@@ -30,19 +30,19 @@ class Usuario{
     public function setNombre($nombre){
         $this->nombre = $nombre;
     }
-    public function getFecha_inicio(){
-        return $this->fecha_inicio;
+    public function getFechaInicio(){
+        return $this->fechaInicio;
     }
 
-    public function setFecha_inicio($fecha_inicio){
-        $this->fecha_inicio = $fecha_inicio;
+    public function setFechaInicio($fechaInicio){
+        $this->fechaInicio = $fechaInicio;
     }
-    public function getFecha_final(){
-        return $this->fecha_final;
+    public function getFechaFinal(){
+        return $this->fechaFinal;
     }
 
-    public function setFecha_final($fecha_final){
-        $this->fecha_final = $fecha_final;
+    public function setFechaFinal($fechaFinal){
+        $this->fechaFinal = $fechaFinal;
     }
     public function getEstado(){
         return $this->estado;
