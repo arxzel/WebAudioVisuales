@@ -2,13 +2,6 @@
     require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
     $requires = new Requires();
     $requires -> importParametroReservaController();
-
-    $parametroReservaController = new ParametroReservaController();
-    $parametroReserva = new ParametroReserva();
-    $parametroReserva -> setIdParametroReserva($_GET['idParametroReserva']);
-    $parametroReserva = $parametroReservaController -> getParametroReservaById($parametroReserva);
-
-
 ?>
 
 <!DOCTYPE html>
@@ -61,14 +54,14 @@
 								</tr>
 								<tr>
 									<td><input type="submit" name="bootonCancelar" value="Cancelar"></td>
-									<td><input type="submit" name="bootonResgistrar" value="Aceptar"></td>
+									<td><input type="submit" name="bootonResgistrar" value="Registar"></td>
 								</tr>
 								<tr>
 									<td colspan="2">
 									<?php
 
 	                                    if (isset($_POST['botonRegistrar'])) {
-
+	                                        $parametroReserva = new ParametroReserva();
 	                                        //construccion de objetos
 	                                        $parametroReserva->setNombre($_POST['txtNombreR']);
 	                                        $parametroReserva->setDiasMinimoReserva($_POST['smallintDiasMinimosReserva']);
@@ -77,7 +70,9 @@
 	                                        $parametroReserva->setTiempoMaximoReserva($_POST['timeTiempoMaximoReserva']);
 	                                        $parametroReserva->setEstado($_POST['booleanEstado']);
 	                                        //instanció un objeto de tipo parametro tipo controller
-	                                      
+	                                        $parametroReservaController = new ParametroReservaController();
+	                                        //le pasa al controlador el objeto tipo parametro horario
+	                                        $parametroReservaController->insertarParametroReserva($parametroReserva);
 	                                    }
 	                                    //Falta crear la condicción si esta seguro o desea cancelarlo.
 	                                    //Falta el aviso cuando registre en la db o si hay algún problema.
