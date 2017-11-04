@@ -35,13 +35,13 @@ class DAOParametroReserva extends DataBase{
 
    public function deleteParametroReserva($parametroReserva,$usuario)
     {
-        $sql = "call delete_parametro_reserva(". $parametroReserva->getIdParametro()." , ". $usuario->getIdUsuario().");"
+        $sql = "call delete_parametro_reserva(". $parametroReserva->getIdParametro()." , ". $usuario->getIdUsuario().");";
         $this->deleteQuery($sql); //muestra error en esta línea, para las vistas parametro_reserva
     }
 
   public function updateParametroReserva($parametroReserva,$usuario)
     {
-       $sql = "call update_parametro_reserva(". $parametroReserva->getNombre()." , ". $parametroReserva->getDiasMinimos()." , ". $parametroReserva->getTiempoMinimo()." , ". $parametroReserva->getDiasMaximo()." , ". $parametroReserva->getTiempoMaximo()." , ". $parametroReserva->getEstado().", ". $usuario->getIdUsuario().");"
+       $sql = "call update_parametro_reserva(". $parametroReserva->getNombre()." , ". $parametroReserva->getDiasMinimos()." , ". $parametroReserva->getTiempoMinimo()." , ". $parametroReserva->getDiasMaximo()." , ". $parametroReserva->getTiempoMaximo()." , ". $parametroReserva->getEstado().", ". $usuario->getIdUsuario().");";
        $this->updateQuery($sql);
     }
 
@@ -52,7 +52,7 @@ class DAOParametroReserva extends DataBase{
 
                 foreach($resulset as $row){
 
-                    $parametroReserva -> setIdParametro((int)$row['id_parametro_reserva']);
+                    $parametroReserva -> setIdParametroReserva((int)$row['id_parametro_reserva']);
                     /* Ojo Preguntar por los tipos de datos */
                     $parametroReserva -> setNombre($row['nombre']);
                     $parametroReserva->setDiasMinimos($row['dias_minimos_reserva']);

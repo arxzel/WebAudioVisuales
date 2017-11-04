@@ -2,9 +2,10 @@
     require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
     $requires = new Requires();
     $requires -> importParametroReservaController();
-
+    $requires -> importParametroReserva();
     $parametroReservaController = new ParametroReservaController();
     $parametroReserva = new ParametroReserva();
+    //para que no salge error hay q enviarle un parametro al método. $_GET['idParametroReserva'] aún no está definido y por eso envía error
     $parametroReserva -> setIdParametroReserva($_GET['idParametroReserva']);
     $parametroReserva = $parametroReservaController -> getParametroReservaById($parametroReserva);
 
@@ -22,9 +23,9 @@
 	<body>
 		<header>
 			<img src="/../WebAudioVisuales/interfaz/img/logoUni.png">
-			<h1 align="center">Recursos Audiovisuales</h1>		
+			<h1 align="center">Recursos Audiovisuales</h1>
 		</header>
-		
+
 			<section name="ParametroReserva" class="parametroReserva">
 				<fieldset class="pRF"><legend style="font-weight:bold"> Parametros Reserva</legend>
 				<form method="POST" action="parametros_Reservas.php">
@@ -32,7 +33,7 @@
 						<thead>
 							<tr>
 								<td colspan="2"><h3>Editar Parametros Reserva</h3></td>
-							</tr>	
+							</tr>
 						</thead>
 							<tbody>
 								<tr>
@@ -77,7 +78,7 @@
 	                                        $parametroReserva->setTiempoMaximoReserva($_POST['timeTiempoMaximoReserva']);
 	                                        $parametroReserva->setEstado($_POST['booleanEstado']);
 	                                        //instanció un objeto de tipo parametro tipo controller
-	                                      
+
 	                                    }
 	                                    //Falta crear la condicción si esta seguro o desea cancelarlo.
 	                                    //Falta el aviso cuando registre en la db o si hay algún problema.
@@ -104,7 +105,7 @@
 			<tr>
 				<td style="text-align: right;"><a href="https://plus.google.com/+unisangil/posts" target="_blank" rel="alternate"><img src="/../WebAudioVisuales/interfaz/img/google.png" alt="" height="23" width="23"></a></td>
 			</tr>
-				
+
 			</tr>
 		</tbody>
 		</table>
