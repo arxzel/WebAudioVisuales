@@ -35,7 +35,7 @@ class DAOPeriodoAcademico extends DataBase{
    public function deletePeriodoAcademico($PeriodoAcademico,$usuario)
     {
         $sql = "call delete_periodo_academico(".$PeriodoAcademico->getIdPeriodoAcademico()." , ". $usuario->getIdUsuario().");"
-        $this->deleteQuery($sql);
+        $this->deleteQuery($sql); //muestra error en esta linea
     }
 
   public function updatePeriodoAcademico($PeriodoAcademico,$usuario)
