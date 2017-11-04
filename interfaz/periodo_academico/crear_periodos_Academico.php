@@ -26,7 +26,7 @@
 						<table>
 							<thead>
 								<tr>
-									<td colspan="2"><h3>Periodos Académicos</h3></td>
+									<td colspan="2"><h3>Crear Periodos Académicos</h3></td>
 								</tr>
 							</thead>
 								<tbody>
