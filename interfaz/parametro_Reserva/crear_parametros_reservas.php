@@ -24,7 +24,7 @@
 					<table>
 						<thead>
 							<tr>
-								<td colspan="2"><h3>Parametros Reserva</h3></td>
+								<td colspan="2"><h3>Crear Parametros Reserva</h3></td>
 							</tr>	
 						</thead>
 							<tbody>
