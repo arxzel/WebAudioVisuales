@@ -63,25 +63,10 @@ CREATE TABLE IF NOT EXISTS usuarios(
 ***** ESQUEMA MAGISTRAL EN DESARROLLO *****
 ****/
 
-
-
-CREATE TABLE IF NOT EXISTS descansos(
-    id_descanso                     INT             NOT NULL        AUTO_INCREMENT,
-    nombre                          VARCHAR(20)     NOT NULL,
-    hora_inicio                     TIME            NOT NULL,
-    duracion                        TIME            NOT NULL,
-    estado                          BOOLEAN         NOT NULL,
-    PRIMARY KEY (id_descanso)
-);
-
-CREATE TABLE IF NOT EXISTS parametros_horarios(
-    id_parametro_horario            INT             NOT NULL        AUTO_INCREMENT,
-    nombre                          VARCHAR(30)     NOT NULL,
-    hora_inicio_jornada             TIME            NOT NULL,
-    hora_final_jornada              TIME            NOT NULL,
-    duracion_hora_academica         TIME            NOT NULL,
-    estado                          BOOLEAN         NOT NULL,
-    PRIMARY KEY (id_parametro_horario)
+CREATE TABLE IF NOT EXISTS horas(
+    id_hora                         INT             NOT NULL        AUTO_INCREMENT COMMENT 'Se ingresarán manualMente',
+    hora                            TIME            NOT NULL,
+    PRIMARY KEY (id_hora)
 );
 
 CREATE TABLE IF NOT EXISTS parametros_reservas(
@@ -95,11 +80,6 @@ CREATE TABLE IF NOT EXISTS parametros_reservas(
     PRIMARY KEY (id_parametro_reserva)
 );
 
-CREATE TABLE IF NOT EXISTS horas(
-    id_hora                         INT             NOT NULL        AUTO_INCREMENT COMMENT 'no es AUTO_INCREMENT debido a que el trigger no soporta DDL solo DML',
-    hora                            TIME            NOT NULL,
-    PRIMARY KEY (id_hora)
-);
 
 CREATE TABLE IF NOT EXISTS periodos_academicos(
     id_periodo_academico            INT             NOT NULL        AUTO_INCREMENT,

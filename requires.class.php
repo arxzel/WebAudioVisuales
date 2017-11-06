@@ -36,14 +36,6 @@ class Requires
         require_once($this->root.'/dataBase/DAOHora.class.php');
     }
 
-    public function importDAODescanso(){
-        require_once($this->root.'/dataBase/DAODescanso.class.php');
-    }
-
-    public function importDAOParametroHorario(){
-        require_once($this->root.'/dataBase/DAOParametroHorario.class.php');
-    }
-
     public function importDAOParametroReserva(){
         require_once($this->root.'/dataBase/DAOParametroReserva.class.php');
     }
@@ -108,14 +100,6 @@ class Requires
         require_once($this->root.'/controllers/HoraController.class.php');
     }
 
-    public function importDescansoController(){
-        require_once($this->root.'/controllers/DescansoController.class.php');
-    }
-
-    public function importParametroHorarioController(){
-        require_once($this->root.'/controllers/ParametroHorarioController.class.php');
-    }
-
     public function importParametroReservaController(){
         require_once($this->root.'/controllers/ParametroReservaController.class.php');
     }
@@ -178,14 +162,6 @@ class Requires
 
     public function importHora(){
         require_once($this->root.'/objs/Hora.class.php');
-    }
-
-    public function importDescanso(){
-        require_once($this->root.'/objs/Descanso.class.php');
-    }
-
-    public function importParametroHorario(){
-        require_once($this->root.'/objs/ParametroHorario.class.php');
     }
 
     public function importParametroReserva(){
