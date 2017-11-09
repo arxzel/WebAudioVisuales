@@ -4,6 +4,7 @@
 ***** INSERTS DEL ESQUEMA USUARIOS Y PERMISOS *****
 ****/
 USE audio_visuales;
+
 INSERT INTO permisos
     (permiso, valor) VALUES
     ('CREAR USUARIO',1),
@@ -59,4 +60,3 @@ INSERT INTO periodos_academicos
     ('2017-1', '2017-2-1', '2017-6-30', FALSE, 'descripcion'),
     ('2017-2', '2017-8-1', '2017-11-30', TRUE, 'descripcion')
 ;
-

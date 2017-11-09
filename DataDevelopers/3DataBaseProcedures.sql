@@ -8,7 +8,7 @@ USE audio_visuales;
 /**
 ************PROCEDURES PARAMETROS RESERVAS
 **/
-
+/*
 DROP PROCEDURE IF EXISTS update_parametro_reserva;
 DELIMITER $$
 CREATE PROCEDURE update_parametro_reserva(
