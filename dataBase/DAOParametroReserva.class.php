@@ -5,7 +5,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
 $requires = new Requires();
 $requires->importDatabase();
 $requires-> importUsuario();
-$requires->importDAOParametroReserva();
+$requires->importParametroReserva();
 
 class DAOParametroReserva extends DataBase{
 
@@ -27,7 +27,7 @@ class DAOParametroReserva extends DataBase{
                  return $this-> construirParametrosReserva($resulset);
             }
             
-    public function getAllParametrosReserva($parametroReserva)
+    public function getAllParametrosReserva()
             {
                  $sql = "SELECT * FROM parametros_reservas";
                  $resulset = $this->selectQuery($sql);
@@ -75,18 +75,20 @@ class DAOParametroReserva extends DataBase{
 
     private function construirParametrosReserva($resulset){
         $parametrosReserva = [];
+        $parametroReserva = new ParametroReserva();
         foreach($resulset as $row)
                     {
                       $parametroReserva = new ParametroReserva();
-                      $parametroReserva -> setIdParametro((int)$row['id_parametro_reserva']);
+                      $parametroReserva -> setIdParametroReserva((int)$row['id_parametro_reserva']);
                       /* Ojo Preguntar por los tipos de datos */
-                      $parametroReserva -> setNombre($row['nombre']);
+                      $parametroReserva->setNombre($row['nombre']);
                       $parametroReserva->setDiasMinimos($row['dias_minimos_reserva']);
                       $parametroReserva->setTiempoMinimo($row['tiempo_minimo_reserva']);
                       $parametroReserva->setDiasMaximo($row['dias_maximos_reserva']);
                       $parametroReserva->setTiempoMaximo($row['tiempo_maximo_reserva']);
                       $parametroReserva->setEstado($row['estado']);
-                      $parametrosReserva[] = $parametroReserva;
+                      //$parametrosReserva[] = $parametroReserva;
+                      array_push ( $parametrosReserva , $parametroReserva );
 
 
                     }

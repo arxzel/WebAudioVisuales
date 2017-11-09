@@ -5,7 +5,7 @@
 	//creacion de controller
 	$requires -> importParametroReservaController();
 
-	$parametro_Reservas_Controller = new ParametroReservaController();
+	$parametroReservasController = new ParametroReservaController();
 
 
  ?>
@@ -48,10 +48,10 @@
 										<td colspan="2">
 											<?php
 
-											$listarParametroReserva = $parametro_Reservas_Controller -> getAllParametrosReserva(); 
-											foreach ($listarParametroReserva as $parametroReserva) {
+											$listarParametrosReserva = $parametroReservasController -> getAllParametrosReserva(); 
+											echo $listarParametrosReserva[1]->getNombre();
+											foreach ($listarParametrosReserva as $parametroReserva) {
 												echo "<tr>";
-
     											echo "<td>".$parametroReserva->getNombre()."</td>";
     											echo "<td>".$parametroReserva->getDiasMinimoReserva()."</td>";
     											echo "<td>".$parametroReserva->getFTiempoMinimoReserva()."</td>";
