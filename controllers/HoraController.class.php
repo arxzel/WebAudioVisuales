@@ -16,7 +16,13 @@ class HoraController
       {
        return $this->daoHora->getHoras();
       }
-    public function updateHoras($hora)
+    public function updateHoras($horas){
+      return $this->daoHora->updateHoras($horas);
+    }
+    public function deleteHoras($horas){
+      return $this->daoHora->deleteHoras($horas);
+    }
+
     public function getHoraById($hora)
       {
       	return $this->daoHora->getHoraById($hora);
