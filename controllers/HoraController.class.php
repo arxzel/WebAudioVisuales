@@ -12,21 +12,22 @@ class HoraController
         $this->daoHora = new DAOHora();
     }
 
-    public function getHoras($hora)
+    public function getHoras()
       {
-       return $this->daoHora->getHoras($hora);
+       return $this->daoHora->getHoras();
       }
-    public function getHorasById($hora)
+    public function updateHoras($hora)
+    public function getHoraById($hora)
       {
-      	return $this->daoHora->getHorasById($hora);
+      	return $this->daoHora->getHoraById($hora);
       }  
-    private function construirHora($resulset)
-    {
-    	$this->daoHora->construirHora($resulset);
-    }  
-    private function construirHoras($resulset)
-    {
-    	$this->daoHora->construirHoras($resulset);
-    }
+    public function construirHora($resulset)
+      {
+    	 return $this->daoHora->construirHora($resulset);
+      }  
+    public function construirHoras($resulset)
+      {
+    	 return $this->daoHora->construirHoras($resulset);
+      }
 }
 ?>
