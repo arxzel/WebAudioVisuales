@@ -12,7 +12,7 @@ class HoraController
         $this->daoHora = new DAOHora();
     }
 
-    public function getHoras($hora)
+    public function getHoras()
       {
        return $this->daoHora->getHoras($hora);
       }
