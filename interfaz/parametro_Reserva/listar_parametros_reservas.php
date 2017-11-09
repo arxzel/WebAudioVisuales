@@ -7,6 +7,7 @@
 
 	$parametro_Reservas_Controller = new ParametroReservaController();
 
+
  ?>
 
 
@@ -47,8 +48,7 @@
 										<td colspan="2">
 											<?php
 
-											$listarParametroReserva = $controladorParametroReserva -> getAllParametroReserva(); 
-
+											$listarParametroReserva = $parametro_Reservas_Controller -> getAllParametrosReserva(); 
 											foreach ($listarParametroReserva as $parametroReserva) {
 												echo "<tr>";
 

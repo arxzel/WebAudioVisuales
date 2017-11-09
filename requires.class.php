@@ -168,8 +168,8 @@ class Requires
         require_once($this->root.'/objs/ParametroReserva.class.php');
     }
 
-    public function importPriodoAcademico(){
-        require_once($this->root.'/objs/TriodoAcademico.class.php');
+    public function importPeriodoAcademico(){
+        require_once($this->root.'/objs/PeriodoAcademico.class.php');
     }
 
     public function importGrupoMateria(){
