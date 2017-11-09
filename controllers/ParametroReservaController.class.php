@@ -3,7 +3,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
 $requires = new Requires();
 $requires->importDAOParametroReserva();
 
-
 class ParametroReservaController
 {
     private $daoParametroReserva;
@@ -22,31 +21,30 @@ class ParametroReservaController
             {
             	return$this->daoParametroReserva->getParametroReservaByEstado($parametroReserva);
             }
-
+            
            public function insertParametroReserva($parametroReserva)
             {
-            	$this->daoParametroReserva->insertParametroReserva($parametroReserva);
+            	return $this->daoParametroReserva->insertParametroReserva($parametroReserva);
             }
 
             public function deleteParametroReserva($parametroReserva,$usuario)
            {
-            $this->daoParametroReserva->deleteParametroReserva($parametroReserva,$usuario);
+            return $this->daoParametroReserva->deleteParametroReserva($parametroReserva,$usuario);
            }
 
            public function updateParametroReserva($parametroReserva,$usuario)
           {
-          	$this->daoParametroReserva->updateParametroReserva($parametroReserva,$usuario);
+          	return $this->daoParametroReserva->updateParametroReserva($parametroReserva,$usuario);
           }
 
-          private function construirParametroReserva($resulset)
+          public function construirParametroReserva($resulset)
           {
-          	$this->daoParametroReserva->construirParametroReserva($resulset);
+          	return $this->daoParametroReserva->construirParametroReserva($resulset);
           }
-          private function getAllParametrosReservas($parametroReserva)
+          public function getAllParametrosReserva()
           {
-            $this->daoParametroReserva->getAllParametrosReserva($parametroReserva);
+            return $this->daoParametroReserva->getAllParametrosReserva();
 
           }
-
 }
 ?>

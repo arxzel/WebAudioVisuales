@@ -17,7 +17,7 @@ class ParametroReserva{
     public function __construct(){
     }
 
-    public function getIdParametro(){
+    public function getIdParametroReserva(){
         return $this->idParametro;
     }
 

@@ -18,14 +18,14 @@ class DAOHora extends DataBase
 
   }
 
-  public function getHoras($hora)
+  public function getHoras()
       {
            $sql = "SELECT * FROM horas";
            $resulset = $this->selectQuery($sql);
            return $this-> construirHoras($resulset);
       }
 
-  public function getHorasById($hora)
+  public function getHoraById($hora)
       {
           $sql = "SELECT * FROM horas WHERE id_hora = ".$hora->getIdHora();
           $resulset = $this->selectQuery($sql);
@@ -35,12 +35,11 @@ class DAOHora extends DataBase
   private function construirHora($resulset){
       $hora = new Hora();
 
-              foreach($resulset as $row){
-                
+              foreach($resulset as $row)
+              {
                   $hora -> setIdHora((int)$row['id_hora']);
                   $hora -> setHora($row['hora']);
               }
-
               return $hora;
   }
   
@@ -49,8 +48,28 @@ class DAOHora extends DataBase
         
         foreach($horas as $hora){
             $sql = "INSERT INTO horas VALUES". $hora->getHora();
+            $this->insertQuery($sql);
         }
         
+  }
+ 
+
+  public function updateHoras($horas)
+  {
+      foreach($horas as $hora){
+        $sql = "UPDATE `horas` SET `hora`=".$hora->getHora()."WHERE id_hora =".$hora->getIdHora();
+        $this->insertQuery($sql);
+      }
+      
+  }
+
+  public function deleteHoras($horas)
+  {
+    foreach($horas as $hora)
+    {
+        $sql = "DELETE FROM horas WHERE id_hora =".$hora->getIdHora();
+        this->deleteQuery($sql);
+    }
   }
 
   private function construirHoras($resulset){
