@@ -45,34 +45,17 @@ class DAOHora extends DataBase
   
 
   public function insertarHoras($horas){
+        $sql = "TRUNCATE TABLE horas";
+        $this->deleteQuery($sql);
         
         foreach($horas as $hora){
+           
             $sql = "INSERT INTO horas (`hora`) VALUES (". $hora->getHora().")";
             $this->insertQuery($sql);
         }
         
   }
  
-
-  public function updateHoras($horas)
-  {
-      foreach($horas as $hora)
-      {
-        $sql = "UPDATE `horas` SET `hora`=".$hora->getHora()."WHERE id_hora =".$hora->getIdHora();
-        $this->insertQuery($sql);
-      }
-      
-  }
-
-  public function deleteHoras($horas)
-  {
-    foreach($horas as $hora)
-    {
-        $sql = "DELETE FROM horas WHERE id_hora =".$hora->getIdHora();
-        this->deleteQuery($sql);
-    }
-  }
-
   private function construirHoras($resulset){
       $horas = [];
 
