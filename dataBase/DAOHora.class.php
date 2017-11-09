@@ -47,7 +47,7 @@ class DAOHora extends DataBase
   public function insertarHoras($horas){
         
         foreach($horas as $hora){
-            $sql = "INSERT INTO horas VALUES". $hora->getHora();
+            $sql = "INSERT INTO horas (`hora`) VALUES (". $hora->getHora().")";
             $this->insertQuery($sql);
         }
         
@@ -56,7 +56,8 @@ class DAOHora extends DataBase
 
   public function updateHoras($horas)
   {
-      foreach($horas as $hora){
+      foreach($horas as $hora)
+      {
         $sql = "UPDATE `horas` SET `hora`=".$hora->getHora()."WHERE id_hora =".$hora->getIdHora();
         $this->insertQuery($sql);
       }
