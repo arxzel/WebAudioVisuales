@@ -46,23 +46,6 @@ INSERT INTO usuarios
 
 
 
-
-/****
-***** INSERTS DEL ESQUEMA MAGISTRAL *****
-****/
-
-
-/*INSERT INTO parametros_horarios
-    (hora_inicio_jornada, hora_final_jornada, duracion_hora_academica, estado) VALUES
-    ('06:00:00', '23:00:00', '60:00:00', FALSE),
-    ('06:00:00', '23:00:00', '00:45:00', FALSE),
-    ('06:00:00', '23:00:00', '00:50:00', TRUE)
-;*/
-
-CALL insert_parametro_horario('06:00:00', '23:00:00', '60:00:00', FALSE,1);
-CALL insert_parametro_horario('06:00:00', '23:00:00', '00:45:00', FALSE,1);
-CALL insert_parametro_horario('06:00:00', '23:00:00', 'asdasd', TRUE,1);
-
 INSERT INTO parametros_reservas
     (nombre, dias_minimos_reserva, tiempo_minimo_reserva, dias_maximos_reserva, tiempo_maximo_reserva, estado) VALUES
     ('antes', 0, '12:00:00', 6, '23:59:59', FALSE),
@@ -77,12 +60,3 @@ INSERT INTO periodos_academicos
     ('2017-2', '2017-8-1', '2017-11-30', TRUE, 'descripcion')
 ;
 
-
-INSERT INTO descansos
-    (nombre, hora_inicio, duracion, estado) VALUES
-    ('Primer descanso mañana', '08:30:00', '00:10:00', TRUE),
-    ('Segundo descanso mañana', '10:20:00', '00:10:00', TRUE),
-    ('Descanso medio día', '12:10:00', '01:40:00', TRUE),
-    ('Descanso media tarde', '18:00:00', '00:15:00', TRUE),
-    ('Descanso noche', '20:45', '00:10:00', TRUE)
-;
