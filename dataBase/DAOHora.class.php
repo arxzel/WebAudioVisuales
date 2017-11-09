@@ -43,6 +43,15 @@ class DAOHora extends DataBase
 
               return $hora;
   }
+  
+
+  public function insertarHoras($horas){
+        
+        foreach($horas as $hora){
+            $sql = "INSERT INTO horas VALUES". $hora->getHora();
+        }
+        
+  }
 
   private function construirHoras($resulset){
       $horas = [];

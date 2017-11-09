@@ -27,7 +27,7 @@ class DAOParametroReserva extends DataBase{
                  return $this-> construirParametrosReserva($resulset);
             }
             
-    public function getAllParametroReserva($parametroReserva)
+    public function getAllParametrosReserva($parametroReserva)
             {
                  $sql = "SELECT * FROM parametros_reservas";
                  $resulset = $this->selectQuery($sql);
