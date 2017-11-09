@@ -42,5 +42,10 @@ class ParametroReservaController
           {
           	$this->daoParametroReserva->construirParametroReserva($resulset);
           }
+          private function getAllParametrosReservas($parametroReserva)
+          {
+            $this->daoParametroReserva->getAllParametrosReserva($parametroReserva);
+
+          }
 
 }
