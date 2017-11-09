@@ -36,7 +36,7 @@ class DAOParametroReserva extends DataBase{
 
     public function insertParametroReserva($parametroReserva)
     {
-        $sql = "INSERT INTO `parametros_reservas`(`id_parametro_reserva`, `nombre`, `dias_minimos_reserva`, `tiempo_minimo_reserva`, `dias_maximos_reserva`, `tiempo_maximo_reserva`, `estado`) VALUES(".$parametroReserva->getIdParametro().",".$parametroReserva->getNombre().",".$parametroReserva->getDiasMinimos().",".$parametroReserva->getTiempoMinimo().",".$parametroReserva->getDiasMaximo().",".$parametroReserva->getTiempoMaximo().",".$parametroReserva->getEstado().")";
+        $sql = "INSERT INTO `parametros_reservas`(`nombre`, `dias_minimos_reserva`, `tiempo_minimo_reserva`, `dias_maximos_reserva`, `tiempo_maximo_reserva`, `estado`) VALUES(".$parametroReserva->getNombre().",".$parametroReserva->getDiasMinimos().",".$parametroReserva->getTiempoMinimo().",".$parametroReserva->getDiasMaximo().",".$parametroReserva->getTiempoMaximo().",".$parametroReserva->getEstado().")";
          $this->insertQuery($sql);
     }
 

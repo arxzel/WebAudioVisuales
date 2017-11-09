@@ -28,7 +28,7 @@ class DAOPeriodoAcademico extends DataBase{
 
     public function insertPeriodoAcademico($PeriodoAcademico)
     {
-        $sql = "INSERT INTO `periodos_academicos`(`id_periodo_academico`, `nombre`, `fecha_inicio`, `fecha_final`, `estado`, `descripcion`)  VALUES(".$PeriodoAcademico->getNombre().",".$PeriodoAcademico->getFechaInicio().",".$PeriodoAcademico->getFechaFinal().",".$PeriodoAcademico->getEstado().",".$PeriodoAcademico->getDescripcion().")";
+        $sql = "INSERT INTO `periodos_academicos`(`nombre`, `fecha_inicio`, `fecha_final`, `estado`, `descripcion`)  VALUES(".$PeriodoAcademico->getNombre().",".$PeriodoAcademico->getFechaInicio().",".$PeriodoAcademico->getFechaFinal().",".$PeriodoAcademico->getEstado().",".$PeriodoAcademico->getDescripcion().")";
          $this->insertQuery($sql);
     }
 
