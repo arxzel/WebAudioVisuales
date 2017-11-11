@@ -15,7 +15,8 @@ class DAOParametroReserva extends DataBase{
 
     public function getParametroReservaById($parametroReserva)
         {
-             $sql = "SELECT * FROM parametros_reservas WHERE id_parametro_reserva = " . $parametroReserva->getIdParametro();
+             //$sql = "SELECT * FROM parametros_reservas WHERE id_parametro_reserva = 1";
+             $sql = "SELECT * FROM parametros_reservas WHERE id_parametro_reserva = " . $parametroReserva->getIdParametroReserva();
              $resulset = $this->selectQuery($sql);
              return $this-> construirParametroReserva($resulset);
         }
@@ -42,7 +43,7 @@ class DAOParametroReserva extends DataBase{
 
    public function deleteParametroReserva($parametroReserva,$usuario)
     {
-        $sql = "call delete_parametro_reserva(". $parametroReserva->getIdParametro()." , ". $usuario->getIdUsuario().");";
+        $sql = "call delete_parametro_reserva(". $parametroReserva->getIdParametroReserva()." , ". $usuario->getIdUsuario().");";
         $this->deleteQuery($sql); //muestra error en esta línea, para las vistas parametro_reserva
     }
 
