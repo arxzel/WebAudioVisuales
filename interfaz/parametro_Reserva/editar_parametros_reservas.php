@@ -6,7 +6,7 @@
     $parametroReservaController = new ParametroReservaController();
     $parametroReserva = new ParametroReserva();
     //para que no salge error hay q enviarle un parametro al método. $_GET['idParametroReserva'] aún no está definido y por eso envía error
-    $parametroReserva -> setIdParametroReserva($_GET['idParametroReserva']);
+    $parametroReserva -> setIdParametroReserva($_GET['idParametro']);
     $parametroReserva = $parametroReservaController -> getParametroReservaById($parametroReserva);
 
 

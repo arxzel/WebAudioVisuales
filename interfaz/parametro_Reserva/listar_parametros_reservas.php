@@ -18,6 +18,12 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css"">
 	<title>Parametros Reservas</title>
+	<script type="text/javascript">
+		function estaSeguro(){
+			a = confirm("¿Esta seguro que desea eliminar el parámetro?");
+			return a;
+		}
+	</script>
 </head>
 	<body>
 		<header>
@@ -38,31 +44,28 @@
 								    	<th>Dias Mínimos Reserva</th>
 								    	<th>Tiempo Mínimo Reserva</th>
 								    	<th>Días Máximo Reserva</th>
+								    	<th>Opciones</th>
 								    </tr>
-								    <tr>
-								    	<th></th>
-								    	<th></th>
-								    </tr>
-								
+															
 									<tr>
 										<td colspan="2">
 											<?php
 
 											$listarParametrosReserva = $parametroReservasController -> getAllParametrosReserva(); 
 											echo $listarParametrosReserva[1]->getNombre();
-											foreach ($listarParametrosReserva as $parametroReserva) {
-												echo "<tr>";
-    											echo "<td>".$parametroReserva->getNombre()."</td>";
-    											echo "<td>".$parametroReserva->getDiasMinimoReserva()."</td>";
-    											echo "<td>".$parametroReserva->getFTiempoMinimoReserva()."</td>";
-    											echo "<td>".$parametroReserva->getDiasMaximoReserva()."</td>";
-    											
+												foreach ($listarParametrosReserva as $parametroReserva) {
+													echo "<tr>";
+	    											echo "<td>".$parametroReserva->getNombre()."</td>";
+	    											echo "<td>".$parametroReserva->getDiasMinimos()."</td>";
+	    											echo "<td>".$parametroReserva->getTiempoMinimo()."</td>";
+	    											echo "<td>".$parametroReserva->getDiasMaximo()."</td>";
+	    											
 
-    											echo "<td><a href='editar_parametros_reservas.php?idParametro='".$parametroReserva->getIdParametro().">editar</a>";
-												echo "<input type='submit' name='bootonEliminar' value='Eliminar'></td>";
-    											echo "</tr>";
-											}
-												
+	    											echo "<td><a href='editar_parametros_reservas.php?idParametro=".$parametroReserva->getIdParametroReserva()."'>editar</a>";
+													echo "<form onsubmit='return estaSeguro()' action='' ><input type='submit' name='bootonEliminar' value='Eliminar'></form></td>";
+	    											echo "</tr>";
+
+												}
 											?>
 
 										</td>
