@@ -9618,7 +9618,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFe9MbZascSHrg="
 							},
-							"name": "id_horario_i",
+							"name": "hora_inicio",
 							"type": "TIME",
 							"length": 0,
 							"primaryKey": false,
@@ -9632,7 +9632,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFe9MbZascSHrg="
 							},
-							"name": "id_horario_f",
+							"name": "hora_final",
 							"type": "TIME",
 							"length": 0,
 							"primaryKey": false,
