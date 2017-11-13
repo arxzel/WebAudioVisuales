@@ -52,7 +52,7 @@
 											<?php
 
 											$listarParametrosReserva = $parametroReservasController -> getAllParametrosReserva(); 
-											echo $listarParametrosReserva[1]->getNombre();
+											
 												foreach ($listarParametrosReserva as $parametroReserva) {
 													echo "<tr>";
 	    											echo "<td>".$parametroReserva->getNombre()."</td>";
@@ -62,7 +62,10 @@
 	    											
 
 	    											echo "<td><a href='editar_parametros_reservas.php?idParametro=".$parametroReserva->getIdParametroReserva()."'>editar</a>";
-													echo "<form onsubmit='return estaSeguro()' action='' ><input type='submit' name='bootonEliminar' value='Eliminar'></form></td>";
+	    											
+													echo "<form onsubmit='return estaSeguro()' action='../../controllers/ParametroReservaController.class.php' >
+													<input type='hidden' name='idParametro' value=".$parametroReserva->getIdParametroReserva().">
+													<input type='submit' name='boton' value='Eliminar'></form></td>";
 	    											echo "</tr>";
 
 												}
@@ -72,8 +75,11 @@
 									</tr>
 								</tbody>
 						</table>
+						<a href="crear_parametros_reservas.php">Crear Nuevo Parámetro</a>
 				</fieldset>
+
 			</section>
+
 	</body>
 	<footer>
 		<table align="right" class="redes">

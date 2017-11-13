@@ -49,7 +49,7 @@
 										<td colspan="2">
 											<?php
 
-											$listaPeridoAcademico = $controladorPeridoAcademico -> getAllPeridoAcademico(); 
+											$listaPeridoAcademico = $peridoAcademicoController -> getAllPeridoAcademico(); 
 
 											foreach ($listaPeridoAcademico as $periodoAcademico) {
 												echo "<tr>";
@@ -60,11 +60,28 @@
     											echo "<td>".$periodoAcademico->getEstado()."</td>";
     											echo "<td>".$periodoAcademico->getDescripcion()."</td>";
 
-    											echo "<td><a href='editar_periodo_academico.php?idPeriodoAcademico='".$periodoAcademico->getIdPeriodoAcademico().">editar</a>";
-												echo "<input type='submit' name='bootonEliminar' value='Eliminar'></td>";
-    											echo "</tr>";
+    											echo "<td><a href='editar_periodo_academico.php?idPeriodoAcademico=".$periodoAcademico->getIdPeriodoAcademico()."'>editar</a>";
+												echo "<form onsubmit='return estaSeguro()' action=''>
+													<input type='hidden' name='idParametro' value=".$periodoAcademico->getIdPeriodoAcademico().">
+													<input type='submit' name='boton' value='Eliminar'></form></td>";
+	    											echo "</tr>";
 											}
-												
+
+											if(isset($_GET["idParametro"]))
+										    {
+										       $miPeriodoAcademicoController = new PeriodoAcademicoController();
+										       $miPeriodoAcademico = new PeriodoAcademico();
+										       $miUsuario = new Usuario();
+										       //El id del usuario puede ser cualquiera ya que no hemos llegado a ese módulo.
+										       $miUsuario->setIdUsuario(1);
+										       $miPeriodoAcademico->setIdPeriodoAcademico($_GET["idParametro"]);
+										       echo $miUsuario->getIdUsuario();
+										       echo $miPeriodoAcademico->getIdPeriodoAcademico();
+										      
+										       $miPeriodoAcademicoController->deletePeriodoAcademico($miPeriodoAcademico,$miUsuario);
+										       header("http://localhost/WebAudioVisuales/interfaz/periodo_academico/listar_Periodo_Academico.php");
+										    }
+																						
 											?>
 
 										</td>

@@ -86,7 +86,7 @@
 												$hora = new Hora();
 												//contruccion de objeto (da el hora)
 
-												$hora->setHora($_POST['timeHora']);
+												//$hora->setHora($_POST['timeHora']);
 												
 												//instanció un objeto de tipo hora tipo controller
 												$horaController	= new HoraController();

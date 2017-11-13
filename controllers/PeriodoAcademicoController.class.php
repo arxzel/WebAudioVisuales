@@ -46,5 +46,10 @@ class PeriodoAcademicoController
     {
     	return $this->daoPeriodoAcademico->construirPeriodoAcademico($resulset);
     }
+
+    public function getAllPeridoAcademico()
+    {
+        return $this->daoPeriodoAcademico->getAllPeridoAcademico();
+    }
 }
-?>
+

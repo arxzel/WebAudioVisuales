@@ -20,7 +20,7 @@
 		
 			<section name="ParametroReserva" class="parametroReserva">
 				<fieldset class="pRF"><legend style="font-weight:bold"> Parametros Reserva</legend>
-				<form method="POST" action="parametros_Reservas.php">
+				<form method="POST" action="">
 					<table>
 						<thead>
 							<tr>
@@ -60,22 +60,31 @@
 									<td colspan="2">
 									<?php
 
-	                                    if (isset($_POST['botonRegistrar'])) {
-	                                        $parametroReserva = new ParametroReserva();
+	                                   
+	                                    	if(isset($_POST['txtNombreR']) && !is_null($_POST['txtNombreR']) && isset($_POST['smallintDiasMinimosReserva']) && !is_null($_POST['smallintDiasMinimosReserva']) && isset($_POST['timeTiempoMinimoReserva'])  && !is_null($_POST['timeTiempoMinimoReserva']) && isset($_POST['smallintDiasMaximoReserva']) && !is_null($_POST['smallintDiasMaximoReserva']) && isset($_POST['timeTiempoMaximoReserva']) && !is_null($_POST['timeTiempoMaximoReserva']) && isset($_POST['booleanEstado']) && !is_null($_POST['booleanEstado']))
+	                                    	{
+	                                    		$parametroReserva = new ParametroReserva();
 	                                        //construccion de objetos
 	                                        $parametroReserva->setNombre($_POST['txtNombreR']);
-	                                        $parametroReserva->setDiasMinimoReserva($_POST['smallintDiasMinimosReserva']);
-	                                        $parametroReserva->setTiempoMinimoReserva($_POST['timeTiempoMinimoReserva']);
-	                                        $parametroReserva->setDiaMaximoReserva($_POST['smallintDiasMaximoReserva']);
-	                                        $parametroReserva->setTiempoMaximoReserva($_POST['timeTiempoMaximoReserva']);
+	                                        $parametroReserva->setDiasMinimos($_POST['smallintDiasMinimosReserva']);
+	                                        $parametroReserva->setTiempoMinimo($_POST['timeTiempoMinimoReserva']);
+	                                        $parametroReserva->setDiasMaximo($_POST['smallintDiasMaximoReserva']);
+	                                        $parametroReserva->setTiempoMaximo($_POST['timeTiempoMaximoReserva']);
 	                                        $parametroReserva->setEstado($_POST['booleanEstado']);
 	                                        //instanció un objeto de tipo parametro tipo controller
 	                                        $parametroReservaController = new ParametroReservaController();
 	                                        //le pasa al controlador el objeto tipo parametro horario
-	                                        $parametroReservaController->insertarParametroReserva($parametroReserva);
-	                                    }
+	                                        $parametroReservaController->insertParametroReserva($parametroReserva);
+	                                    
 	                                    //Falta crear la condicción si esta seguro o desea cancelarlo.
 	                                    //Falta el aviso cuando registre en la db o si hay algún problema.
+	                                        header("Location: http://localhost/WebAudioVisuales/interfaz/parametro_Reserva/listar_parametros_reservas.php");
+	                                        
+	                                    	}
+	                                    	
+
+	                                    	
+	                                        
 	                                ?>
 									</td>
 								</tr>

@@ -2,6 +2,8 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
 $requires = new Requires();
 $requires->importDAOParametroReserva();
+$requires -> importParametroReserva();
+$requires -> importUsuario();
 
 class ParametroReservaController
 {
@@ -46,5 +48,31 @@ class ParametroReservaController
             return $this->daoParametroReserva->getAllParametrosReserva();
 
           }
+          public function test(){
+            echo "test";
+          }
+
 }
+    /*************************************************************************
+    * Manejadores de Eventos desde la vista
+    *************************************************************************/
+
+    /** Manejador del evento Eliminar parámetro desde la vista */
+    if(isset($_GET["idParametro"]))
+    {
+       $miParametroReservaController = new ParametroReservaController();
+       $miParametroReserva = new ParametroReserva();
+       $miUsuario = new Usuario();
+       //El id del usuario puede ser cualquiera ya que no hemos llegado a ese módulo.
+       $miUsuario->setIdUsuario(1);
+       $miParametroReserva->setIdParametroReserva($_GET["idParametro"]);
+       echo $miUsuario->getIdUsuario();
+       echo $miParametroReserva->getIdParametroReserva();
+       echo $miParametroReservaController->test();
+       $miParametroReservaController->deleteParametroReserva($miParametroReserva,$miUsuario);
+       header("Location: http://localhost/WebAudioVisuales/interfaz/parametro_Reserva/listar_parametros_reservas.php");
+    }
+
+   
+    
 ?>

@@ -29,14 +29,14 @@ class DataBase
     protected function insertQuery($query)
     {
         $this->getConnection();
-        $this->conn->exec($sql);
+        $this->conn->exec($query);
         $this->closeConnection();
     }
 
     protected function deleteQuery($query)
     {
         $this->getConnection();
-        $this->conn->exec($sql);
+        $this->conn->exec($query);
         $this->closeConnection();
     }
 

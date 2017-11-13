@@ -13,7 +13,7 @@ $requires->importUsuario();
 class DAOHora extends DataBase
 {
 
-  function __construct(argument)
+  function __construct()
   {
 
   }

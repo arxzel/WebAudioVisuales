@@ -37,13 +37,14 @@ class DAOParametroReserva extends DataBase{
 
     public function insertParametroReserva($parametroReserva)
     {
-        $sql = "INSERT INTO `parametros_reservas`(`nombre`, `dias_minimos_reserva`, `tiempo_minimo_reserva`, `dias_maximos_reserva`, `tiempo_maximo_reserva`, `estado`) VALUES(".$parametroReserva->getNombre().",".$parametroReserva->getDiasMinimos().",".$parametroReserva->getTiempoMinimo().",".$parametroReserva->getDiasMaximo().",".$parametroReserva->getTiempoMaximo().",".$parametroReserva->getEstado().")";
+        $sql = "INSERT INTO `parametros_reservas`(`nombre`, `dias_minimos_reserva`, `tiempo_minimo_reserva`, `dias_maximos_reserva`, `tiempo_maximo_reserva`, `estado`) VALUES('".$parametroReserva->getNombre()."','".$parametroReserva->getDiasMinimos()."','".$parametroReserva->getTiempoMinimo()."','".$parametroReserva->getDiasMaximo()."','".$parametroReserva->getTiempoMaximo()."','".$parametroReserva->getEstado()."')";
          $this->insertQuery($sql);
     }
 
    public function deleteParametroReserva($parametroReserva,$usuario)
     {
-        $sql = "call delete_parametro_reserva(". $parametroReserva->getIdParametroReserva()." , ". $usuario->getIdUsuario().");";
+       /*$sql = "call delete_parametro_reserva(". $parametroReserva->getIdParametroReserva()." , ". $usuario->getIdUsuario().");";*/
+      $sql= "DELETE FROM `parametros_reservas` WHERE `id_parametro_reserva` =".$parametroReserva->getIdParametroReserva();
         $this->deleteQuery($sql); //muestra error en esta línea, para las vistas parametro_reserva
     }
 

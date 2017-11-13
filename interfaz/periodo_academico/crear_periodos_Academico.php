@@ -14,6 +14,13 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css">
 	<title>Periodos Académicos</title>
+
+	<script type="text/javascript">
+		function estaSeguro(){
+			a = confirm("¿Esta de que la información de los campos es correcta?");
+			return a;
+		}
+	</script>
 </head>
 	<body>
 		<header>
@@ -22,7 +29,7 @@
 		</header>
 			<section name="PeriodosAcademicos">
 				<fieldset class="pA"><legend> Periodos Académicos</legend>
-					<form method="POST" action="periodo_Academico.php">
+					<form method="POST" action='#' onsubmit="return estaSeguro()">
 						<table>
 							<thead>
 								<tr>
@@ -71,11 +78,12 @@
 													 //instanció un objeto de tipo parametro tipo controller
 													$periodoAcademicoController	= new PeriodoAcademicoController();
 													 //le pasa al controlador el objeto tipo parametro horario
-													$periodoAcademicoController->insertarperiodoAcademico($periodoAcademico);
+													$periodoAcademicoController->insertPeriodoAcademico($periodoAcademico);
 												}
 												//Falta crear la condicción si esta seguro o desea cancelarlo.
 												//Falta el aviso cuando registre en la db o si hay algún problema.
-										
+
+												echo "<h3>Periodo Académico creado correctamente</h3>";									
 
 
 											?>
