@@ -8776,6 +8776,7 @@
 								"$ref": "AAAAAAFe9JaKsMQ8cb4="
 							},
 							"name": "id_padre",
+							"type": "INTEGER",
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
@@ -9019,6 +9020,7 @@
 								"$ref": "AAAAAAFe9Jn5NcRYgNM="
 							},
 							"name": "id_grupo_materia",
+							"type": "BIGINT",
 							"length": 0,
 							"primaryKey": true,
 							"foreignKey": false,
@@ -9242,7 +9244,7 @@
 								"$ref": "AAAAAAFe9Jt/dsRrvFE="
 							},
 							"name": "id_categoria",
-							"type": "INT",
+							"type": "INTEGER",
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
@@ -10681,7 +10683,7 @@
 								"$ref": "AAAAAAFfqPtUraHTU2E="
 							},
 							"name": "id_categoria",
-							"type": "INT",
+							"type": "INTEGER",
 							"length": 0,
 							"primaryKey": true,
 							"foreignKey": false,

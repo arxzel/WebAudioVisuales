@@ -59,12 +59,15 @@ CREATE TABLE IF NOT EXISTS usuarios(
 
 
 
+
+
+
 /****
 ***** ESQUEMA MAGISTRAL EN DESARROLLO *****
 ****/
 
 CREATE TABLE IF NOT EXISTS horas(
-    id_hora                         INT             NOT NULL        AUTO_INCREMENT COMMENT 'Se ingresarán manualMente',
+    id_hora                         INT             NOT NULL        AUTO_INCREMENT,
     hora                            TIME            NOT NULL,
     PRIMARY KEY (id_hora)
 );
@@ -90,3 +93,43 @@ CREATE TABLE IF NOT EXISTS periodos_academicos(
     descripcion                     TEXT            NULL,
     PRIMARY KEY (id_periodo_academico)
 );
+
+
+
+
+
+
+
+
+
+/****
+***** ESQUEMA RESERVAS EN DESARROLLO *****
+****/
+/*
+CREATE TABLE IF NOT EXISTS CATEGORIAS(
+    id_categoria                    INT             NOT NULL        AUTO_INCREMENT,
+    categoria                       VARCHAR(25)     NOT NULL,
+    descripcion
+);
+
+CREATE TABLE IF NOT EXISTS RECURSOS(
+        id_recurso                  INT             NOT NULL        AUTO_INCREMENT,
+        ciu                         VARCHAR(10)     NOT NULL,
+        recurso                     VARCHAR(50)     NOT NULL,
+        descripcion                 TEXT            NOT NULL,
+        estado                      BOOLEAN         NOT NULL COMMENT 'El estado es: 1 para pendiente, 2 para atentida y 3 para cancelada',
+);
+
+CREATE TABLE IF NOT EXISTS RESERVAS(
+    id_reserva                      INT             NOT NULL        AUTO_INCREMENT,
+    fecha_hora_creada               TIMESTAMP       NOT NULL,
+    info_adicional                  TEXT            NOT NULL,
+    fecha_reserva                   DATE            NOT NULL,
+    estado                          BIT             NOT NULL,
+    id_aula                         INT             NOT NULL,
+    hora_inicio                     TIME            NOT NULL,
+    hora_final                      TIME            NOT NULL,
+    id_materia                      INT             NOT NULL,
+    id_usuario                      INT             NOT NULL,
+)
+*/
