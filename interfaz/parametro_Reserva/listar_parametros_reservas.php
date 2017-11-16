@@ -45,6 +45,7 @@
 								    	<th>Tiempo Mínimo Reserva</th>
 								    	<th>Días Máximo Reserva</th>
 								    	<th>Opciones</th>
+								    	<th>Estado</th>
 								    </tr>
 											<?php
 
@@ -56,6 +57,7 @@
 	    											echo "<td>".$parametroReserva->getDiasMinimos()."</td>";
 	    											echo "<td>".$parametroReserva->getTiempoMinimo()."</td>";
 	    											echo "<td>".$parametroReserva->getDiasMaximo()."</td>";
+	    											echo "<td>".$parametroReserva->getEstado()."</td>";
 
 
 	    											echo "<td><a href='editar_parametros_reservas.php?idParametro=".$parametroReserva->getIdParametroReserva()."'>editar</a>";

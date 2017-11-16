@@ -30,7 +30,7 @@ class DAOParametroReserva extends DataBase{
 
     public function getAllParametrosReserva()
             {
-                 $sql = "SELECT * FROM parametros_reservas";
+                 $sql = "SELECT * FROM parametros_reservas ORDER BY estado DESC";
                  $resulset = $this->selectQuery($sql);
                  return $this-> construirParametrosReserva($resulset);
             }
