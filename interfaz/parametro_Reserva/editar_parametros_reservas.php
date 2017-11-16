@@ -62,7 +62,7 @@
 									<td><input type="boolean" name="booleanEstado" value="<? echo $parametroReserva->getEstado();?>"></td>
 								</tr>
 								<tr>
-									<td><input type="submit" name="bootonCancelar" value="Cancelar"></td>
+									<td><input type="button" name="bootonCancelar" onclick="window.history.go(-1);" value="Cancelar"></td>
 									<td><input type="submit" name="bootonResgistrar" value="Aceptar"></td>
 								</tr>
 								<tr>
@@ -82,6 +82,7 @@
 	                                        //instanció un objeto de tipo parametro tipo controller
 
                                              header('Location:listar_parametros_reservas.php');
+                                             //header("Location:javascript://history.go(-2)");
 
 	                                    }
 	                                    //Falta crear la condicción si esta seguro o desea cancelarlo.
