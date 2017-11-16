@@ -4,8 +4,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
 $requires = new Requires();
 $requires->importDatabase();
 $requires->importCategoria();
-
-
     /**
      *
      */
@@ -29,28 +27,12 @@ $requires->importCategoria();
             foreach ($resulset as $row) {
 
                 $categoria->setidCategoria($row['id_categoria']);
-                $categoria->setDocumento($row['documento']);
-                $categoria->setNombres($row['nombres']);
-                $categoria->setApellidos($row['apellidos']);
-                $categoria->setEmail($row['email']);
-                $categoria->setPasswd($row['passwd']);
-                $categoria->setActivo((boolean) $row['activo']);
-
-                //metodo para buscar el tipo de categoria
-                $DAOTipocategoria =  new DAOTipocategoria();
-                $tipocategoria = new Tipocategoria();
-                $tipocategoria->setIdTipocategoria((int) $row['id_tipo_categoria']);
-                $categoria->setTipocategoria($DAOTipocategoria->getTipocategoriaById($tipocategoria));
+                $categoria->setCategoria($row['categoria']);
+                $categoria->setDescripcion($row['descripcion']);
 
             }
             return $categoria;
         }
-
-
-
-
-
-
 
         public function getcategoriaByNombre($categoria)
         {
