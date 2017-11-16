@@ -105,11 +105,12 @@ CREATE TABLE IF NOT EXISTS periodos_academicos(
 /****
 ***** ESQUEMA RESERVAS EN DESARROLLO *****
 ****/
-/*
+
 CREATE TABLE IF NOT EXISTS CATEGORIAS(
     id_categoria                    INT             NOT NULL        AUTO_INCREMENT,
     categoria                       VARCHAR(25)     NOT NULL,
-    descripcion
+    descripcion                     TEXT            NOT NULL,
+    PRIMARY KEY (id_categoria),
 );
 
 CREATE TABLE IF NOT EXISTS RECURSOS(
@@ -118,6 +119,10 @@ CREATE TABLE IF NOT EXISTS RECURSOS(
         recurso                     VARCHAR(50)     NOT NULL,
         descripcion                 TEXT            NOT NULL,
         estado                      BOOLEAN         NOT NULL COMMENT 'El estado es: 1 para pendiente, 2 para atentida y 3 para cancelada',
+        id_categoria                INT             NOT NULL,
+        PRIMARY KEY (id_reserva),
+        FOREIGN KEY (id_categoria) REFERENCES CATEGORIAS(id_categoria)
+
 );
 
 CREATE TABLE IF NOT EXISTS RESERVAS(
@@ -131,5 +136,15 @@ CREATE TABLE IF NOT EXISTS RESERVAS(
     hora_final                      TIME            NOT NULL,
     id_materia                      INT             NOT NULL,
     id_usuario                      INT             NOT NULL,
-)
-*/
+    PRIMARY KEY (id_reserva),
+    FOREIGN KEY (id_usuario) REFERENCES USUARIOS(id_usuario)
+);
+
+CREATE TABLE IF NOT EXISTS RESERVAS_RECURSOS(
+    id_reserva_recurso          INT             NOT NULL        AUTO_INCREMENT,
+    id_reserva                  INT             NOT NULL,
+    id_recurso                  INT             NOT NULL,
+    PRIMARY KEY (id_reserva_recurso),
+    FOREIGN KEY (id_reserva) REFERENCES RESERVAS(id_reserva),
+    FOREIGN KEY (id_recurso) REFERENCES RECURSOS(id_recurso)
+);

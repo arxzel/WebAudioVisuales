@@ -219,4 +219,18 @@ BEGIN
 END;
 $$ DELIMITER ;
 
-/**/
+/*
+//
+*/
+
+DROP PROCEDURE IF EXISTS delete_periodo_academico;
+DELIMITER $$
+CREATE PROCEDURE delete_periodo_academico(
+    in idPeriodoAcademico           INT,
+    in idUsuario                    INT
+)
+BEGIN
+
+COMMIT;
+END;
+$$ DELIMITER ;
