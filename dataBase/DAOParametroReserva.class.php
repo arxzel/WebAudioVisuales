@@ -27,7 +27,7 @@ class DAOParametroReserva extends DataBase{
                  $resulset = $this->selectQuery($sql);
                  return $this-> construirParametrosReserva($resulset);
             }
-            
+
     public function getAllParametrosReserva()
             {
                  $sql = "SELECT * FROM parametros_reservas";
@@ -50,8 +50,9 @@ class DAOParametroReserva extends DataBase{
 
   public function updateParametroReserva($parametroReserva,$usuario)
     {
-       $sql = "call update_parametro_reserva(". $parametroReserva->getNombre()." , ". $parametroReserva->getDiasMinimos()." , ". $parametroReserva->getTiempoMinimo()." , ". $parametroReserva->getDiasMaximo()." , ". $parametroReserva->getTiempoMaximo()." , ". $parametroReserva->getEstado().", ". $usuario->getIdUsuario().");";
+       $sql = "call update_parametro_reserva(".$parametroReserva->getIdParametroReserva().",'". $parametroReserva->getNombre()." ', ". $parametroReserva->getDiasMinimos()." , '". $parametroReserva->getTiempoMinimo()."' , ". $parametroReserva->getDiasMaximo()." , '". $parametroReserva->getTiempoMaximo()."' , ". $parametroReserva->getEstado().", ". $usuario->getIdUsuario().");";
        $this->updateQuery($sql);
+       return null;
     }
 
 
