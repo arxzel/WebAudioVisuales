@@ -18,7 +18,7 @@ class HoraController
       }
 
       public function insertHoras($horas){
-        $this->daoHora->insertHoras($horas);
+        $this->daoHora->insertarHoras($horas);
       } 
 
     public function getHoraById($hora)

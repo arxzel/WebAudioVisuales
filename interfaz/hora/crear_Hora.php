@@ -1,6 +1,7 @@
 <?php
 	require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
 	$requires = new Requires();
+	$requires ->importHora();
 
 	//creacion de controller
 	$requires -> importHoraController();
@@ -24,8 +25,10 @@
 			<h1 align="center">Recursos Audiovisuales</h1>	
 		</header>
 			<section name="PeriodosAcademicos">
+
+
 				<fieldset class="pA"><legend>Crear Horas</legend>
-					<form method="POST" action="periodo_Academico.php">
+					<form method="POST" action="#">
 						<table>
 							<thead>
 								<tr>
@@ -34,46 +37,23 @@
 							</thead>
 								<tbody>
 									<tr>
-										<td>Hora Inicio Jornada: </td>
-										<td>Hora Final Jornada: </td>
+										<th> # </th>
+										<th> Inicio: </th>
+										<th> Final: </th>
 									</tr>
-									<tr>
-										<td><input type="time" name="timeHora"></td>
-										<td><input type="time" name="timeHora"></td>
-									</tr>
-									<tr>
-										<td><input type="time" name="timeHora"></td>
-										<td><input type="time" name="timeHora"></td>
-									</tr>
-									<tr>
-										<td><input type="time" name="timeHora"></td>
-										<td><input type="time" name="timeHora"></td>
-									</tr>
-									<tr>
-										<td><input type="time" name="timeHora"></td>
-										<td><input type="time" name="timeHora"></td>
-									</tr>
-									<tr>
-										<td><input type="time" name="timeHora"></td>
-										<td><input type="time" name="timeHora"></td>
-									</tr>
-									<tr>
-										<td><input type="time" name="timeHora"></td>
-										<td><input type="time" name="timeHora"></td>
-									</tr>
-									<tr>
-										<td><input type="time" name="timeHora"></td>
-										<td><input type="time" name="timeHora"></td>
-									</tr>
-									<tr>
-										<td><input type="time" name="timeHora"></td>
-										<td><input type="time" name="timeHora"></td>
-									</tr>
-									<tr>
-										<td><input type="time" name="timeHora"></td>
-										<td><input type="time" name="timeHora"></td>
-									</tr>
+									<?php
 
+										for($i=1;$i<3;$i++){
+
+											echo "<tr>
+											<td style='text-align: center;'><b>".$i."</b></td>
+										<td><input type='time' name='timeHora".$i."'></td>
+										<td><input type='time' name='timeHoraF".$i."'></td>
+												</tr>";
+										}
+									?>
+									
+									
 									<tr>
 										<td><input type="submit" name="bootonCancelar" value="Cancelar"></td>
 										<td><input type="submit" name="bootonRegistrar" value="Registar"></td>
@@ -83,18 +63,37 @@
 										<td colspan="2">
 											<?php
 
-												$hora = new Hora();
+												$horas =  [];
+												
 												//contruccion de objeto (da el hora)
+												if(isset($_POST['bootonRegistrar'])){
+													for($i=1;$i<3;$i++){
+														$hora = new Hora();
+														
+														$hora->setHora($_POST['timeHora'.$i]);
+														array_push ( $horas , $hora );
+														echo $horas[$i-1]->getHora();
+														//para que al final tome la última hora
+														if($i==2){
+															$hora = new Hora();
+															$hora->setHora($_POST['timeHoraF'.$i]);
+														array_push ( $horas , $hora );
+														echo $horas[$i]->getHora();
+														}
+													}
 
-												//$hora->setHora($_POST['timeHora']);
+													//$hora->setHora($_POST['timeHora']);
 												
 												//instanció un objeto de tipo hora tipo controller
 												$horaController	= new HoraController();
-
+												$horaController->insertHoras($horas);
+												}
+													if(isset($_POST['bootonCancelar'])){
+														header('Location: http://localhost/WebAudioVisuales/interfaz/hora/crear_Hora.php');
+													}
 												
 
-												
-											?>
+												?>
 
 										</td>
 									</tr>

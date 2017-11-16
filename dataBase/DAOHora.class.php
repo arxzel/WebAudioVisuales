@@ -50,7 +50,7 @@ class DAOHora extends DataBase
         
         foreach($horas as $hora){
            
-            $sql = "INSERT INTO horas (`hora`) VALUES (". $hora->getHora().")";
+            $sql = "INSERT INTO horas (`hora`) VALUES ('". $hora->getHora()."')";
             $this->insertQuery($sql);
         }
         
