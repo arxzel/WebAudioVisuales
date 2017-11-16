@@ -8,16 +8,16 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css"">
+	<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css">
 	<title>Parametros Reservas</title>
 	<meta name="viewport" content="width=device-width">
 </head>
 	<body>
 		<header>
 			<img src="/../WebAudioVisuales/interfaz/img/logoUni.png">
-			<h1 align="center">Recursos Audiovisuales</h1>		
+			<h1 align="center">Recursos Audiovisuales</h1>
 		</header>
-		
+
 			<section name="ParametroReserva" class="parametroReserva">
 				<fieldset class="pRF"><legend style="font-weight:bold"> Parametros Reserva</legend>
 				<form method="POST" action="">
@@ -25,7 +25,7 @@
 						<thead>
 							<tr>
 								<td colspan="2"><h3>Crear Parametros Reserva</h3></td>
-							</tr>	
+							</tr>
 						</thead>
 							<tbody>
 								<tr>
@@ -60,7 +60,7 @@
 									<td colspan="2">
 									<?php
 
-	                                   
+
 	                                    	if(isset($_POST['txtNombreR']) && !is_null($_POST['txtNombreR']) && isset($_POST['smallintDiasMinimosReserva']) && !is_null($_POST['smallintDiasMinimosReserva']) && isset($_POST['timeTiempoMinimoReserva'])  && !is_null($_POST['timeTiempoMinimoReserva']) && isset($_POST['smallintDiasMaximoReserva']) && !is_null($_POST['smallintDiasMaximoReserva']) && isset($_POST['timeTiempoMaximoReserva']) && !is_null($_POST['timeTiempoMaximoReserva']) && isset($_POST['booleanEstado']) && !is_null($_POST['booleanEstado']))
 	                                    	{
 	                                    		$parametroReserva = new ParametroReserva();
@@ -75,16 +75,16 @@
 	                                        $parametroReservaController = new ParametroReservaController();
 	                                        //le pasa al controlador el objeto tipo parametro horario
 	                                        $parametroReservaController->insertParametroReserva($parametroReserva);
-	                                    
-	                                    //Falta crear la condicción si esta seguro o desea cancelarlo.
-	                                    //Falta el aviso cuando registre en la db o si hay algún problema.
-	                                        header("Location: http://localhost/WebAudioVisuales/interfaz/parametro_Reserva/listar_parametros_reservas.php");
-	                                        
-	                                    	}
-	                                    	
 
-	                                    	
-	                                        
+	                                           //Falta crear la condicción si esta seguro o desea cancelarlo.
+	                                              //Falta el aviso cuando registre en la db o si hay algún problema.
+	                                        header("Location: http://localhost/WebAudioVisuales/interfaz/parametro_Reserva/listar_parametros_reservas.php");
+
+	                                    	}
+
+
+
+
 	                                ?>
 									</td>
 								</tr>
@@ -108,7 +108,7 @@
 			<tr>
 				<td style="text-align: right;"><a href="https://plus.google.com/+unisangil/posts" target="_blank" rel="alternate"><img src="/../WebAudioVisuales/interfaz/img/google.png" alt="" height="23" width="23"></a></td>
 			</tr>
-				
+
 			</tr>
 		</tbody>
 		</table>

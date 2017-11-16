@@ -16,7 +16,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css"">
+	<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css">
 	<title>Parametros Reservas</title>
 	<script type="text/javascript">
 		function estaSeguro(){
@@ -28,7 +28,7 @@
 	<body>
 		<header>
 			<img src="/../WebAudioVisuales/interfaz/img/logoUni.png">
-			<h1 align="center">Recursos Audiovisuales</h1>	
+			<h1 align="center">Recursos Audiovisuales</h1>
 		</header>
 			<section name="PeriodosAcademicos">
 				<fieldset class="lPA"><legend>Listar Parametros Reservas</legend>
@@ -46,23 +46,23 @@
 								    	<th>Días Máximo Reserva</th>
 								    	<th>Opciones</th>
 								    </tr>
-															
+
 									<tr>
 										<td colspan="2">
 											<?php
 
-											$listarParametrosReserva = $parametroReservasController -> getAllParametrosReserva(); 
-											
+											$listarParametrosReserva = $parametroReservasController -> getAllParametrosReserva();
+
 												foreach ($listarParametrosReserva as $parametroReserva) {
 													echo "<tr>";
 	    											echo "<td>".$parametroReserva->getNombre()."</td>";
 	    											echo "<td>".$parametroReserva->getDiasMinimos()."</td>";
 	    											echo "<td>".$parametroReserva->getTiempoMinimo()."</td>";
 	    											echo "<td>".$parametroReserva->getDiasMaximo()."</td>";
-	    											
+
 
 	    											echo "<td><a href='editar_parametros_reservas.php?idParametro=".$parametroReserva->getIdParametroReserva()."'>editar</a>";
-	    											
+
 													echo "<form onsubmit='return estaSeguro()' action='../../controllers/ParametroReservaController.class.php' >
 													<input type='hidden' name='idParametro' value=".$parametroReserva->getIdParametroReserva().">
 													<input type='submit' name='boton' value='Eliminar'></form></td>";
@@ -94,7 +94,7 @@
 			<tr>
 				<td style="text-align: right;"><a href="https://plus.google.com/+unisangil/posts" target="_blank" rel="alternate"><img src="/../WebAudioVisuales/interfaz/img/google.png" alt="" height="23" width="23"></a></td>
 			</tr>
-				
+
 			</tr>
 		</tbody>
 		</table>

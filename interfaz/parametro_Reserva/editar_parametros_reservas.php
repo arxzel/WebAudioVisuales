@@ -16,7 +16,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css"">
+	<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css">
 	<title>Parametros Reservas</title>
 	<meta name="viewport" content="width=device-width">
 </head>

@@ -21,15 +21,15 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width">
 		<title>Parametros Hora</title>
-		<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css"">
+		<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css">
 	</head>
 
 	<body>
 		<header>
 			<img src="/../WebAudioVisuales/interfaz/img/logoUni.png">
-			<h1 align="center">Recursos Audiovisuales</h1>	
+			<h1 align="center">Recursos Audiovisuales</h1>
 		</header>
-		
+
 		<div class="principal">
 			<section name="ParametrosHorarios">
 				<fieldset class="pA"><legend>Parametros Horarios</legend>
@@ -47,7 +47,7 @@
 									<th>Hora Final Jornada</th>
 									<th>Duración Hora Academica</th>
 									<th>Estado</th>
-																							
+
 								</tr>
 
 								<tr>
@@ -72,6 +72,7 @@
 												echo "<input type='submit' name='botonEliminar' value='Eliminar'></td>";
 
 												echo "</tr>";
+											}
 
 										?>
 									</td>
@@ -98,7 +99,7 @@
 								<th>Hora Inicio</th>
 								<th>Duración</th>
 								<th>Estado</th>
-																									
+
 							</tr>
 							<tr>
 									<td></td>
@@ -108,7 +109,7 @@
 								<td colspan="2">
 									<?php
 
-											$listarDescanso = $descansoController ->getAllDescanso();
+											/*$listarDescanso = $descansoController->getAllDescanso();
 
 											foreach ($listarDescanso as $decanso) {
 												echo "<tr>";
@@ -118,10 +119,11 @@
 												echo"<tr>".$decanso-> getDuracion()."</td>";
 												echo"<tr>".$decanso-> getEstado()."</td>";
 
-												echo"<td><a href='editar_parametros_hora.php?idParametroHorario='".$decanso -> getIdParametroHorario().">Editar</a>";
+												echo"<td><a href='editar_parametros_hora.php?idParametroHorario=".$decanso -> getIdParametroHorario()."'>Editar</a>";
 												echo "<input type='submit' name='botonEliminar' value='Eliminar'></td>";
 
 												echo "</tr>";
+											}*/
 									?>
 								</td>
 							</tr>
@@ -147,7 +149,7 @@
 			<tr>
 				<td style="text-align: right;"><a href="https://plus.google.com/+unisangil/posts" target="_blank" rel="alternate"><img src="/../WebAudioVisuales/interfaz/img/google.png" alt="" height="23" width="23"></a></td>
 			</tr>
-				
+
 			</tr>
 		</tbody>
 		</table>
