@@ -15,7 +15,7 @@ class Hora{
         $this->idHora = $idHora;
     }
 
-    public function getHora (){
+    public function getHora(){
         return $this->Hora;
     }
 
