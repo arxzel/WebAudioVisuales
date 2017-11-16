@@ -39,27 +39,27 @@
 							<tbody>
 								<tr>
 									<td>Nombre: </td>
-									<td><input type="text" name="txtNombreR" value="<? echo $parametroReserva->getNombre();?>"></td>
+									<td><input type="text" name="txtNombreR" value="<?php echo $parametroReserva->getNombre();?>"></td>
 								</tr>
 								<tr>
 									<td>Dias Mínimos Reservas: </td>
-									<td><input type="number" name="smallintDiasMinimosReserva" value="<? echo $parametroReserva->getDiasMinimos();?>"></td>
+									<td><input type="number" name="smallintDiasMinimosReserva" value="<?php echo $parametroReserva->getDiasMinimos();?>"></td>
 								</tr>
 								<tr>
 									<td>Tiempo Mínimo Reserva: </td>
-									<td><input type="time" name="timeTiempoMinimoReserva" value="<? echo $parametroReserva->getTiempoMinimo();?>"></td>
+									<td><input type="time" name="timeTiempoMinimoReserva" value="<?php echo $parametroReserva->getTiempoMinimo();?>"></td>
 								</tr>
 								<tr>
 									<td>Dias Máximo Reservas: </td>
-									<td><input type="number" name="smallintDiasMaximoReserva" value="<? echo $parametroReserva->getDiasMaximo();?>"></td>
+									<td><input type="number" name="smallintDiasMaximoReserva" value="<?php echo $parametroReserva->getDiasMaximo();?>"></td>
 								</tr>
 								<tr>
 									<td>Tiempo Máximo Reserva: </td>
-									<td><input type="time" name="timeTiempoMaximoReserva" value="<? echo $parametroReserva->getTiempoMaximo();?>"></td>
+									<td><input type="time" name="timeTiempoMaximoReserva" value="<?php echo $parametroReserva->getTiempoMaximo();?>"></td>
 								</tr>
 								<tr>
 									<td>Estado: </td>
-									<td><input type="boolean" name="booleanEstado" value="<? echo $parametroReserva->getEstado();?>"></td>
+									<td><input type="boolean" name="booleanEstado" value="<?php echo $parametroReserva->getEstado();?>"></td>
 								</tr>
 								<tr>
 									<td><input type="button" name="bootonCancelar" onclick="window.history.go(-1);" value="Cancelar"></td>

@@ -20,7 +20,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css"">
+	<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css">
 	<title>Periodos Académicos</title>
 </head>
 	<body>
@@ -40,23 +40,23 @@
 								<tbody>
 									<tr>
 										<td>Nombre: </td>
-										<td><input type="text" name="textNombre"></td>
+										<td><input type="text" name="textNombre" value="<?php echo $periodoAcademico->getNombre();?>"></td>
 									</tr>
 									<tr>
 										<td>Fecha Inicio: </td>
-										<td><input type="date" name="dateFechaInicio"></td>
+										<td><input type="date" name="dateFechaInicio" value="<?php echo $periodoAcademico->getFechaInicio();?>"></td>
 									</tr>
 									<tr>
 										<td>Fecha Final: </td>
-										<td><input type="date" name="dateFechaFinal"></td>
+										<td><input type="date" name="dateFechaFinal" value="<?php echo $periodoAcademico->getFechaFinal();?>"></td>
 									</tr>
 									<tr>
 										<td>Estado: </td>
-										<td><input type="boolean" name="booleanEstado"></td>
+										<td><input type="boolean" name="booleanEstado" value="<?php echo $periodoAcademico->getEstado();?>"></td>
 									</tr>
 									<tr>
 										<td>Descripción: </td>
-										<td><input type="text" name="textDescripcion"></td>
+										<td><input type="text" name="textDescripcion" value="<?php echo $periodoAcademico->getDescripcion();?>"></td>
 									</tr>
 									<tr>
 										<td><input type="submit" name="bootonCancelar" value="Cancelar"></td>

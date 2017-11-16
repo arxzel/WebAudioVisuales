@@ -66,3 +66,8 @@ th {
     border: 6px solid #dddddd;
     text-align: left;
     padding: 8px;
+ }
+ 
+a:link{
+	text-decoration: none;
+}
