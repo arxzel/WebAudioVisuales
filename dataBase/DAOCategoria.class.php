@@ -33,6 +33,14 @@ $requires->importCategoria();
             }
             return $categoria;
         }
+        public function updateCategoria($categoria){
+            $sql = "Call update_categoria(".$categoria->getidCategoria().",'".$categoria->getcategoria()."','".$categoria->getdescripcion()."');";
+            $this->updateQuery($sql);
+       return null;
+
+        }
+
+        CALL update_categoria(qweqwe,qweqwe,qweqwe,)
 
         public function getcategoriaByNombre($categoria)
         {
