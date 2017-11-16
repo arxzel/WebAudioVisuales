@@ -78,6 +78,11 @@
 										    }
 																						
 											?>
+											<tr>
+												<td>
+													<a href="crear_periodos_Academico.php">Crear</a>
+								 				</td>
+											</tr>
 
 										</td>
 									</tr>
