@@ -5,6 +5,8 @@
 ****/
 USE audio_visuales;
 
+
+TRUNCATE TABLE permisos;
 INSERT INTO permisos
     (permiso, valor) VALUES
     ('CREAR USUARIO',1),
@@ -16,6 +18,7 @@ INSERT INTO permisos
     ('ADMIN ACADEMICO',7)
 ;
 
+TRUNCATE TABLE tipos_usuarios;
 INSERT INTO tipos_usuarios
     (tipo_usuario) VALUES
     ('ROOT'),
@@ -26,6 +29,7 @@ INSERT INTO tipos_usuarios
     ('INVITADO')
 ;
 
+TRUNCATE TABLE permisos_tipos_usuarios;
 INSERT INTO permisos_tipos_usuarios
     (id_tipo_usuario, id_permiso) VALUES
     (1, 1),
@@ -37,6 +41,7 @@ INSERT INTO permisos_tipos_usuarios
     (1, 7)
 ;
 
+TRUNCATE TABLE usuarios;
 INSERT INTO usuarios
     (documento, nombres, apellidos, email, passwd, activo, id_tipo_usuario, id_jefe) VALUES
     ('0', 'ROOT', 'ADMIN', 'support@unisangil.edu.co', SHA1(MD5('toor')), TRUE, 1, NULL),
@@ -47,12 +52,14 @@ INSERT INTO usuarios
 
 
 
+TRUNCATE TABLE parametros_reservas;
 INSERT INTO parametros_reservas
     (nombre, dias_minimos_reserva, tiempo_minimo_reserva, dias_maximos_reserva, tiempo_maximo_reserva, estado) VALUES
     ('antes', 0, '12:00:00', 6, '23:59:59', FALSE),
     ('ahora', 1, '00:00:00', 7, '23:59:59', TRUE)
 ;
 
+TRUNCATE TABLE periodos_academicos;
 INSERT INTO periodos_academicos
     (nombre, fecha_inicio, fecha_final, estado, descripcion) VALUES
     ('2016-1', '2016-2-1', '2016-6-30', FALSE, 'descripcion'),
