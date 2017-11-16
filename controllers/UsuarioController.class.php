@@ -9,11 +9,16 @@ class UsuariosController
     private $daoUsuario;
     public function __construct()
     {
-        $this->daoUsuario = new DAOUsusario();
+        $this->daoUsuario = new DAOUsuario();
     }
 
     public function getUsuarioById($usuario)
     {
         return $this->daoUsuario->getUsuarioById($usuario);
+    }
+
+    public function construirUsuario($resulset)
+    {
+        return $this->daoUsuario->construirUsuario($resulset);
     }
 }
