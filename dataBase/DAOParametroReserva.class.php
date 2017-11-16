@@ -77,8 +77,8 @@ class DAOParametroReserva extends DataBase{
     }
 
     private function construirParametrosReserva($resulset){
-        $parametrosReserva = [];
-        $parametroReserva = new ParametroReserva();
+        $parametrosReserva = array();
+        //$parametroReserva = new ParametroReserva();
         foreach($resulset as $row)
                     {
                       $parametroReserva = new ParametroReserva();
