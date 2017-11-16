@@ -19,7 +19,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width">
 		<title>Parametros Hora</title>
-		<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css"">
+		<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css">
 	</head>
 
 	<body>

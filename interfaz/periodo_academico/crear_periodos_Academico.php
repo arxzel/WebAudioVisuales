@@ -60,6 +60,7 @@
 									<tr>
 										<td><input type="submit" name="bootonCancelar" value="Cancelar"></td>
 										<td><input type="submit" name="bootonRegistrar" value="Registar"></td>
+										<td><input type="submit" name="bootonListar" value="Listar"></td>
 									</tr>
 									<tr>
 										<td colspan="2">
@@ -83,7 +84,7 @@
 												//Falta crear la condicción si esta seguro o desea cancelarlo.
 												//Falta el aviso cuando registre en la db o si hay algún problema.
 
-												echo "<h3>Periodo Académico creado correctamente</h3>";									
+																				
 
 
 											?>

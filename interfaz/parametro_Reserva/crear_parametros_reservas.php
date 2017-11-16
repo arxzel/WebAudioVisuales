@@ -53,7 +53,7 @@
 									<td><input type="boolean" name="booleanEstado"></td>
 								</tr>
 								<tr>
-									<td><input type="submit" name="bootonCancelar" value="Cancelar"></td>
+									<td><button onclick="window.history.go(-1);">Cancelar</button></td>
 									<td><input type="submit" name="bootonResgistrar" value="Registar"></td>
 								</tr>
 								<tr>
@@ -94,6 +94,7 @@
 					</form>
 				</fieldset>
 			</section>
+			
 		</body>
 	<footer>
 		<table align="right" class="redes">

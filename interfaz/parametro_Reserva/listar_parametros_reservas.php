@@ -46,9 +46,6 @@
 								    	<th>Días Máximo Reserva</th>
 								    	<th>Opciones</th>
 								    </tr>
-
-									<tr>
-										<td colspan="2">
 											<?php
 
 											$listarParametrosReserva = $parametroReservasController -> getAllParametrosReserva();
@@ -70,12 +67,16 @@
 
 												}
 											?>
+								<tr>
+									<td>
+										<a href="crear_parametros_reservas.php"> Crear</a>
+								 	</td>
+								</tr>
 
-										</td>
-									</tr>
+
 								</tbody>
 						</table>
-						<a href="crear_parametros_reservas.php">Crear Nuevo Parámetro</a>
+						
 				</fieldset>
 
 			</section>
