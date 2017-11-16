@@ -13,9 +13,12 @@ class CategoriaController
     }
 
     
-    public function getCategoriaById($hora)
+    public function getCategoriaById($categoria)
       {
-      	return $this->daoCategoria->getCategoriaById($hora);
+      	return $this->daoCategoria->getCategoriaById($categoria);
       }  
+      public function updateCatergoria($categoria){
+        retun $this->daoCategoria->updateCatergoria($categoria);
+      }
 }
 ?>
