@@ -8,7 +8,7 @@ USE audio_visuales;
 /**
 ************PROCEDURES PARAMETROS RESERVAS
 **/
-/*
+
 DROP PROCEDURE IF EXISTS update_parametro_reserva;
 DELIMITER $$
 CREATE PROCEDURE update_parametro_reserva(
@@ -23,7 +23,7 @@ CREATE PROCEDURE update_parametro_reserva(
 )
 BEGIN
     INSERT INTO auditoria_update_parametros_reservas(
-        id_parametro_reserva,
+        auditoria_update_parametros_reservas.id_parametro_reserva,
         nombre_old,
         nombre_new,
         dias_minimos_reserva_old,
@@ -39,7 +39,7 @@ BEGIN
         usuario_id,
         hora_action
         ) SELECT
-            id_parametro_reserva,
+            parametros_reservas.id_parametro_reserva,
             nombre,
             newNombre,
             dias_minimos_reserva,
@@ -54,6 +54,7 @@ BEGIN
             newEstado,
             idUsuario,
             now()
+            FROM parametros_reservas
             WHERE
             id_parametro_reserva = idParametroReserva
 

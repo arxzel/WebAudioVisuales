@@ -45,10 +45,8 @@
 								    	<th>Tiempo Mínimo Reserva</th>
 								    	<th>Días Máximo Reserva</th>
 								    	<th>Opciones</th>
+								    	<th>Estado</th>
 								    </tr>
-
-									<tr>
-										<td colspan="2">
 											<?php
 
 											$listarParametrosReserva = $parametroReservasController -> getAllParametrosReserva();
@@ -59,23 +57,42 @@
 	    											echo "<td>".$parametroReserva->getDiasMinimos()."</td>";
 	    											echo "<td>".$parametroReserva->getTiempoMinimo()."</td>";
 	    											echo "<td>".$parametroReserva->getDiasMaximo()."</td>";
+	    											echo "<td>".$parametroReserva->getEstado()."</td>";
 
 
 	    											echo "<td><a href='editar_parametros_reservas.php?idParametro=".$parametroReserva->getIdParametroReserva()."'>editar</a>";
 
-													echo "<form onsubmit='return estaSeguro()' action='../../controllers/ParametroReservaController.class.php' >
+													echo "<form onsubmit='return estaSeguro()' action='#' method ='POST' >
 													<input type='hidden' name='idParametro' value=".$parametroReserva->getIdParametroReserva().">
 													<input type='submit' name='boton' value='Eliminar'></form></td>";
 	    											echo "</tr>";
 
 												}
+												if(isset($_POST["idParametro"]))
+											    {
+											       $miParametroReservaController = new ParametroReservaController();
+											       $miParametroReserva = new ParametroReserva();
+											       $miUsuario = new Usuario();
+											       //El id del usuario puede ser cualquiera ya que no hemos llegado a ese módulo.
+											       $miUsuario->setIdUsuario(1);
+											       $miParametroReserva->setIdParametroReserva($_POST["idParametro"]);
+											       echo $miUsuario->getIdUsuario();
+											       echo $miParametroReserva->getIdParametroReserva();
+											       echo $miParametroReservaController->test();
+											       $miParametroReservaController->deleteParametroReserva($miParametroReserva,$miUsuario);
+											       header("Location: http://localhost/WebAudioVisuales/interfaz/parametro_Reserva/listar_parametros_reservas.php");
+											   }
 											?>
+								<tr>
+									<td>
+										<a href="crear_parametros_reservas.php"> Crear</a>
+								 	</td>
+								</tr>
 
-										</td>
-									</tr>
+
 								</tbody>
 						</table>
-						<a href="crear_parametros_reservas.php">Crear Nuevo Parámetro</a>
+						
 				</fieldset>
 
 			</section>

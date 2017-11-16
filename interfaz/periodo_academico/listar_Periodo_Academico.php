@@ -15,7 +15,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css"">
+	<link rel="stylesheet" type="text/css" href="/../WebAudioVisuales/interfaz/style.css">
 	<title>Periodos Académicos</title>
 </head>
 	<body>
@@ -40,12 +40,7 @@
 								    	<th>Descripción</th>
 								    	<th>Operación</th>
 								    </tr>
-								    <tr>
-								    	<th></th>
-								    	<th></th>
-								    </tr>
-								
-									<tr>
+								   <tr>
 										<td colspan="2">
 											<?php
 
