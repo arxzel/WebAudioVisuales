@@ -223,6 +223,114 @@ $$ DELIMITER ;
 //
 */
 
+DROP PROCEDURE IF EXISTS delete_categoria;
+DELIMITER $$
+CREATE PROCEDURE delete_categoria(
+    in idCategoria          INT,
+    in idUsuario            INT
+)
+BEGIN
+    INSERT INTO AUDITORIA_DELETE_CATEGORIAS(
+        id_categoria,
+        categoria,
+        descripcion,
+        usuario_id,
+        hora_action
+    ) SELECT
+    id_categoria,
+    categoria,
+    descripcion,
+    idUsuario,
+    now()
+    FROM CATEGORIAS
+    WHERE id_categoria = idCategoria;
+
+    UPDATE CATEGORIAS
+    SET estado = 0
+    WHERE id_categoria = idCategoria;
+COMMIT;
+END;
+$$ DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS delete_periodo_academico;
+DELIMITER $$
+CREATE PROCEDURE delete_periodo_academico(
+    in idPeriodoAcademico           INT,
+    in idUsuario                    INT
+)
+BEGIN
+
+COMMIT;
+END;
+$$ DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS delete_periodo_academico;
+DELIMITER $$
+CREATE PROCEDURE delete_periodo_academico(
+    in idPeriodoAcademico           INT,
+    in idUsuario                    INT
+)
+BEGIN
+
+COMMIT;
+END;
+$$ DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS delete_periodo_academico;
+DELIMITER $$
+CREATE PROCEDURE delete_periodo_academico(
+    in idPeriodoAcademico           INT,
+    in idUsuario                    INT
+)
+BEGIN
+
+COMMIT;
+END;
+$$ DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS delete_periodo_academico;
+DELIMITER $$
+CREATE PROCEDURE delete_periodo_academico(
+    in idPeriodoAcademico           INT,
+    in idUsuario                    INT
+)
+BEGIN
+
+COMMIT;
+END;
+$$ DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS delete_periodo_academico;
+DELIMITER $$
+CREATE PROCEDURE delete_periodo_academico(
+    in idPeriodoAcademico           INT,
+    in idUsuario                    INT
+)
+BEGIN
+
+COMMIT;
+END;
+$$ DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS delete_periodo_academico;
+DELIMITER $$
+CREATE PROCEDURE delete_periodo_academico(
+    in idPeriodoAcademico           INT,
+    in idUsuario                    INT
+)
+BEGIN
+
+COMMIT;
+END;
+$$ DELIMITER ;
+
+
 DROP PROCEDURE IF EXISTS delete_periodo_academico;
 DELIMITER $$
 CREATE PROCEDURE delete_periodo_academico(

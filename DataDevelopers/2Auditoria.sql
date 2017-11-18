@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS auditoria_delete_parametros_reservas(
     PRIMARY KEY (id_auditoria_delete_parametros_reservas)
 );
 
-
+/*
 CREATE TABLE IF NOT EXISTS auditoria_delete_horas(
     id_auditoria_delete_horas   INT             AUTO_INCREMENT,
     id_hora                         INT             NULL,
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS auditoria_delete_horas(
     hora_action                     TIMESTAMP       NOT NULL,
     PRIMARY KEY (id_auditoria_delete_horas)
 );
-
+*/
 
 CREATE TABLE IF NOT EXISTS auditoria_delete_periodos_academicos(
     id_auditoria_delete_periodos_academicos INT             AUTO_INCREMENT,
@@ -157,7 +157,7 @@ CREATE TABLE IF NOT EXISTS auditoria_update_parametros_reservas(
     hora_action                         TIMESTAMP       NOT NULL,
     PRIMARY KEY (id_auditoria_update_parametros_reservas)
 );
-
+/*
 CREATE TABLE IF NOT EXISTS auditoria_update_horas(
     id_auditoria_update_horas       INT             AUTO_INCREMENT,
     id_hora                         INT             NULL,
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS auditoria_update_horas(
     hora_action                     TIMESTAMP       NOT NULL,
     PRIMARY KEY (id_auditoria_update_horas)
 );
-
+*/
 CREATE TABLE IF NOT EXISTS auditoria_update_periodos_academicos(
     id_auditoria_update_periodos_academicos INT             AUTO_INCREMENT,
     id_periodo_academico                INT             NULL,
@@ -200,6 +200,7 @@ CREATE TABLE IF NOT EXISTS AUDITORIA_DELETE_RECURSOS(
         id_auditoria_delete_recurso                 INT             NOT NULL        AUTO_INCREMENT,
         id_recurso                  INT             NULL,
         ciu                         VARCHAR(10)     NULL,
+        serial                      VARCHAR(100)    NULL,
         recurso                     VARCHAR(50)     NULL,
         descripcion                 TEXT            NULL,
         estado                      BOOLEAN         NULL COMMENT 'El estado es: 1 para pendiente, 2 para atentida y 3 para cancelada',
@@ -255,6 +256,8 @@ CREATE TABLE IF NOT EXISTS AUDITORIA_UPDATE_RECURSOS(
         id_recurso                  INT             NULL,
         ciu_old                         VARCHAR(10)     NULL,
         ciu_new                         VARCHAR(10)     NULL,
+        serial_old                      VARCHAR(100)    NULL,
+        serial_new                      VARCHAR(100)    NULL,
         recurso_old                     VARCHAR(50)     NULL,
         recurso_new                     VARCHAR(50)     NULL,
         descripcion_old                 TEXT            NULL,
