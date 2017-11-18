@@ -1,4 +1,10 @@
 <?php
+
+/*require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
+$requires = new Requires();
+$requires -> getRequireTipoUsuario();
+*/
+
 class Hora{
     private $idHora;
     private $hora;

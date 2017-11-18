@@ -1,5 +1,10 @@
 <?php
 
+/*require_once($_SERVER['DOCUMENT_ROOT'].'/WebAudioVisuales/requires.class.php');
+$requires = new Requires();
+$requires -> getRequireTipoUsuario();
+*/
+
 class FaculProgMateria {
 
 	private $idFaculProgMateria;

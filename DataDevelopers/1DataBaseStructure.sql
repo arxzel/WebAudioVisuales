@@ -114,15 +114,15 @@ CREATE TABLE IF NOT EXISTS CATEGORIAS(
 );
 
 CREATE TABLE IF NOT EXISTS RECURSOS(
-        id_recurso                  INT             NOT NULL        AUTO_INCREMENT,
+        id_recurso_history          INT             NOT NULL        AUTO_INCREMENT,
         ciu                         VARCHAR(10)     NOT NULL,
+        serial                      VARCHAR(100)    NOT NULL,
         recurso                     VARCHAR(50)     NOT NULL,
         descripcion                 TEXT            NOT NULL,
-        estado                      BOOLEAN         NOT NULL COMMENT 'El estado es: 1 para pendiente, 2 para atentida y 3 para cancelada',
+        estado                      BOOLEAN         NOT NULL COMMENT 'El estado es: 0 eliminado, 1 activo, 2 inactivo',
         id_categoria                INT             NOT NULL,
         PRIMARY KEY (id_reserva),
         FOREIGN KEY (id_categoria) REFERENCES CATEGORIAS(id_categoria)
-
 );
 
 CREATE TABLE IF NOT EXISTS RESERVAS(
