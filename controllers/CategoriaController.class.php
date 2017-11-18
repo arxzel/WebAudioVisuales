@@ -18,7 +18,14 @@ class CategoriaController
       	return $this->daoCategoria->getCategoriaById($categoria);
       }  
       public function updateCatergoria($categoria){
-        retun $this->daoCategoria->updateCatergoria($categoria);
+        return $this->daoCategoria->updateCatergoria($categoria);
+      }
+
+      public function deleteCategoria($categoria){
+        $this->daoCategoria->deleteCategoria($categoria);
+      }
+      public function insertCategoria($categoria){
+        $this->daoCategoria->insertCategoria($categoria);
       }
 }
 ?>
