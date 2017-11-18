@@ -58,9 +58,9 @@ $requires->importCategoria();
 
         public function getcategoriaByNombre($categoria)
         {
-            $sql = "SELECT * FROM `categoria` WHERE UPPER(`nombres`) LIKE (UPPER('%".$categoria->getNombres()."%'))";
+            $sql = "SELECT * FROM `categoria` WHERE UPPER(`nombres`) LIKE (UPPER('%".$categoria->getcategoria()."%'))";
             $resulset = $this-> selectQuery($sql);
-            return $this-> construircategoria($resulset);
+            return $this-> construirCategoria($resulset);
         }
         public function getAllCategoria(){
              $sql = "SELECT * FROM `categoria`";

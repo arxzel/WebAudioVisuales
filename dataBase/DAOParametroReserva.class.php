@@ -77,7 +77,7 @@ class DAOParametroReserva extends DataBase{
     }
 
     private function construirParametrosReserva($resulset){
-        $parametrosReserva = array();
+        $parametrosReserva = [];
         //$parametroReserva = new ParametroReserva();
         foreach($resulset as $row)
                     {
@@ -90,8 +90,8 @@ class DAOParametroReserva extends DataBase{
                       $parametroReserva->setDiasMaximo($row['dias_maximos_reserva']);
                       $parametroReserva->setTiempoMaximo($row['tiempo_maximo_reserva']);
                       $parametroReserva->setEstado($row['estado']);
-                      //$parametrosReserva[] = $parametroReserva;
-                      array_push ( $parametrosReserva , $parametroReserva );
+                      $parametrosReserva[] = $parametroReserva;
+                      //array_push ( $parametrosReserva , $parametroReserva );
 
 
                     }
