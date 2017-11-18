@@ -27,5 +27,8 @@ class CategoriaController
       public function insertCategoria($categoria){
         $this->daoCategoria->insertCategoria($categoria);
       }
+      public function getAllCategorias(){
+        return $this->daoCategoria->getAllCategorias();
+      }
 }
 ?>

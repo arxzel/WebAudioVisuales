@@ -35,10 +35,15 @@ $requires->importCategoria();
         private function construirCategorias($resulset){
             $categorias = array();
     //            $categoria = new Categoria();
-            //ACA SE ARMÓ LA GRANDE
             foreach ($resulset as $row) {
+                $categoria = new Categoria();
+                $this->categoria->setidCategoria($row['id_categoria']);
+                $this->categoria->setcategoria($row['categoria']);
+                $this->categoria->setdescripcion($row['descripcion']);
+                $categorias[] = $categoria;
             
             }
+            return $categorias;
 
         }
         public function updateCategoria($categoria){
@@ -58,11 +63,11 @@ $requires->importCategoria();
 
         public function getcategoriaByNombre($categoria)
         {
-            $sql = "SELECT * FROM `categoria` WHERE UPPER(`nombres`) LIKE (UPPER('%".$categoria->getNombres()."%'))";
+            $sql = "SELECT * FROM `categoria` WHERE UPPER(`nombres`) LIKE (UPPER('%".$categoria->getcategoria()."%'))";
             $resulset = $this-> selectQuery($sql);
-            return $this-> construircategoria($resulset);
+            return $this-> construirCategoria($resulset);
         }
-        public function getAllCategoria(){
+        public function getAllCategorias(){
              $sql = "SELECT * FROM `categoria`";
                  $resulset = $this->selectQuery($sql);
                  return $this-> construirCategorias($resulset);
