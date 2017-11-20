@@ -9,7 +9,7 @@ $requires->importDAOTipoUsuario();
     /**
      *
      */
-    class DAOUsusario extends DataBase
+    class DAOUsuario extends DataBase
     {
 
         function __construct()
